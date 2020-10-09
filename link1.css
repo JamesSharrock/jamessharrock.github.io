@@ -100,20 +100,20 @@ body, html {
 }
 
 /* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 400px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-  .img-t {
-	  float: left;
-	  width:100%;
-	  padding:5px;
+@media screen and (max-width: 650px) {
+  	.column {
+   		width: 100%;
+    		display: block;
+  	}
+	.img-t {
+	  	float: left;
+	  	width:100%;
+	  	padding:5px;
 	}
-    .img-s {
-	    float:right;
-	    width:100%;
-	    padding: 5px;
+	.img-s {
+	    	float:right;
+	    	width:100%;
+	    	padding: 5px;
 	}
 }
 
