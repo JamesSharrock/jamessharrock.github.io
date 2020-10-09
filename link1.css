@@ -1,4 +1,4 @@
- body {
+  body {
 		margin: 0px;
 		background-color: #c6ccc8;
       }
@@ -10,6 +10,7 @@ body, html {
   background-color: #c6ff41;
   text-align: center;
   padding: 20px;
+  width: 100%;
 }
 .active {
   background-color: #4CAF50;
@@ -44,7 +45,8 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 0px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   text-decoration: none;
 }
 a {
@@ -151,8 +153,8 @@ nav ul a {
     text-decoration: none;
 }
 nav ul li {
-    float:center;
-	width:25%;
+	float: center;
+	width: 25%;
 }
 article {
     margin-left: 100px;
@@ -163,5 +165,5 @@ article {
 }
 nav {
 	left: 0%;
-	width:100%;
+	width: 100%;
 }
