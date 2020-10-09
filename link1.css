@@ -44,7 +44,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 120px;
+  padding: 14px 0px;
   text-decoration: none;
 }
 a {
@@ -150,6 +150,10 @@ h5 {
 nav ul a {
     text-decoration: none;
 }
+nav ul li {
+    float:center;
+	width:25%;
+}
 article {
     margin-left: 100px;
 	margin-right: 100px;
@@ -159,4 +163,5 @@ article {
 }
 nav {
 	left: 0%;
+	width:100%;
 }
