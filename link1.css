@@ -1,4 +1,4 @@
-     /*----------General Page Formatting----------*/
+   /*----------General Page Formatting----------*/
 
 body {
 	margin: 0px;
@@ -199,6 +199,9 @@ li a:hover {
 	.footerli {
 		float: left;
 		width:100%;
+	}
+	li a:hover {
+		background-color: #000000;
 	}
 }
 
