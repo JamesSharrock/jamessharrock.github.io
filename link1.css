@@ -1,4 +1,4 @@
-   /*----------General Page Formatting----------*/
+    /*----------General Page Formatting----------*/
 
 body {
 	margin: 0px;
@@ -176,7 +176,9 @@ li a:hover {
 	}
 	li a:hover {
 		background-color: #555;
-		color: white;
+	}
+	li a:active {
+		background-color: #000;
 	}
 	nav {
 		left: 0%;
@@ -201,7 +203,10 @@ li a:hover {
 		width:100%;
 	}
 	li a:hover {
-		background-color: #000000;
+		background-color: #000;
+	}
+	li a:active {
+		background-color: #000;
 	}
 }
 
