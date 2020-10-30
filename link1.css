@@ -99,10 +99,10 @@ img {
 
 article {
     margin-left: 10%;
-	margin-right: 10%;
-    padding: 1em;
+    margin-right: 10%;
+    padding: 0em;
     overflow: hidden;
-	background-color: #c6ccc8;
+    background-color: #c6ccc8;
 }
 nav {
 	left: 0%;
