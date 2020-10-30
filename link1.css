@@ -1,4 +1,4 @@
-  body {
+   body {
 		margin: 0px;
 		background-color: #c6ccc8;
       }
@@ -100,28 +100,40 @@ body, html {
 }
 
 /* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
-  	.column {
-   		width: 100%;
-    		display: block;
-  	}
-	.img-t {
-	  	float: left;
-	  	width:100%;
-	  	padding:5px;
-	}
-	.img-s {
-	    	float:right;
-	    	width:100%;
-	    	padding: 5px;
-	}
-	article {
-		margin-left: 1px;
-		margin-right: 1px;
-		padding: 1em;
-		overflow: hidden;
-		background-color: #c6ccc8;
-	}	
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+    display: block;
+  } 
+  .img-t {
+	float: left;
+	width: 100%;
+	padding: 5px;
+  }
+  .img-s {
+	float:right;
+	width: 100%;
+	padding: 5px;
+  }
+  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	background-color: #f1f1f1;
+  }
+  li a {
+	display: block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
+  }
+
+	/* Change the link color on hover */
+  li a:hover {
+	background-color: #555;
+	color: white;
+  }
 }
 
 /* Add some shadows to create a card effect */
