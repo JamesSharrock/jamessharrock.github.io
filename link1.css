@@ -1,4 +1,4 @@
-  /*----------General Page Formatting----------*/
+   /*----------General Page Formatting----------*/
 
 body {
 	margin: 0px;
@@ -113,10 +113,11 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #000000;
+  background-color: #000000; 
 }
 li {
   float: left;
+  width: 25%;
 }
 li a {
   display: block;
@@ -225,4 +226,3 @@ h5 {
     color: black;
 	font-family: 'Raleway', sans-serif;
 }
-
