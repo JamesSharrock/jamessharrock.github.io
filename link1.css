@@ -1,4 +1,4 @@
-     /*----------General Page Formatting----------*/
+   /*----------General Page Formatting----------*/
 
 body {
 	margin: 0px;
@@ -136,6 +136,7 @@ li a {
 }
 a {
   color: black;
+  background-color: black;
   text-align: center;
   text-decoration: none;
 }
