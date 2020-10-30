@@ -1,4 +1,4 @@
-   /*----------General Page Formatting----------*/
+     /*----------General Page Formatting----------*/
 
 body {
 	margin: 0px;
@@ -20,6 +20,10 @@ body, html {
   background: #c6ff41;
   color: white;
   font-size: 20px;
+}
+.footerli {
+  float: left;
+  width:33.33%;
 }
 article {
     margin-left: 10%;
@@ -191,6 +195,10 @@ li a:hover {
 		padding: 1em;
 		overflow: hidden;
 		background-color: #c6ccc8;
+	}
+	.footerli {
+		float: left;
+		width:100%;
 	}
 }
 
