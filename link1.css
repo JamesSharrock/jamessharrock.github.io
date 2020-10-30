@@ -1,4 +1,4 @@
-    /*----------General Page Formatting----------*/
+     /*----------General Page Formatting----------*/
 
 body {
 	margin: 0px;
@@ -136,11 +136,14 @@ a {
   text-align: center;
   text-decoration: none;
 }
-li a:hover {
-  background-color: #111;
-}
 * {
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 801px) {
+	li a:hover {
+		background-color: #111;
+	}
 }
 
 /*----------Mobile Formatting----------*/
@@ -174,10 +177,8 @@ li a:hover {
 		padding: 0px 0px;
 		text-decoration: none;
 	}
-	li a:hover {
-		background-color: #555;
-	}
-	li a:active {
+	li a{
+		color: #000;
 		background-color: #000;
 	}
 	nav {
@@ -201,12 +202,6 @@ li a:hover {
 	.footerli {
 		float: left;
 		width:100%;
-	}
-	li a:hover {
-		background-color: #000;
-	}
-	li a:active {
-		background-color: #000;
 	}
 }
 
