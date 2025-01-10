@@ -19,11 +19,21 @@ body, html {
   text-align: left;
   background: #355249;
   font-size: 28px;
+  height: 140px;
+}
+
+.headertext {
+  float: left;
+  margin-left: 5%
+}
+
+.headerlogos {
+  float: right;
 }
 
 article {
-  margin-left: 7%;
-	margin-right: 7%;
+  margin-left: 5%;
+	margin-right: 5%;
   padding: 1em;
   overflow: hidden;
 	background-color: #d3d3d3;
@@ -31,7 +41,10 @@ article {
 
 /*----------Divider Formatting----------*/
 .left {
-    margin-left: 3%;
+  margin-left: 3%;
+}
+.right {
+  margin-right: 5%;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -69,7 +82,14 @@ article {
   margin-bottom: 10px;
   padding: 10px 10px;
 }
-.column {
+
+.column2 {
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+}
+.column3 {
   float: left;
   width: 33.3%;
   margin-bottom: 20px;
@@ -189,6 +209,9 @@ a {
 		overflow: hidden;
 		background-color: #d3d3d3;
 	}
+  .headertext{
+    margin-left:3%;
+  }
 	.footerli {
 		float: left;
 		width:100%;
@@ -233,3 +256,32 @@ h6 {
 	  font-family: 'Anton', sans-serif;
     margin: 0px;
 }
+
+/*----------Header Icons----------*/
+
+.fa {
+  padding: 0px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%
+}
+
+.fa:hover {
+  color: #ffddd0;
+}
+
+.fa-github{
+  color: white;
+}
+
+.fa-linkedin{
+  color: white;
+}
+
+.fa-envelope{
+  color: white;
+}
+
+/*----------Flexbox----------*/

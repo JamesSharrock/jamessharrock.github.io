@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../CSS/link1.css"> <!--CSS-->
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico"> <!--favicon-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!--font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--icons-->
+    <title>James Sharrock</title>
+  </head>
+
+<body>
+  <header class="header">
+    <div class = "headertext">
+      <h4>James Sharrock</h4>
+    </div>
+    <div class = "headerlogos">
+      <a href="https://github.com/JamesSharrock" class="fa fa-github"></a>
+      <a href="https://twitter.com/JSharrockDev?s=09" class="fa fa-linkedin"></a>
+      <a href="mailto:jamessharrockdev@gmail.com?subject=Contact%20Me" class="fa fa-envelope"></a>
+    </div>
+  </header>
+      
+  <nav>
+    <ul>
+      <li><a href="index.html"><h3>Home</h3></a></li>	
+      <li><a href="projects.html"><h3>Projects</h3></a></li>
+      <li><a href="blog.html"><h3>Blog</h3></a></li>
+    </ul>
+  </nav>
+      
+  <article>
+    <center><h1 style = "color: #355249"> MY GCSE Programming Project</h1></center>
+    <p>For my GCSE Programming Project, I undertook the second task of the tasks given to us by the OCR exam board. 
+      This was described as a two-player dice game in which there would be simple mathematical manipulation 
+      according to set of criteria that awarded or penalised points on double rolls or on odd or even totals of 
+      the two dices. However, what made this more complicated was the need for authorisation from the players. 
+      A username and password system had to be created. To further this theme of validation, inputs had to be 
+      validated to ensure no whitespace errors or SQL injection into the code. The entire criteria is listed 
+      below:</p><br><hr>
+    <p><br>Design, develop, test and evaluate a program that:<br><br>
+          *   Allows two players to enter their details, which are then authenticated to ensure that they are authorised players.<br>
+          *   Allows each player to roll two 6-sided dice.<br>
+          *   Calculates and outputs the points for each round and each player's total score.<br>
+          *   Allows the players to play 5 rounds.<br>
+          *   If both players have the same score after 5 rounds, allows each player to roll 1 die each until someone wins.<br>
+          *   Outputs who has won at the end of the 5 rounds.<br>
+          *   Stores the winner's score, and their name, in an external file.<br>
+          *   Displays the score and player name of the top 5 winning scores from the external file.<br><br>
+    </p><br><hr>
+    <br><p>I immediately decomposed the problem into some initial problems. I reasoned that I needed to have <br> 1) Working authentication <br> 2) Working Mathematical Algorithms <br> 3) A decider system when the two scores were equal <br> 4) A file that can store past highscores. <br> My first step before I began programming was to design some flowcharts to come up with a basis for my algorithms. </p><br><br>
+    <p> I continued to create more flowcharts for each of these steps and then began to draft pseudocode that fulfilled the flowcharts. Once I was confident I had sufficient flowcharts and pseudocode for each algorithm I began my code development. I started with the user authentication using if statements and after 3 unsuccessful login attempts the program would close. I then listed some rules and created my Mathematical logic in which I differentiated even and odd totals and gave the corresponding scores. Once I had a working game with authentication, I had to begin to think about saving highscores to a file. Unfortunately in hindsight I approached the problem wrong in attempting to transfer the totals to the file and then order within it. Instead I should have used a bubble sort to order totals and place them in an array then entering the array into a file.<br><br> On the whole, my program was a great success. I had a working game, and I supplanted it with a loading screen and ascii art to add my own personal touch to the program. I'm interested to see what your opinion is of it. I will include my Program and Evaluation </p><br><hr><br>
+    <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@James_Sharrock/Python-Programming-Project-Ascii-version?embed=true"></iframe><br><br><br><hr><br><br>
+    <iframe src="../Files/gcseprogrammingproject.pdf#toolbar=0" width="100%" height="500px"></iframe><br><br><hr><br>
+    </div>
+  </article> 
+
+  <div class = "footer">
+    <div class = "footertext">
+      <h4>James Sharrock</h4><br>
+    </div>
+    <div class = "footerlogos">
+      <a href="https://github.com/JamesSharrock" class="fa fa-github"></a>
+      <a href="www.linkedin.com/in/jamessharrock" class="fa fa-linkedin"></a>
+      <a href="mailto:jamessharrockdev@gmail.com?subject=Contact%20Me" class="fa fa-envelope"></a> 
+    </div>
+  </div>
+</body>
+</html>
