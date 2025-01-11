@@ -1,11 +1,11 @@
-function lightdark(){
-    const button = document.getElementById("lightdark");
-    button.onclick = function(){
-        document.body.classList.toggle("light-mode");
-        document.body.classList.toggle("dark-mode");
-    };
-};
 
-window.onload = function(){
-    lightdark();
-};
+document.getElementById("lightdark").addEventListener("click", function(){
+    const body = document.body;
+    if (body.classList.contains("light-mode")){
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+    } else {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+    }
+});
