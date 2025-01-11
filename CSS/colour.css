@@ -77,10 +77,17 @@
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
         color: var(--lighticon);
     }
-    & :is(.fa .fa-brands, .fa-solid, .fa-regular){
-        &:hover{
-            color: var(--lighticonhover);
-        }
+    & .fa:hover{
+        color: var(--lighticonhover);
+    }
+    & .fa-solid:hover{
+        color: var(--lighticonhover);
+    }
+    & .fa-regular:hover{
+        color: var(--lighticonhover);
+    }
+    & .fa-brands:hover{
+        color: var(--lighticonhover);
     }
 }
 
