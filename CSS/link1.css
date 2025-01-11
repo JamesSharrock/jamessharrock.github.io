@@ -1,3 +1,6 @@
+/* REFACTOR CSS */
+
+
 body {
 	margin: 0px;
 	background-color: #d3d3d3;
@@ -159,7 +162,14 @@ a {
 /*----------Mobile Formatting----------*/
 
 @media screen and (max-width: 800px) {
-	.column {
+	.column2 {
+		width: 100%;
+		display: block;
+	}
+  .card{
+    width:100%;
+  }
+  .column3 {
 		width: 100%;
 		display: block;
 	}
