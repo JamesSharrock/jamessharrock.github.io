@@ -138,9 +138,16 @@
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
         color: var(--darkicon);
     }
-    & :is(.fa .fa-brands, .fa-solid, .fa-regular){
-        &:hover{
-            color: var(--darkiconhover);
-        }
+    & .fa:hover{
+        color: var(--darkiconhover);
+    }
+    & .fa-solid:hover{
+        color: var(--darkiconhover);
+    }
+    & .fa-regular:hover{
+        color: var(--darkiconhover);
+    }
+    & .fa-brands:hover{
+        color: var(--darkiconhover);
     }
 }
