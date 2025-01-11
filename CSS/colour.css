@@ -1,0 +1,139 @@
+/*-------Colour Variables------*/
+:root{
+    --lightbackground: #d3d3d3;
+    --lightnav: #ffffff;
+    --lighthover: #ffddd0;
+    --lightborder: #355249;
+    --lightp: black;
+    --lighth1: white;
+    --lighth2: white;
+    --lighth3: black;
+    --lighth4: white;
+    --lighth5: white;
+    --lighth6: white;
+    --lighticon: white;
+    --lighticonhover: #ffddd0;
+
+    --darkbackground: #000000;
+    --darknav: #4b4b4b;
+    --darkhover: #c5917d;
+    --darkborder: #355249;
+    --darkp: white;
+    --darkh1: white;
+    --darkh2: white;
+    --darkh3: white;
+    --darkh4: white;
+    --darkh5: white;
+    --darkh6: white;
+    --darkicon: white;
+    --darkiconhover: #c5917d;
+}
+
+
+
+
+
+/*----------Light Theme------*/
+.light-mode{
+    background-color: var(--lightbackground);
+    & article{
+        background-color: var(--lightbackground);
+    }
+    & :is(ul, li a){
+        background-color: var(--lightnav);
+    }
+    & li a{
+        &:hover{
+            background-color: var(--lighthover);
+        }
+    }
+    & h4:hover{
+        color: var(--lighthover);
+    }
+    & :is(.header, .footer, .card){
+        background-color: var(--lightborder);
+    }
+    & p{
+        color: var(--lightp);
+    }
+    & h1{
+        color: var(--lighth1);
+    }
+    & h2{
+        color: var(--lighth2);
+    }
+    & h3{
+        color: var(--lighth3);
+    }
+    & h4{
+        color: var(--lighth4);
+    }
+    & h5{
+        color: var(--lighth5);
+    }
+    & h6{
+        color: var(--lighth6);
+    }
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
+        color: var(--lighticon);
+    }
+    & :is(.fa .fa-brands, .fa-solid, .fa-regular){
+        &:hover{
+            color: var(--lighticonhover);
+        }
+    }
+}
+
+
+  
+
+/*----------Dark Theme------*/
+.dark-mode{
+    background-color: var(--darkbackground);
+    & article{
+        background-color: var(--darkbackground);
+    }
+    & :is(ul, li a){
+        background-color: var(--darknav);
+    }
+    & li a{
+        &:hover{
+            background-color: var(--darkhover);
+        }
+    }
+    & h4:hover{
+        color: var(--darkhover);
+    }
+    & :is(.header, .footer, .card){
+        background-color: var(--darkborder);
+    }
+    & p{
+        color: var(--darkp);
+    }
+    & h1{
+        color: var(--darkh1);
+    }
+    & h2{
+        color: var(--darkh2);
+    }
+    & h3{
+        color: var(--darkh3);
+    }
+    & h4{
+        color: var(--darkh4);
+    }
+    & h5{
+        color: var(--darkh5);
+    }
+    & h6{
+        color: var(--darkh6);
+    }
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
+        color: var(--darkicon);
+    }
+    & :is(.fa .fa-brands, .fa-solid, .fa-regular){
+        &:hover{
+            color: var(--darkiconhover);
+        }
+    }
+}

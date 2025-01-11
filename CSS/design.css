@@ -1,0 +1,66 @@
+/*----------Text Formatting----------*/
+
+p{
+    margin: 0px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
+}	
+h1 {
+    font-family: 'Anton', sans-serif;
+}
+  
+h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
+}
+h4{
+    font-family: 'Anton';
+}
+h5 {
+    margin: 0px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
+}
+h6 {
+    font-family: 'Anton', sans-serif;
+    margin: 0px;
+}
+
+
+/*----------Header Icons----------*/
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-brands{
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-solid{
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-regular{
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.btn{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+}
