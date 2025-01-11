@@ -39,10 +39,10 @@
     & article{
         background-color: var(--lightbackground);
     }
-    & :is(ul, li a){
+    & :is(ul, li a, .button){
         background-color: var(--lightnav);
     }
-    & li a{
+    & :is(li a, .button){
         &:hover{
             background-color: var(--lighthover);
         }
@@ -93,10 +93,10 @@
     & article{
         background-color: var(--darkbackground);
     }
-    & :is(ul, li a){
+    & :is(ul, li a, .button){
         background-color: var(--darknav);
     }
-    & li a{
+    & :is(li a, .button){
         &:hover{
             background-color: var(--darkhover);
         }
