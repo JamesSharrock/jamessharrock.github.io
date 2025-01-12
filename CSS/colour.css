@@ -5,6 +5,8 @@
     --lighthover: #ffddd0;
     --lightborder: #355249;
     --lightp: black;
+    --lightpblog: white;
+    --lightpproj: white;
     --lighth1: white;
     --lighth2: white;
     --lighth3: black;
@@ -18,6 +20,8 @@
     --darknav: #4b4b4b;
     --darkhover: #c5917d;
     --darkborder: #355249;
+    --lightpblog: white;
+    --lightpproj: white;
     --darkp: white;
     --darkh1: white;
     --darkh2: white;
@@ -39,10 +43,10 @@
     & article{
         background-color: var(--lightbackground);
     }
-    & :is(ul, li a, .button){
+    & :is(ul, li a, .button, .blogbutton){
         background-color: var(--lightnav);
     }
-    & :is(li a, .button){
+    & :is(li a, .button, .blogbutton){
         &:hover{
             background-color: var(--lighthover);
         }
@@ -50,7 +54,7 @@
     & h4:hover{
         color: var(--lighthover);
     }
-    & :is(.header, .footer, .card){
+    & :is(.header, .footer, .card, .blogcard){
         background-color: var(--lightborder);
     }
     & p{
@@ -89,6 +93,13 @@
     & .fa-brands:hover{
         color: var(--lighticonhover);
     }
+
+    & .p-blog{
+        color: var(--lightpblog);
+    }
+    & .p-proj{
+        color: var(--lightpproj);
+    }
 }
 
 
@@ -100,10 +111,10 @@
     & article{
         background-color: var(--darkbackground);
     }
-    & :is(ul, li a, .button){
+    & :is(ul, li a, .button, .blogbutton){
         background-color: var(--darknav);
     }
-    & :is(li a, .button){
+    & :is(li a, .button, .blogbutton){
         &:hover{
             background-color: var(--darkhover);
         }
@@ -111,7 +122,7 @@
     & h4:hover{
         color: var(--darkhover);
     }
-    & :is(.header, .footer, .card){
+    & :is(.header, .footer, .card, .blogcard){
         background-color: var(--darkborder);
     }
     & p{
@@ -149,5 +160,12 @@
     }
     & .fa-brands:hover{
         color: var(--darkiconhover);
+    }
+
+    & .p-blog{
+        color: var(--darkpblog);
+    }
+    & .p-proj{
+        color: var(--darkpproj);
     }
 }

@@ -83,17 +83,23 @@ article {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 0px 0px;
+  max-width: 100%;
+  min-height: 310px;
+  max-height: 500px;
 }
 .container::after, .row::after {
+  max-height: 100px;
+  display: inline-block;
   content: "";
   clear: both;
   display: table;	
+  max-width: 100%;
 }
 .button {
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 20px 28px;
+  padding: 8px 0px;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -111,13 +117,13 @@ article {
   margin-bottom: 10px;
   padding: 10px 10px;
 }
-.column2 {
+.columnof2 {
   float: left;
   width: 50%;
   margin-bottom: 20px;
   padding: 20px 20px;
 }
-.column3 {
+.columnof3 {
   float: left;
   width: 33.3%;
   margin-bottom: 20px;
@@ -133,11 +139,44 @@ img {
 }
 .img-right {
 	float:right;
-	width: 66.66%;
+	width: 33.33%;
 	padding: 5px;
 }
 
+/*----------Blog Page--------------*/
 
+.columnof1{
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px 20px;
+}
+.blogbutton{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  text-align: left;
+  text-indent: 3%;
+  cursor: pointer;
+  width: 100%;
+  padding: 5px 0px;
+}
+.blogcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px 0px;
+  max-width: 100%;
+  min-height: 300px;
+  max-height: 500px;
+}
+.blogcontainer::after, .row::after {
+  padding: 0 0px;
+  max-height: 100px;
+  display: inline-block;
+  content: "";
+  clear: both;
+  display: table;	
+  max-width: 100%;
+}
 
 /*----------PC Formatting----------*/
 
@@ -147,7 +186,11 @@ img {
 /*----------Mobile Formatting----------*/
 
 @media screen and (max-width: 800px) {
-	.column2 {
+  .columnof1{
+    width: 100%;
+    display: block;
+  }
+	.columnof2 {
 		width: 100%;
 		display: block;
 	}

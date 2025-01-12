@@ -11,7 +11,7 @@ h1 {
   
 h3 {
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 h4{
     font-family: 'Anton';
@@ -20,10 +20,15 @@ h5 {
     margin: 0px;
     font-family: 'Rubik', sans-serif;
     font-size: 1.2em;
+    padding-top: 10px;
+    padding-left: 3%;
+    padding-right: 3%
 }
 h6 {
-    font-family: 'Anton', sans-serif;
+    font-size: 01em;
+    font-family: 'Rubik', sans-serif;
     margin: 0px;
+    padding-top: 10px;
 }
 
 
@@ -63,4 +68,25 @@ h6 {
     border: none;
     overflow: hidden;
     outline: none;
+}
+
+/*Specific Pages:*/
+/* -------------- Blog ------------- */
+.p-blog{
+    margin: 0px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+/* -------------- Projects ---------- */
+.p-proj{
+    margin: 0px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
+    padding-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
