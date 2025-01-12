@@ -1,41 +1,34 @@
-function toggleLightDark(){
+//Light + Dark Mode
+document.addEventListener("DOMContentLoaded", function(){
     const body = document.body;
     const icon = document.getElementById("lightdarkicon");
-    if (body.classList.contains("light-mode")){
-        body.classList.remove("light-mode");
-        body.classList.add("dark-mode");
-        localStorage.setItem("mode", "dark-mode");
-        icon.classList.remove("fa-solid");
-        icon.classList.add("fa-regular");
-        localStorage.setItem("moon", "fa-regular")
-    } else{
-        body.classList.remove("dark-mode");
-        body.classList.add("light-mode");
-        localStorage.setItem("mode", "light-mode");
-        icon.classList.remove("fa-regular");
-        icon.classList.add("fa-solid");
-        localStorage.setItem("moon", "fa-solid");
+    const mode = localStorage.getItem("mode") || "light-mode";
+    const moon = localStorage.getItem("moon") || "fa-solid";
+
+    //Set Initial Mode
+    body.classList.add(mode);
+    icon.classList.add(moon);
+
+    //Toggle Mode function
+    function toggleLightDark(){
+        const isLightMode = body.classList.contains("light-mode");
+
+        body.classList.toggle("light-mode", !isLightMode);
+        body.classList.toggle("dark-mode", isLightMode);
+        localStorage.setItem("mode", isLightMode ? "dark-mode" : "light-mode");
+
+        icon.classList.toggle("fa-solid", !isLightMode);
+        icon.classList.toggle("fa-regular", isLightMode);
+        localStorage.setItem("moon", isLightMode ? "fa-regular" : "fa-solid");
     }
-}
 
-function setInitialMode(){
-    const mode = localStorage.getItem("mode");
-    const moon = localStorage.getItem("moon");
-    const icon = document.getElementById("lightdarkicon");
-    if (mode) {
-        document.body.classList.add(mode);
-        icon.classList.add(moon);
-    } else {
-        document.body.classList.add("light-mode");
-        icon.classList.add("fa-solid");
-    }
-}
+    //Event Listener for the Button
+    document.getElementById("lightdark").addEventListener("click", function(event){
+        event.preventDefault();
+        toggleLightDark();
+    })
+})
 
-document.getElementById("lightdark").addEventListener("click", function(event){
-    event.preventDefault();
-    toggleLightDark();
-});
 
-window.onload = setInitialMode;
 
 
