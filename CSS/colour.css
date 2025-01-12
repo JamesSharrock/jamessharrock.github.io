@@ -7,7 +7,7 @@
     --lightp: black;
     --lightpblog: white;
     --lightpproj: white;
-    --lighth1: white;
+    --lighth1: #355249;
     --lighth2: white;
     --lighth3: black;
     --lighth4: white;
@@ -16,12 +16,12 @@
     --lighticon: white;
     --lighticonhover: #ffddd0;
 
-    --darkbackground: #000000;
+    --darkbackground: #303030; /* 000 */
     --darknav: #4b4b4b;
-    --darkhover: #c5917d;
-    --darkborder: #355249;
-    --lightpblog: white;
-    --lightpproj: white;
+    --darkhover: #c5917d; /* c5917d */
+    --darkborder: #000; /* #222d29; */ /* #1e2422 */
+    --darkpblog: white;
+    --darkpproj: white;
     --darkp: white;
     --darkh1: white;
     --darkh2: white;

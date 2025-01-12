@@ -1,14 +1,17 @@
 /*----------Text Formatting----------*/
 
+.anton{
+    font-family: 'Anton';
+}
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
 p{
     margin: 0px;
     font-family: 'Rubik', sans-serif;
     font-size: 1.2em;
-}	
-h1 {
-    font-family: 'Anton', sans-serif;
-}
-  
+}	 
 h3 {
     font-family: 'Rubik', sans-serif;
     font-size: 1.4em;
