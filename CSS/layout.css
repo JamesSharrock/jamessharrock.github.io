@@ -108,9 +108,15 @@ article {
 .columnof2 {
   float: left;
   width: 50%;
-  margin-top: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding: 0em 1em;
+}
+.final-colof2{
+  float: left;
+  width: 50%;
   margin-bottom: 2em;
-  padding: 1em 1em;
+  padding: 0em 1em;
 }
 .columnof3 {
   float: left;

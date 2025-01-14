@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="../../CSS/layout.css"> <!--CSS-->
   <link rel="stylesheet" type="text/css" href ="../../CSS/design.css"> <!--CSS-->
   <link rel="stylesheet" type="text/css" href="../../CSS/colour.css"> <!--CSS-->
-  <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico"> <!--favicon-->
+  <link rel="shortcut icon" type="image/x-icon" href="../../Images/favicon.ico"> <!--favicon-->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!--font-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!--icons-->
   <script src="../../Javascript/lightdark.js" defer></script>
@@ -35,6 +35,43 @@
     </ul>
   </nav>
        
+
+  <article>
+    <center><h1 class = "rubik"> Optical Character Recognition </h1></center>
+    <p>For my GCSE Programming Project, I undertook the second task of the tasks given to us by the OCR exam board. 
+      This was described as a two-player dice game in which there would be simple mathematical manipulation 
+      according to set of criteria that awarded or penalised points on double rolls or on odd or even totals of 
+      the two dices. The entire criteria is listed 
+      below:</p><br><hr>
+    <p><br>Design, develop, test and evaluate a program that:<br><br>
+          *   Allows each player to roll two 6-sided dice.<br>
+          *   Calculates and outputs the points for each round and each player's total score.<br>
+          *   Allows the players to play 5 rounds.<br>
+          *   If both players have the same score after 5 rounds, allows each player to roll 1 die each until someone wins.<br>
+          *   Outputs who has won at the end of the 5 rounds.<br>
+          *   Stores the winner's score, and their name, in an external file.<br>
+          *   Displays the score and player name of the top 5 winning scores from the external file.<br><br>
+    </p><br><hr>
+    <br><p>I immediately decomposed the problem into some initial problems. I reasoned that I needed to have <br> 
+      1) Working authentication <br> 
+      2) Working Mathematical Algorithms <br> 
+      3) A decider system when the two scores were equal <br> 
+      4) A file that can store past highscores. <br> 
+      My first step before I began programming was to design some flowcharts to come up with a basis for my algorithms. </p><br><br>
+    <p> I continued to create more flowcharts for each of these steps and then began to draft pseudocode that fulfilled the 
+      flowcharts. Once I was confident I had sufficient flowcharts and pseudocode for each algorithm I began my code 
+      development. I started with the user authentication using if statements and after 3 unsuccessful login attempts the 
+      program would close. I then listed some rules and created my Mathematical logic in which I differentiated even and odd 
+      totals and gave the corresponding scores. Once I had a working game with authentication, I had to begin to think about 
+      saving highscores to a file. Unfortunately in hindsight I approached the problem wrong in attempting to transfer the 
+      totals to the file and then order within it. Instead I should have used a bubble sort to order totals and place them in 
+      an array then entering the array into a file.<br><br> On the whole, my program was a great success. I had a working 
+      game, and I supplanted it with a loading screen and ascii art to add my own personal touch to the program. I'm 
+      interested to see what your opinion is of it. I will include my Program. </p><br><br>
+    </div>
+  </article> 
+
+
   <div class = "footer">
     <div class = "footertext">
       <h4>James Sharrock</h4><br>
