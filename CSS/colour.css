@@ -75,6 +75,15 @@
     & h6{
         color: var(--lighth6);
     }
+    & code{
+        color: var(--lightp);
+    }
+    & th{
+        color: var(--lightp);
+    }
+    & td{
+        color: var(--lightp);
+    }
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
         color: var(--lighticon);
     }
@@ -139,6 +148,15 @@
     }
     & h6{
         color: var(--darkh6);
+    }
+    & code{
+        color: var(--darkp);
+    }
+    & th{
+        color: var(--darkp);
+    }
+    & td{
+        color: var(--darkp);
     }
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
         color: var(--darkicon);

@@ -125,19 +125,31 @@ article {
   margin-bottom: 2em;
   padding: 1em 1em;
 }
-img {
-	float:center;
+.div-leftsmall {
+	float:left;
+  width: 33%;
 }
-.img-left {
-	float: left;
-	width: 33.33%;
-	padding: 0.5em;
+.div-leftmed {
+	float:left;
+  width: 50%
 }
-.img-right {
+.div-leftlarge {
+	float:left;
+  width: 66%
+}
+.div-rightsmall {
 	float:right;
-	width: 33.33%;
-	padding: 0.5em;
+  width: 33%;
 }
+.div-rightmed {
+	float:right;
+  width: 50%
+}
+.div-rightlarge {
+	float:right;
+  width: 66%
+}
+
 
 /*----------Blog Page--------------*/
 

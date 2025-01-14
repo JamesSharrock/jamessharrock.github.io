@@ -23,7 +23,7 @@
       <button id = "lightdark" class = "btn"><a href = "" id = "lightdarkicon" class = "fa-moon"></a></button>
       <a href="https://github.com/JamesSharrock" class="fa-brands fa-github"></a>
       <a href="https://linkedin.com/in/jamessharrock" class="fa-brands fa-linkedin-in"></a>
-      <a href="mailto:jamessharrockdev@gmail.com?subject=Contact%20Me" class="fa fa-envelope"></a> 
+      <a href="mailto:jamessharrock65@gmail.com?subject=Contact%20Me" class="fa fa-envelope"></a> 
     </div>
   </header>
           
@@ -38,37 +38,168 @@
 
   <article>
     <center><h1 class = "rubik"> Optical Character Recognition </h1></center>
-    <p>For my GCSE Programming Project, I undertook the second task of the tasks given to us by the OCR exam board. 
-      This was described as a two-player dice game in which there would be simple mathematical manipulation 
-      according to set of criteria that awarded or penalised points on double rolls or on odd or even totals of 
-      the two dices. The entire criteria is listed 
-      below:</p><br><hr>
-    <p><br>Design, develop, test and evaluate a program that:<br><br>
-          *   Allows each player to roll two 6-sided dice.<br>
-          *   Calculates and outputs the points for each round and each player's total score.<br>
-          *   Allows the players to play 5 rounds.<br>
-          *   If both players have the same score after 5 rounds, allows each player to roll 1 die each until someone wins.<br>
-          *   Outputs who has won at the end of the 5 rounds.<br>
-          *   Stores the winner's score, and their name, in an external file.<br>
-          *   Displays the score and player name of the top 5 winning scores from the external file.<br><br>
-    </p><br><hr>
-    <br><p>I immediately decomposed the problem into some initial problems. I reasoned that I needed to have <br> 
-      1) Working authentication <br> 
-      2) Working Mathematical Algorithms <br> 
-      3) A decider system when the two scores were equal <br> 
-      4) A file that can store past highscores. <br> 
-      My first step before I began programming was to design some flowcharts to come up with a basis for my algorithms. </p><br><br>
-    <p> I continued to create more flowcharts for each of these steps and then began to draft pseudocode that fulfilled the 
-      flowcharts. Once I was confident I had sufficient flowcharts and pseudocode for each algorithm I began my code 
-      development. I started with the user authentication using if statements and after 3 unsuccessful login attempts the 
-      program would close. I then listed some rules and created my Mathematical logic in which I differentiated even and odd 
-      totals and gave the corresponding scores. Once I had a working game with authentication, I had to begin to think about 
-      saving highscores to a file. Unfortunately in hindsight I approached the problem wrong in attempting to transfer the 
-      totals to the file and then order within it. Instead I should have used a bubble sort to order totals and place them in 
-      an array then entering the array into a file.<br><br> On the whole, my program was a great success. I had a working 
-      game, and I supplanted it with a loading screen and ascii art to add my own personal touch to the program. I'm 
-      interested to see what your opinion is of it. I will include my Program. </p><br><br>
+    <p>Optical Character Recognition from the handwritten EMNIST dataset.</p><br><hr>
+    <p>Optical Character Recognition is the process of converting handwritten text into machine-encoded text through mediums 
+      such as documents, written papers, or images. Developing automated methods for this using machine learning and deep 
+      learning of large datasets is important for producing AI models that can appropriately recognise and convert this text. 
+      In this work, we aim to compare varying classification models for their efficiency and accuracy in creating an AI model 
+      for Optical Character Recognition. This has many uses such as data entry in transcribing written records into a digital 
+      form.</p><br>
+    <div class = "div-leftsmall">
+        <img class = "img-l" src="../../Images/proj-ai-ocr-emnist.png">
     </div>
+    <p>The EMNIST dataset is a collection of 26,000 images. The format of this data is 26,000 28x28 pixel images with each 
+      pixel represented by a numerical value. Each image is also provided with a corresponding label as to the correct digital 
+      character that the handwritten image refers to. Data is provided as a 1x784 vector and variable labels stored as a 
+      column vector. We convert the images into a double type so that it can be scaled accurately unlike an integer. We also 
+      convert the labels into a categorical array for further processing. The data is split into training and testing subsets 
+      to avoid overfitting. A random permutation of the 26,000 images is created and used to make a 50/50 split of training 
+      and testing subsets.</p><br><br><br><hr><br>
+    <p>The results can be seen in the following table:</p><br>
+    <table>
+      <tr>
+        <th class = "proj-th">Classification Model</th>
+        <th class = "proj-th">Time of Processing (s)</th>
+        <th class = "proj-th">Correct Predictions (/13,000)</th>
+        <th class = "proj-th">Accuracy (%)</th>
+      </tr>
+      <tr>
+        <td class = "proj-td">KNN Custom Euclidean</td>
+        <td class = "proj-td">424</td>
+        <td class = "proj-td">9,496</td>
+        <td class = "proj-td">73.05</td>
+      </tr>
+      <tr>
+        <td class = "proj-td">KNN Custom Manhattan</td>
+        <td class = "proj-td">423</td>
+        <td class = "proj-td">9,202</td>
+        <td class = "proj-td">70.78</td>
+      </tr>
+      <tr>
+        <td class = "proj-td">KNN Matlab</td>
+        <td class = "proj-td">21.5</td>
+        <td class = "proj-td">10,096</td>
+        <td class = "proj-td">77.66</td>
+      </tr>
+      <tr>
+        <td class = "proj-td">SVM Matlab</td>
+        <td class = "proj-td">41.3</td>
+        <td class = "proj-td">9,518</td>
+        <td class = "proj-td">73.22</td>
+      </tr>
+    </table><br>
+
+    <p>The Custom KNN model is far slower to process than the built-in functions which is to be expected as pre-built 
+      functions are optimised in machine code already without the need for compilation or interpretation. The distance 
+      measures have very similar time of processing. Manhattan is quicker as it doesn’t need calculating of square numbers 
+      however this is a large dataset, and this advantage doesn’t apply. The MatLab KNN is ~20 times quicker and has a greater 
+      accuracy making it more efficient and better. SVM has a slower processing time as it classifies the entire data which 
+      takes a lot of time on the dataset. This is also not rewarded as the accuracy is less. SVM is often used for 
+      text-processing and is efficient on small datasets, so this observation is expected on a large dataset.
+    </p><br>
+    <p>In conclusion, our study shows that the K-nearest neighbour classification model is both the most efficient and 
+      accurate algorithm for correctly classifying these handwritten images. KNN is very good for implementing on multiclass 
+      models however it can be slow on large datasets and struggle with imbalanced data. An accuracy of 77.66% is not good 
+      enough for making this OCR model viable in commercial use and so further testing and training of other models is 
+      important for increasing these numbers. Further evaluation could also be done to recognise areas of weakness. For 
+      example, looking at the confusion charts we see the models have issues with distinguishing between the letter I and L.
+    </p><br><hr><br>
+    <div class = "div-rightmed">
+      <img class = "img-r" src="../../Images/proj-ai-ocr-confusion.png">
+    </div>
+    <p>Code, Data and Charts:</p><br><br>
+    <p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
+      respectively. The blue diagonal line we can see indicates our successful matches of characters where our model
+      correctly predicted a hand-drawn letter and matched it to the correct class.<br>
+      The other boxes also indicate matches but these are incorrect matches. The higher the gradient of orange means the more
+      incorrect matches. We can see these in places we might expect. For example with the KNN with Euclidean Distance model
+      we see True 12 is predicted as class 9. In real terms the model predicts that the letter 'l' is the letter 'i' and vice
+      versa. </p><br><br>
+    <p>Here I include my code from MatLab: </p><br><br>
+
+    <pre><code>load dataset-letters</code>
+    <code>features = dataset_images; %Load the 26,000 1*784 image vectors</code>
+    <code>labels = dataset_labels; %Load the 16,000 label column vectors</code>
+    <code>key = dataset_key; %Alphabet for translating label nums to letters</code>
+
+    <code>%2: Dataset</code>
+    <code>figure(1), colormap gray;</code>
+    <code>for i = 1:12 %For loop of all 12 images</code>
+      <code>subplot(3,4,i);</code>
+      <code>im = reshape(features(i, :), [28,28]); %Reshape 1*784 to 28*28 vector</code>
+      <code>imagesc(im), axis off</code>
+      <code>title(key(labels(i, :))); %Subtitle each subplot with the letter (label)</code>
+    <code>end</code>
+    <code>saveas(gcf, "Dataset.png");</code>
+
+    <code>%3: Data Preparation</code>
+    <code>imf = double(features);</code>
+    <code>iml = categorical(labels); %Categorical array for labels</code>
+    <code>randp = randperm(26000); %Randomising a permutation for the data</code>
+    <code>%Using this permutation to split into 50/50 Training and Testing data sets</code>
+    <code>trfeatures = imf(randp(1:13000), :);</code>
+    <code>tefeatures = imf(randp(13001:end), :);</code>
+    <code>trlabels = iml(randp(1:13000), :);</code>
+    <code>telabels = iml(randp(13001:end), :);</code>
+
+    <code>%4.1: Model Training with K-NN</code>
+    <code>prediction1 = categorical.empty(size(tefeatures, 1), 0); %Array for prediction output of Euclidean Distance</code>
+    <code>prediction2 = caegorical.empty(size(tefeatures, 1), 0); %Array for prediction output of Manhattan Distance</code>
+    <code>k = 28; %Set k parameter</code>
+    <code>for i = 1:size(tefeatures, 1) %Loop for Euclidean Distance</code>
+      <code>comp1 = trfeatures;</code>
+      <code>comp2 = repmat(tefeatures(i, :), [size(trfeatures, 1), 1]);</code>
+      <code>l2 = sum((comp1-comp2).^2, 2); %Euclidean Distance</code>
+      <code>[~, ind] = sort(l2);</code>
+      <code>ind = ind(1: k);</code>
+      <code>labs = trlabels(ind);</code>
+      <code>prediction1(i, 1) = mode(labs);</code>
+      <code>i</code>
+    <code>end</code>
+    <code>for i = 1:size(tefeatures, 1) %Loop for Manhattan Distance</code>
+      <code>comp1 = trfeatures;</code>
+      <code>comp2 = repmat(tefeatures(i, :), [size(trfeatures, 1), 1]);</code>
+      <code>l1 = sum(abs(comp1-comp2), 2); %L1 Distance</code>
+      <code>[~, ind] = sort(l1);</code>
+      <code>ind = ind(1: k);</code>
+      <code>labs = trlabels(ind);</code>
+      <code>prediction2(i, 1) = mode(labs);</code>
+      <code>i</code>
+    <code>end</code>
+
+    <code>%4.2: Model Training with existing models</code>
+    <code>knnmodel = fitcknn(trfeatures, trlabels);</code>
+    <code>predictedknn = predict(knnmodel, tefeatures);</code>
+    <code>svmmodel = fitcecoc(trfeatures, trlabels);</code>
+    <code>predictedsvm = predict(svmmodel, tefeatures);</code>
+
+    <code>%4.3: Evaluation</code>
+    <code>correct_knn1 = sum(telabels == prediction1)</code>
+    <code>correct_knn2 = sum(telabels == prediction2)</code>
+    <code>correct_knnmodel = sum(telabels == predictedknn)</code>
+    <code>correct_svmmodel = sum(telabels == predictedsvm)</code>
+    <code>accuracy_knn1 = correct_knn/size(telabels, 1)</code>
+    <code>accuracy_knn2 = correct_knn2/size(telabels, 1)</code>
+    <code>accuracy_knnmodel = correct_knnmodel/size(telabels, 1)</code>
+    <code>accuracy_svmmodel = correct_svmmodel/size(telabels, 1)</code>
+    <code>figure(2)</code>
+    <code>subplot(2,2,1);</code>
+    <code>knn1CM = confusionchart(telabels, prediction1);</code>
+    <code>title("KNN with Euclidean Distance");</code>
+    <code>subplot(2,2,2);</code>
+    <code>knn2CM = confusionchart(telabels, prediction2);</code>
+    <code>title("KNN with L1 Distance");</code>
+    <code>subplot(2,2,3);</code>
+    <code>knnmodelCM = confusionchart(telabels, predictedknn);</code>
+    <code>title("MatLab KNN");</code>
+    <code>subplot(2,2,4);</code>
+    <code>svmmodelCM = confusionchart(telabels, predictedsvm);</code>
+    <code>title("MatLab SVM");</code>
+    <code>saveas(gcf, "Results.png");</code>
+  </pre>
+
+  <br><br>
+  </div>
   </article> 
 
 

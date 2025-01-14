@@ -98,3 +98,26 @@ h6 {
 a {
     text-decoration: none;
   }
+
+
+/* ------------- Tables ---------------- */
+.proj-th{
+    font-size: 1.2em;
+    padding: 0em 1.2em;
+}
+.proj-td{
+    font-size: 1.2em;
+    padding: 0.2em 4em;
+}
+
+/* ----------- Images ------------------- */
+.img-l {
+    width: 95%;
+    display: inline-block;
+    padding-right: 1em;
+}
+.img-r {
+    width: 95%;
+    display: inline-block;
+    padding-left: 1em;
+}
