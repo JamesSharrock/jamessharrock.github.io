@@ -121,3 +121,7 @@ a {
     display: inline-block;
     padding-left: 1em;
 }
+.img-proj{
+    width:100%;
+    height:150px;
+}

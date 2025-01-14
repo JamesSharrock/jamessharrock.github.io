@@ -105,14 +105,20 @@ article {
   margin-bottom: 1em;
   padding: 1em 1em;
 }
-.columnof2 {
+.first-colof2 {
+  float: left;
+  width: 50%;
+  margin-top: 1.5em;
+  padding: 0em 1em;
+}
+.mid-colof2 {
   float: left;
   width: 50%;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   padding: 0em 1em;
 }
-.final-colof2{
+.last-colof2{
   float: left;
   width: 50%;
   margin-bottom: 2em;
