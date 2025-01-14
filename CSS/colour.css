@@ -51,9 +51,6 @@
             background-color: var(--lighthover);
         }
     }
-    & h4:hover{
-        color: var(--lighthover);
-    }
     & :is(.header, .footer, .card, .blogcard){
         background-color: var(--lightborder);
     }
@@ -118,9 +115,6 @@
         &:hover{
             background-color: var(--darkhover);
         }
-    }
-    & h4:hover{
-        color: var(--darkhover);
     }
     & :is(.header, .footer, .card, .blogcard){
         background-color: var(--darkborder);

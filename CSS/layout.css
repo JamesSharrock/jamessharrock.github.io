@@ -1,7 +1,6 @@
 /* --------- BODY --------- */
 body {
-	margin: 0px;
-  font-size: 100%;
+	margin: 0em;
 }
 body, html {
   height: 100%;
@@ -10,51 +9,44 @@ body, html {
 
 /* -------- HEADER/FOOTER ---------- */
 .header {
-  padding: 20px;
+  padding: 0.5em 0.5em;
   text-align: left;
-  font-size: 28px;
-  height: 140px;
+  font-size: 1.8rem;
+  height: 24vh;
 }
 .headertext {
   float: left;
-  margin-left: 5%
+  margin-left: 3%
 }
 .headerlogos {
   float: right;
 }
 
 .footer {
-  text-align: center;
-  padding: 20px;
+  min-height: 10vh;
   width: 100%;
-  font-size: 28px;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.8em;
 }
 
-/*---------- Nav Bar ----------*/
-
+/*---------- NAV ----------*/
 nav {
-	left: 0%;
 	width: 100%;
 }
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  margin: 0em;
+  padding: 0em;
 }
 li {
   float: left;
-  width:33%;
+  width: 33.33%;
 }
 li a {
   display: block;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-decoration: none;
-}
-a {
-  text-align: center;
+  padding: 0.5em 0em;
   text-decoration: none;
 }
 * {
@@ -81,25 +73,21 @@ article {
   margin-right: 5%;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 0px 0px;
+  padding: 0em 0em;
   max-width: 100%;
-  min-height: 310px;
-  max-height: 500px;
+  min-height: 20em;
+  max-height: 38em;
 }
 .container::after, .row::after {
-  max-height: 100px;
   display: inline-block;
-  content: "";
-  clear: both;
   display: table;	
   max-width: 100%;
+  max-height: 10em;
 }
 .button {
   border: none;
-  outline: 0;
   display: inline-block;
-  padding: 8px 0px;
+  padding: 0.5em 0em;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -107,27 +95,29 @@ article {
 .line {
     float: left;
     width: 100%;
-    margin-bottom: 10px;
-    margin-right: 50px;
-    padding: 10px 10px;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    padding: 1em 1em;
 }
 .split {
   float: left;
   width: 50%;
-  margin-bottom: 10px;
-  padding: 10px 10px;
+  margin-bottom: 1em;
+  padding: 1em 1em;
 }
 .columnof2 {
   float: left;
   width: 50%;
-  margin-bottom: 20px;
-  padding: 20px 20px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding: 1em 1em;
 }
 .columnof3 {
   float: left;
   width: 33.3%;
-  margin-bottom: 20px;
-  padding: 20px 20px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding: 1em 1em;
 }
 img {
 	float:center;
@@ -135,12 +125,12 @@ img {
 .img-left {
 	float: left;
 	width: 33.33%;
-	padding: 5px;
+	padding: 0.5em;
 }
 .img-right {
 	float:right;
 	width: 33.33%;
-	padding: 5px;
+	padding: 0.5em;
 }
 
 /*----------Blog Page--------------*/
@@ -148,9 +138,11 @@ img {
 .columnof1{
   float: left;
   width: 100%;
-  margin-bottom: 20px;
-  padding: 20px 20px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  padding: 1em 1em;
 }
+
 .blogbutton{
   border: none;
   outline: 0;
@@ -159,29 +151,24 @@ img {
   text-indent: 3%;
   cursor: pointer;
   width: 100%;
-  padding: 5px 0px;
+  padding: 0.5em 0em;
 }
 .blogcard {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 0px 0px;
+  padding: 0em 0em;
   max-width: 100%;
-  min-height: 300px;
-  max-height: 500px;
+  min-height: 20em;
+  max-height: 38em;
 }
 .blogcontainer::after, .row::after {
-  padding: 0 0px;
+  padding: 0em 0em;
   max-height: 100px;
-  display: inline-block;
   content: "";
   clear: both;
+  display: inline-block;
   display: table;	
   max-width: 100%;
 }
 
-/*----------PC Formatting----------*/
-
-@media screen and (min-width: 801px) {
-}
 
 /*----------Mobile Formatting----------*/
 
