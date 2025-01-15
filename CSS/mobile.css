@@ -10,25 +10,12 @@
 @media screen and (max-width: 800px) {
 
     /*---------COLOUR OVERHAUL---------*/
-    li a:hover{
-        background-color: currentColor;
+    a:link, a:visited {
+        text-decoration: none;
     }
-    :is(li a, .button, .blogbutton){
-        &:hover{
-            background-color: currentColor;
-        }
-    }
-    .fa:hover{
-        color: currentColor;
-    }
-    .fa-solid:hover{
-        color: currentColor;
-    }
-    .fa-regular:hover{
-        color: currentColor;
-    }
-    .fa-brands:hover{
-        color: currentColor;
+    a { 
+        -webkit-tap-highlight-color: transparent; 
+        -webkit-tap-highlight-color: rgba(0,0,0,0); /* For older webkit browsers */ 
     }
 
 
