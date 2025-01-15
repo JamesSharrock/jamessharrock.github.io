@@ -11,6 +11,7 @@ p{
     margin: 0px;
     font-family: 'Rubik', sans-serif;
     font-size: 1.2em;
+    float: none;
 }	 
 h3 {
     font-family: 'Rubik', sans-serif;
@@ -24,8 +25,6 @@ h5 {
     font-family: 'Rubik', sans-serif;
     font-size: 1.2em;
     padding-top: 10px;
-    padding-left: 3%;
-    padding-right: 3%
 }
 h6 {
     font-size: 01em;
@@ -73,6 +72,9 @@ h6 {
     outline: none;
 }
 
+/* ------------- Title Icons -------*/
+
+
 /*Specific Pages:*/
 /* -------------- Blog ------------- */
 .p-blog{
@@ -98,6 +100,14 @@ h6 {
 a {
     text-decoration: none;
   }
+.hr-newline{
+    background: none;
+    clear: both;
+    outline: 0;
+}
+.br-newline{
+    clear: both;
+}
 
 
 /* ------------- Tables ---------------- */
@@ -109,16 +119,50 @@ a {
     font-size: 1.2em;
     padding: 0.2em 4em;
 }
+.chicago-td{
+    font-size: 1em;
+    padding: 0.2em 2em;
+}
 
 /* ----------- Images ------------------- */
 .img-l {
-    width: 95%;
-    display: inline-block;
+    float: left;
+    width: 100%;
     padding-right: 1em;
 }
 .img-r {
-    width: 95%;
-    display: inline-block;
+    float: right;
+    width: 100%;
+    padding-right: 1em;
+}
+.img-lsmall {
+    float: left;
+    width: 33%;
+    padding-right: 1em;
+}
+.img-lmed {
+    float: left;
+    width: 50%;
+    padding-right: 1em;
+}
+.img-llarge {
+    float: left;
+    width: 66%;
+    padding-right: 1em;
+}
+.img-rsmall {
+    float: right;
+    width: 33%;
+    padding-left: 1em;
+}
+.img-rmed {
+    float: right;
+    width: 50%;
+    padding-left: 1em;
+}
+.img-rlarge {
+    float: right;
+    width: 66%;
     padding-left: 1em;
 }
 .img-proj{

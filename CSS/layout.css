@@ -66,6 +66,19 @@ article {
 
 
 /*----------Dividers Formatting----------*/
+.title-section{
+  display: inline-flex;
+  width: 100%;
+  margin: 0 auto;
+}
+.title-text{
+  padding: 0 0 0 40%;
+}
+.title-icons{
+  padding: 0 1%;
+  float: right;
+}
+
 .left {
   margin-left: 3%;
 }
@@ -143,6 +156,21 @@ article {
 	float:left;
   width: 66%
 }
+.div-midsmall{
+  position: absolute;
+  left: 34%;
+  width:33%;
+}
+.div-midmed{
+  position: absolute;
+  left: 50%;
+  width: 50%;
+}
+.div-midlarge{
+  position: absolute;
+  left: 50%;
+  width: 66%;
+}
 .div-rightsmall {
 	float:right;
   width: 33%;
@@ -180,12 +208,13 @@ article {
 .blogcard {
   padding: 0em 0em;
   max-width: 100%;
-  min-height: 20em;
+  min-height: 10em;
   max-height: 38em;
 }
 .blogcontainer::after, .row::after {
   padding: 0em 0em;
-  max-height: 100px;
+  min-height: 0em;
+  max-height: 10em;
   content: "";
   clear: both;
   display: inline-block;

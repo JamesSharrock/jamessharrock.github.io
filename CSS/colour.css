@@ -11,7 +11,7 @@
     --lighth2: white;
     --lighth3: black;
     --lighth4: white;
-    --lighth5: white;
+    --lighth5: black;
     --lighth6: white;
     --lighticon: white;
     --lighticonhover: #ffddd0;
@@ -105,6 +105,12 @@
     }
     & .p-proj{
         color: var(--lightpproj);
+    }
+
+    & .title{
+        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){
+            color: var(--lightborder);
+        }
     }
 }
 

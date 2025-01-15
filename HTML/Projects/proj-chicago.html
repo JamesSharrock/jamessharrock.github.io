@@ -37,11 +37,342 @@
        
 
   <article>
-    <center><h1 class = "rubik"> Chicago Coin Speedway </h1></center>
-    <p>As my introduction to Unity </p>
-    <br><hr>
-    <br><br>
+    <div class = "title-section">
+      <div class = "title-text">
+        <center><h1 class = "rubik"> Chicago Coin Speedway </h1></center>
+      </div>
+      <div class = "title-icons">
+        <a href="" class="title fa-brands fa-github"></a>
+        <a href="../../Files/proj-chicago.pdf" target = "_blank" class="title fa-solid fa-file"></a>
+      </div>
     </div>
+    <p>My aim is to make a replica/remaster of the 1969 arcade game, Chicago Coin Speedway and port it to a mobile
+      form-factor. Only 317 machines were ever made and since then the game has vanished into obscurity. There are 32
+      known instances of working machines across the world that need to be regularly maintained with sought after spare
+      spare parts. I will be using the Unity game engine and C# scripts to achieve this goal.</p>
+    <br><hr><br>
+    <p>The key components of the game:<br>
+      - Restrict the game to 2 dimensions<br>
+      - A moving scrollable background that creates an illusion of movement<br>
+      - Retro graphics and car models<br>
+      - Simplified audio effects<br>
+      - Game evaluation and a highscore system</p>
+    <br><hr>
+    <pre>
+    <p>The Game can be broken down into 4 main problems that need to be solved:
+      - Graphics: These will etermine how the end product looks to a user. I aim to create car models and backgrounds as 
+                            similar to the originals as possible. There also needs to be an intuitive menu screen.
+      - Control: Using both arrow keys/WASD controls for PC and touchscreen for mobile. The ability to pause the game from 
+                            the menu screen is also important to allowing for breaks if on a large score.
+      - Gameplay: The use of hitboxes is integral to the game in making sure ca models don't overlap one another and that
+                            crashes can be registered between models and penalise collisions. We also require random car 
+                            spawns at the top of the screen as obstacles to driving.
+      - Scoring: Using distance the car has travelled creates a score rewarding the user for being competitive and continuing
+                            to improve.</pre></p><br>
+    <p>An important step before I begin to aim to convert this to a mobile game is to gain an understanding of the initial
+      arcade game and the components that were used to create it. Grand Prix is a 1969 electro-mechanical arcade racing game
+      produced by SEGA. The player has control of a racing car in competition and can speed up or slow down with a gas pedal
+      and steer with a wheel. The game relied on electro-mechanical components to produce sounds ad images rather than a CRT 
+      display. Rear video image projection was used to display moving animations on a video screen.</p><br><hr><br>
+    <p>From this I converted and created a set of initial requirements before development began.</p>
+    
+    <br>
+    <table>
+      <tr>
+        <th class = "proj-th">No.</th>
+        <th class = "proj-th">Requirement</th>
+        <th class = "proj-th">Description and Explanation</th>
+      </tr>
+      <tr>
+        <td class = "chicago-td">1</td>
+        <td class = "chicago-td">Position Indicator</td>
+        <td class = "chicago-td">This acts as an indicator for the user to recognise where they are amongst the opponents.
+          A better position will mean a greater score.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">2</td>
+        <td class = "chicago-td">Odometer</td>
+        <td class = "chicago-td">This provides the information for how long the car has driven for and is also the score.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">3</td>
+        <td class = "chicago-td">Accident Indicator</td>
+        <td class = "chicago-td">This will use mobile phone vibration feedback to notify the user when a collision has occurred</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">4</td>
+        <td class = "chicago-td">Moving Background</td>
+        <td class = "chicago-td">Provides the illusion of movement and distance travelled. Can be increased with distance for 
+          harder difficulty.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">5</td>
+        <td class = "chicago-td">Opponent Cars</td>
+        <td class = "chicago-td">Opponent cars will be deployed to provide obstacles to the player and difficulty in overtaking.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">6</td>
+        <td class = "chicago-td">Accidents</td>
+        <td class = "chicago-td">When an accident occurs the user should be briefly invulnerable.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">7</td>
+        <td class = "chicago-td">Menu</td>
+        <td class = "chicago-td">Provides an interface for the user to enter the game, pause and see their highscore.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">8</td>
+        <td class = "chicago-td">Graphics</td>
+        <td class = "chicago-td">Graphics should make the game look dynamic and interesting for a large target audience.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">9</td>
+        <td class = "chicago-td">Sound</td>
+        <td class = "chicago-td">Music, collision and engine noises should be present for immersion.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">10</td>
+        <td class = "chicago-td">Game Over Screen</td>
+        <td class = "chicago-td">An interface for the user with information and a chance to replay the game.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">11</td>
+        <td class = "chicago-td">High Score Table</td>
+        <td class = "chicago-td">Saves highscores to a central databse where they can be ranked.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">12</td>
+        <td class = "chicago-td">Controls</td>
+        <td class = "chicago-td">Mobile touchscreen controls will be used for steering the car for ease of use.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">13</td>
+        <td class = "chicago-td">Pause</td>
+        <td class = "chicago-td">A pause system is needed for replayability and allowing a user to jump into a game whenever.</td>
+      </tr>
+    </table><br><hr><br>
+
+    <p>I then installed Unity and created a blank 2D Game template. As a first step I imported placeholder assets and began
+      to create some basic assets and some simple scripts. The first C# script I created was for making the background
+      repeatedly scroll. {ScrollBackground.cs} - </p><br>
+    
+    <div class = "div-leftmed"><pre>
+      <code>using System.Collections;
+      using System.Collections.Generic;
+      using UnityEngine;
+        
+      public class ScrollBackground : MonoBehaviour {
+        Renderer rend;
+        public float scrollSpeed = 10.5f;
+  
+        void Start(){
+          rend = GetComponent&lt;Renderer&gt;();
+        }
+  
+        void Update(){
+          float offset = Time.time * scrollSpeed;
+          rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
+        }
+      }</pre>
+    </div>
+
+    <div class = "div-rightmed">
+      <p>First I declare a renderer that gives us access to our asset material. Then create a scrollSpeed and xAxis boolean 
+        variable.<br><br>
+        The script works by finding the distance the background sprite has travelled. Calculating this with the scrollSpeed
+        and time variables between each frame it then moves the sprite to a new y position of 'offset'.<br><br>
+        Remember Speed = Distance/Time. So the Offset (distance) = Speed * Time.</p>
+    </div>
+    <br class = "br-newline"><br>
+    <hr class = "hr-newline"><br>
+    <p>Once the background was in place I created the user's car giving them controls. On this asset I added some Unity
+      properties. A Rigidbody 2D(Kinematic) allows a sprite to behave in a convincing way by applying forces and helps
+      with collision detection. A BoxCollider 2D uses a rectangular hitbox to detect collisions. <br>From here I created the 
+      {Player.cs} script -</p>
+
+    <div class = "div-leftmed"><pre>
+      <code>using System.Collections;
+      using System.Collections.Generic;
+      using UnityEngine;
+      using UnityEngine.SceneManagement;
+          
+      public class Player : MonoBehaviour {
+        public float CarSpeed;
+        Vector2 position;
+    
+        void Start(){
+          position = transform.position;
+        }
+    
+        //Update is called once per frame
+        void Update(){
+          position.x += Input.GetAxis("Horizontal") * CarSpeed * Time.deltaTime;
+          position.x += Mathf.Clamp(position.x, -2f, 2f);
+          transform.position = position;
+        }
+
+        void OnCollisionEnter2D(Collision2D col){
+          if (col.gameObject.tag == "Enemy"){
+            Destoy(gameObject);
+            SceneManager.LoadScene("Menu");
+          }
+        }
+      }</pre>
+    </div>
+  
+    <div class = "div-rightmed">
+      <p>The Start function runs at the beginning og the Main Scene and sets the Player to the original position. If a 
+        collision with an 'Enemy' object occurs the scene switches to the menu and the Player car is removed.<br><br>
+        On each update we find the distance the car has travelled horizontally according to the input and move the car
+        this amount with a transform.
+      </p>
+    </div>
+    <br class = "br-newline"><br>
+    <hr class = "hr-newline"><br>
+
+    <p>During development I came upon constraints and issues with the initial requirements and adapted them further.
+      <br>The main cause of this was realising that having a set amount of enemy cars and a position wouldn't work for a
+      game on a small screen. This is because after a certain time the user would overtake them all and then have no
+      competition. The only way to counterract that would be to have enemies come up from the bottom of the screen also,
+      making the game too difficult and complicated (needing enemy models). Because of this I then changed the game idea 
+      to become an infinite scrolling game with unlimited enemies and distance. These revised requirements are included:
+    </p>
+    <br>
+
+    <table>
+      <tr>
+        <th class = "proj-th">No.</th>
+        <th class = "proj-th">Requirement</th>
+        <th class = "proj-th">Description and Explanation</th>
+      </tr>
+      <tr>
+        <td class = "chicago-td">1</td>
+        <td class = "chicago-td">Odometer</td>
+        <td class = "chicago-td">This provides the information for how long the car has driven for and is also the score.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">2</td>
+        <td class = "chicago-td">Player Controller</td>
+        <td class = "chicago-td">Gives the user movement on screen to play the game.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">3</td>
+        <td class = "chicago-td">Accident</td>
+        <td class = "chicago-td">When a collision occurs he game goes to the menu and restarts.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">4</td>
+        <td class = "chicago-td">Moving Background</td>
+        <td class = "chicago-td">Provides illusion of movement.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">5</td>
+        <td class = "chicago-td">Opponent Cars</td>
+        <td class = "chicago-td">Opponent cars will be deployed to provide obstacles to the player and difficulty in overtaking.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">6</td>
+        <td class = "chicago-td">Menu</td>
+        <td class = "chicago-td">Provides an interface for the user to enter the game.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">7</td>
+        <td class = "chicago-td">Graphics</td>
+        <td class = "chicago-td">Graphics should make the game look dynamic and interesting for a large target audience.</td>
+      </tr>
+      <tr>
+        <td class = "chicago-td">8</td>
+        <td class = "chicago-td">Sound</td>
+        <td class = "chicago-td">Ambient music should be provided to make the game more relaxing and fun.</td>
+      </tr>
+    </table><br><hr><br>
+
+    <p>Finally, I created the enemy cars. This required the use of three scripts. One to spawn the enemy cars above the screen
+      called {EnemySpawn.cs} and one to model the movement of the cars moving down the screen with {Enemy.cs}. Then finally
+      I then created a third script {CarDestroy.cs} which removed the enemy assets as they left the bottom of the screen. This 
+      made sure that the game wouldn' run slower the longer it ran for due to a build up of objects.
+    </p><br><br>
+
+    <div class = "row">
+      <div class = "div-leftsmall">
+        <p>{Enemy.cs}</p>
+        <pre>
+<code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour{
+  public float Speed;
+  private Rigidbody 2D rb;
+
+  void Start(){
+    rb = GetComponent&lt;Rigidbody2D&gt;();
+  }
+
+  void FixedUpdate(){
+    rb.velocity = Vector2.zero;
+    rb.velocity = new Vector2(0, 
+      Speed * Time.fixedDeltaTime * -1);
+  }
+}
+          </code>
+        </pre>
+      </div>
+      <div class = "div-midsmall">
+        <p>{EnemySpawn.cs}</p>
+        <pre>
+<code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+          
+public class CarSpawn : MonoBehaviour{
+  public GameObject car;
+  public float DelayTimer;
+  float timer;
+          
+  void Start(){
+    timer = DelayTimer;
+  }
+          
+  void Update(){
+    timer -= Time.deltaTime;
+    if (timer <=0) {
+      Vector3 CarPos = new Vector3(Random.Range
+        (-2f, 2f), transform.position.y, 
+        transform.position.z);
+      Instantiate(car, CarPos, transform.rotation);
+      timer = DelayTimer;
+    }
+  }
+}
+                    </code>
+                  </pre>
+      </div>
+      <div class = "div-rightsmall">
+        <p>{EnemyDestroy.cs}</p>
+        <pre>
+<code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+                    
+public class Destroy : MonoBehaviour{
+                     
+  void OnCollisionEnter2D(Collision2D col){
+    if(col.gameObject.tag == "Enemy") {
+      Destroy(col.gameObject);
+    }
+  }
+}
+                              </code>
+                            </pre>
+      </div>
+    </div>
+    <br class = "br-newline"><br><br><br>
+    <hr><br>
+    <p>The final parts of implementing the game were creating a highscore system and adding ambient music. The full code
+      and final game can be found on GitHub. The specification, requirements and development document is also linked 
+      at the top of the page. Thanks for Reading! <br><br>
+    </p>
   </article> 
 
 
