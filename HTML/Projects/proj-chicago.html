@@ -60,23 +60,24 @@
       - Simplified audio effects<br>
       - Game evaluation and a highscore system</p>
     <br><hr>
-    <pre>
-    <p>The Game can be broken down into 4 main problems that need to be solved:
-      - Graphics: These will etermine how the end product looks to a user. I aim to create car models and backgrounds as 
-                            similar to the originals as possible. There also needs to be an intuitive menu screen.
-      - Control: Using both arrow keys/WASD controls for PC and touchscreen for mobile. The ability to pause the game from 
-                            the menu screen is also important to allowing for breaks if on a large score.
-      - Gameplay: The use of hitboxes is integral to the game in making sure ca models don't overlap one another and that
-                            crashes can be registered between models and penalise collisions. We also require random car 
-                            spawns at the top of the screen as obstacles to driving.
-      - Scoring: Using distance the car has travelled creates a score rewarding the user for being competitive and continuing
-                            to improve.</pre></p><br>
-    <p>An important step before I begin to aim to convert this to a mobile game is to gain an understanding of the initial
-      arcade game and the components that were used to create it. Grand Prix is a 1969 electro-mechanical arcade racing game
-      produced by SEGA. The player has control of a racing car in competition and can speed up or slow down with a gas pedal
-      and steer with a wheel. The game relied on electro-mechanical components to produce sounds ad images rather than a CRT 
-      display. Rear video image projection was used to display moving animations on a video screen.</p><br><hr><br>
-    <p>From this I converted and created a set of initial requirements before development began.</p>
+
+    <p>The Game can be broken down into 4 main problems that need to be solved:<br><br>
+        - Graphics: These will etermine how the end product looks to a user. I aim to create car models and backgrounds as 
+                              similar to the originals as possible. There also needs to be an intuitive menu screen.<br>
+        - Control: Using both arrow keys/WASD controls for PC and touchscreen for mobile. The ability to pause the game from 
+                              the menu screen is also important to allowing for breaks if on a large score.<br>
+        - Gameplay: The use of hitboxes is integral to the game in making sure ca models don't overlap one another and that
+                              crashes can be registered between models and penalise collisions. We also require random car 
+                              spawns at the top of the screen as obstacles to driving.<br>
+        - Scoring: Using distance the car has travelled creates a score rewarding the user for being competitive and continuing
+                              to improve.</p><br>
+      <p>An important step before I begin to aim to convert this to a mobile game is to gain an understanding of the initial
+        arcade game and the components that were used to create it. Grand Prix is a 1969 electro-mechanical arcade racing game
+        produced by SEGA. The player has control of a racing car in competition and can speed up or slow down with a gas pedal
+        and steer with a wheel. The game relied on electro-mechanical components to produce sounds ad images rather than a CRT 
+        display. Rear video image projection was used to display moving animations on a video screen.</p><br><hr><br>
+      <p>From this I converted and created a set of initial requirements before development began.</p>
+    </div>
     
     <br>
     <table>
@@ -158,24 +159,24 @@
       to create some basic assets and some simple scripts. The first C# script I created was for making the background
       repeatedly scroll. {ScrollBackground.cs} - </p><br>
     
-    <div class = "div-leftmed"><pre>
-      <code>using System.Collections;
-      using System.Collections.Generic;
-      using UnityEngine;
+    <div class = "div-leftmed">
+    <pre><code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
         
-      public class ScrollBackground : MonoBehaviour {
-        Renderer rend;
-        public float scrollSpeed = 10.5f;
+public class ScrollBackground : MonoBehaviour {
+  Renderer rend;
+  public float scrollSpeed = 10.5f;
   
-        void Start(){
-          rend = GetComponent&lt;Renderer&gt;();
-        }
+  void Start(){
+    rend = GetComponent&lt;Renderer&gt;();
+  }
   
-        void Update(){
-          float offset = Time.time * scrollSpeed;
-          rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
-        }
-      }</pre>
+  void Update(){
+    float offset = Time.time * scrollSpeed;
+    rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
+  }
+}</pre>
     </div>
 
     <div class = "div-rightmed">
@@ -192,34 +193,34 @@
       with collision detection. A BoxCollider 2D uses a rectangular hitbox to detect collisions. <br>From here I created the 
       {Player.cs} script -</p>
 
-    <div class = "div-leftmed"><pre>
-      <code>using System.Collections;
-      using System.Collections.Generic;
-      using UnityEngine;
-      using UnityEngine.SceneManagement;
+    <div class = "div-leftmed">
+      <pre><code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
           
-      public class Player : MonoBehaviour {
-        public float CarSpeed;
-        Vector2 position;
+public class Player : MonoBehaviour {
+  public float CarSpeed;
+  Vector2 position;
     
-        void Start(){
-          position = transform.position;
-        }
+  void Start(){
+    position = transform.position;
+  }
     
-        //Update is called once per frame
-        void Update(){
-          position.x += Input.GetAxis("Horizontal") * CarSpeed * Time.deltaTime;
-          position.x += Mathf.Clamp(position.x, -2f, 2f);
-          transform.position = position;
-        }
+  //Update is called once per frame
+    void Update(){
+    position.x += Input.GetAxis("Horizontal") * CarSpeed * Time.deltaTime;
+    position.x += Mathf.Clamp(position.x, -2f, 2f);
+    transform.position = position;
+  }
 
-        void OnCollisionEnter2D(Collision2D col){
-          if (col.gameObject.tag == "Enemy"){
-            Destoy(gameObject);
-            SceneManager.LoadScene("Menu");
-          }
-        }
-      }</pre>
+  void OnCollisionEnter2D(Collision2D col){
+    if (col.gameObject.tag == "Enemy"){
+      Destoy(gameObject);
+      SceneManager.LoadScene("Menu");
+    }
+  }
+}</pre>
     </div>
   
     <div class = "div-rightmed">
@@ -295,11 +296,8 @@
       made sure that the game wouldn' run slower the longer it ran for due to a build up of objects.
     </p><br><br>
 
-    <div class = "row">
-      <div class = "div-leftsmall">
-        <p>{Enemy.cs}</p>
-        <pre>
-<code>using System.Collections;
+    <p>{Enemy.cs}</p>
+    <pre><code>using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -314,16 +312,13 @@ public class Enemy : MonoBehaviour{
   void FixedUpdate(){
     rb.velocity = Vector2.zero;
     rb.velocity = new Vector2(0, 
-      Speed * Time.fixedDeltaTime * -1);
+    Speed * Time.fixedDeltaTime * -1);
   }
 }
-          </code>
-        </pre>
-      </div>
-      <div class = "div-midsmall">
-        <p>{EnemySpawn.cs}</p>
-        <pre>
-<code>using System.Collections;
+    </code></pre>
+      
+    <p>{EnemySpawn.cs}</p>
+    <pre><code>using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
           
@@ -339,21 +334,16 @@ public class CarSpawn : MonoBehaviour{
   void Update(){
     timer -= Time.deltaTime;
     if (timer <=0) {
-      Vector3 CarPos = new Vector3(Random.Range
-        (-2f, 2f), transform.position.y, 
-        transform.position.z);
+      Vector3 CarPos = new Vector3(Random.Range(-2f, 2f), transform.position.y, transform.position.z);
       Instantiate(car, CarPos, transform.rotation);
       timer = DelayTimer;
     }
   }
 }
-                    </code>
-                  </pre>
-      </div>
-      <div class = "div-rightsmall">
-        <p>{EnemyDestroy.cs}</p>
-        <pre>
-<code>using System.Collections;
+    </code></pre>
+
+    <p>{EnemyDestroy.cs}</p>
+    <pre><code>using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
                     
@@ -365,11 +355,8 @@ public class Destroy : MonoBehaviour{
     }
   }
 }
-                              </code>
-                            </pre>
-      </div>
-    </div>
-    <br class = "br-newline"><br><br><br>
+    </code></pre>
+
     <hr><br>
     <p>The final parts of implementing the game were creating a highscore system and adding ambient music. The full code
       and final game can be found on GitHub. The specification, requirements and development document is also linked 

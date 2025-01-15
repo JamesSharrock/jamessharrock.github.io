@@ -108,6 +108,8 @@
 
 
 
+
+
     .columnof1{
       width: 100%;
       display: block;
@@ -117,8 +119,8 @@
         display: block;
     }
     .columnof3 {
-          width: 100%;
-          display: block;
+        width: 100%;
+        display: block;
     }
 
     .card{
@@ -139,6 +141,43 @@
         float:right;
         width: 100%;
         padding: 5px;
+    }
+    :is(.img-lsmall, .img-lmed, .img-llarge, .img-rsmall, .img-rmed, .img-rlarge){
+        width: 100%;
+        padding: 1em;
+    }
+
+    :is(.div-leftsmall, .div-leftmed, .div-leftlarge, .div-midsmall, .divmidmed, .div-midlarge, .div-rightsmall, .div-rightmed, .div-rightlarge){
+        width: 100%;
+        padding: 5px;
+    }
+
+    table{
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
+    td { 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    
+
+    .chicago-td{
+        padding: 0 0.2em;
+    }
+    .proj-td{
+        padding: 0 0.2em;
+    }
+    .proj-th{
+        padding: 0 0.2em;
+    }
+
+
+    pre{
+        overflow-x: auto;
+        display: block;
+        width: 100%;
     }
 }
   

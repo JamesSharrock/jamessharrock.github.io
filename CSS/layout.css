@@ -186,6 +186,10 @@ article {
 	float:right;
   width: 66%
 }
+.div-full{
+  width: 100%;
+  overflow: auto;
+}
 
 
 /*----------Blog Page--------------*/
