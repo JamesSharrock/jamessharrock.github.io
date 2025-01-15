@@ -105,10 +105,11 @@
       important for increasing these numbers. Further evaluation could also be done to recognise areas of weakness. For 
       example, looking at the confusion charts we see the models have issues with distinguishing between the letter I and L.
     </p><br><hr><br>
+    <p>Code, Data and Charts:</p><br><br>
+    
     <div class = "div-rightmed">
       <img class = "img-r" src="../../Images/proj-ai-ocr-confusion.png">
     </div>
-    <p>Code, Data and Charts:</p><br><br>
     <p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
       respectively. The blue diagonal line we can see indicates our successful matches of characters where our model
       correctly predicted a hand-drawn letter and matched it to the correct class.<br>
@@ -116,7 +117,7 @@
       incorrect matches. We can see these in places we might expect. For example with the KNN with Euclidean Distance model
       we see True 12 is predicted as class 9. In real terms the model predicts that the letter 'l' is the letter 'i' and vice
       versa. </p><br><br>
-    <p>Here I include my code from MatLab: </p><br><br>
+    <p>Here I include my code from MatLab: </p><br>
 
     <pre><code>load dataset-letters</code>
 <code>features = dataset_images; </code>
