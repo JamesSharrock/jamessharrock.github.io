@@ -1,0 +1,157 @@
+/* ---------- VARIABLES ---------------- */
+
+
+
+
+
+
+/*----------Mobile Formatting----------*/
+
+@media screen and (max-width: 800px) {
+
+    /*---------COLOUR OVERHAUL---------*/
+    li a:hover{
+        background-color: currentColor;
+    }
+    :is(li a, .button, .blogbutton){
+        &:hover{
+            background-color: currentColor;
+        }
+    }
+    .fa:hover{
+        color: currentColor;
+    }
+    .fa-solid:hover{
+        color: currentColor;
+    }
+    .fa-regular:hover{
+        color: currentColor;
+    }
+    .fa-brands:hover{
+        color: currentColor;
+    }
+
+
+/* ------- NAV -----------------------*/
+    nav {
+        left: 0%;
+        width: 100%;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0em;
+        padding: 0em;
+        overflow: hidden;
+        width:100%;
+    }
+    li a {
+        display: block;
+        padding: 0px 0px;
+        text-decoration: none;
+        text-align: center;
+    }
+    nav ul a {
+        text-decoration: none;
+    }
+    nav ul li {
+        float: center;
+        width: 100%;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+/* --------- HEADER + FOOTER --------------*/
+
+    .header{
+        padding: 0em 0em;
+        height: 5em;
+    }
+    .headertext{
+        float: left;
+        margin-left:3%;
+    }
+    .headerlogos {
+        float: right;
+      }
+    .footer{
+        min-height: 10vh;
+        width: 100%;
+        text-align: center;
+        padding: 0.5em;
+        font-size: 1.8em;
+    }
+    .footerli {
+      float: left;
+      width:100%;
+    }
+
+
+/* --------- GENERAL ---------------------- */
+
+    article {
+        margin-left: 3%;
+        margin-right: 3%;
+        padding: 1em;
+        overflow: hidden;
+    }
+
+
+/* -------- DIVIDERS ----------------------- */
+
+    .first-colof2{
+        float: left;
+        width: 100%;
+        margin-top: 1.5em;
+        padding: 0em 1em;
+    }
+    .mid-colof2{
+        float: left;
+        width: 100%;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        padding: 0em 1em;
+    }
+    .last-colof2{
+        float: left;
+        width: 100%;
+        margin-bottom: 2em;
+        padding: 0em 1em;
+    }
+
+
+
+    .columnof1{
+      width: 100%;
+      display: block;
+    }
+    .columnof2 {
+        width: 100%;
+        display: block;
+    }
+    .columnof3 {
+          width: 100%;
+          display: block;
+    }
+
+    .card{
+        width: 100%;
+      }
+    .split {
+      width: 100%;
+      display: block;
+    } 
+
+
+    .img-l {
+        float: left;
+        width: 100%;
+        padding: 5px;
+    }
+    .img-r {
+        float:right;
+        width: 100%;
+        padding: 5px;
+    }
+}
+  

@@ -49,6 +49,9 @@ li a {
   padding: 0.5em 0em;
   text-decoration: none;
 }
+li a:hover {
+  color: none;
+}
 * {
   box-sizing: border-box;
 }
@@ -221,80 +224,6 @@ article {
   display: table;	
   max-width: 100%;
 }
-
-
-/*----------Mobile Formatting----------*/
-
-@media screen and (max-width: 800px) {
-  .columnof1{
-    width: 100%;
-    display: block;
-  }
-	.columnof2 {
-		width: 100%;
-		display: block;
-	}
-  .card{
-    width: 100%;
-  }
-  .column3 {
-		width: 100%;
-		display: block;
-	}
-  .split {
-    width: 100%;
-    display: block;
-  } 
-	.img-l {
-		float: left;
-		width: 100%;
-		padding: 5px;
-	}
-	.img-r {
-		float:right;
-		width: 100%;
-		padding: 5px;
-	}
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		width:100%;
-	}
-	li a {
-		display: block;
-		padding: 0px 0px;
-		text-decoration: none;
-	}
-	nav {
-		left: 0%;
-		width: 100%;
-	}
-	nav ul a {
-		text-decoration: none;
-	}
-	nav ul li {
-		float: center;
-		width: 100%;
-	}
-	article {
-		margin-left: 3%;
-		margin-right: 3%;
-		padding: 1em;
-		overflow: hidden;
-	}
-  .headertext{
-    margin-left:3%;
-  }
-	.footerli {
-		float: left;
-		width:100%;
-	}
-}
-
-
-
 
 
 /*----------Flexbox----------*/

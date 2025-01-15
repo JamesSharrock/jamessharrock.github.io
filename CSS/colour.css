@@ -34,6 +34,63 @@
 }
 
 
+/*---------PC Only ----------*/
+@media screen and (min-width: 800px) {
+    .light-mode{
+        & :is(li a, .button, .blogbutton){
+            &:hover{
+                background-color: var(--lighthover);
+            }
+        }
+        & .fa:hover{
+            color: var(--lighticonhover);
+        }
+        & .fa-solid:hover{
+            color: var(--lighticonhover);
+        }
+        & .fa-regular:hover{
+            color: var(--lighticonhover);
+        }
+        & .fa-brands:hover{
+            color: var(--lighticonhover);
+        }
+    }
+
+    .dark-mode{
+        & :is(li a, .button, .blogbutton){
+            &:hover{
+                background-color: var(--darkhover);
+            }
+        }
+        & .fa:hover{
+            color: var(--darkiconhover);
+        }
+        & .fa-solid:hover{
+            color: var(--darkiconhover);
+        }
+        & .fa-regular:hover{
+            color: var(--darkiconhover);
+        }
+        & .fa-brands:hover{
+            color: var(--darkiconhover);
+        }
+    }
+}
+
+
+/* --------- Mobile Only ------- */
+@media screen and (max-width: 800px) {
+    .light-mode{
+        & a:hover{
+            color: var(--lightnav);
+        }
+    }
+    .dark-mode{
+        & a:hover{
+            color: var(--darknav);
+        }
+    }
+}
 
 
 
@@ -45,11 +102,6 @@
     }
     & :is(ul, li a, .button, .blogbutton){
         background-color: var(--lightnav);
-    }
-    & :is(li a, .button, .blogbutton){
-        &:hover{
-            background-color: var(--lighthover);
-        }
     }
     & :is(.header, .footer, .card, .blogcard){
         background-color: var(--lightborder);
@@ -86,18 +138,6 @@
     }
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
         color: var(--lighticon);
-    }
-    & .fa:hover{
-        color: var(--lighticonhover);
-    }
-    & .fa-solid:hover{
-        color: var(--lighticonhover);
-    }
-    & .fa-regular:hover{
-        color: var(--lighticonhover);
-    }
-    & .fa-brands:hover{
-        color: var(--lighticonhover);
     }
 
     & .p-blog{
