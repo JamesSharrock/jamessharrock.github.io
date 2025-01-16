@@ -37,8 +37,8 @@
 /*---------PC Only ----------*/
 @media screen and (min-width: 800px) {
     .light-mode{
-        & :is(li a, .button, .blogbutton){
-            &:hover{
+        &:is(li a, .button, .blogbutton){
+            & :hover{
                 background-color: var(--lighthover);
             }
         }
@@ -57,8 +57,8 @@
     }
 
     .dark-mode{
-        & :is(li a, .button, .blogbutton){
-            &:hover{
+        &:is(li a, .button, .blogbutton){
+            & :hover{
                 background-color: var(--darkhover);
             }
         }
