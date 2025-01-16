@@ -106,10 +106,6 @@
         padding: 0em 1em;
     }
 
-
-
-
-
     .columnof1{
       width: 100%;
       display: block;
@@ -179,5 +175,8 @@
         display: block;
         width: 100%;
     }
+
+    /*-------- TEXT ----------*/
+    
 }
   
