@@ -37,11 +37,7 @@
 /*---------PC Only ----------*/
 @media screen and (min-width: 800px) {
     .light-mode{
-        /* & :is(li a, .button, .blogbutton, ul){
-            & :hover{
-                background-color: var(--lighthover);
-            }
-        } */
+
         & :is(li a,  ul){
             & :hover{
                 background-color: var(--lighthover);
@@ -113,7 +109,7 @@
     & article{
         background-color: var(--lightbackground);
     }
-    & :is(ul, li a, .button, .blogbutton){
+    & :is(ul, li a, .button, .blogbutton, .proj-button){
         background-color: var(--lightnav);
     }
     & :is(.header, .footer, .card, .blogcard){
@@ -176,7 +172,7 @@
     & article{
         background-color: var(--darkbackground);
     }
-    & :is(ul, li a, .button, .blogbutton){
+    & :is(ul, li a, .button, .blogbutton, .proj-button){
         background-color: var(--darknav);
     }
     & :is(.header, .footer, .card, .blogcard){
