@@ -1,3 +1,13 @@
+/*-------- Design Variables ---------*/
+:root{
+    --p-size: 1.2em;
+    --h3-size: 1.4em;
+    --h5-size: 1.2em;
+    --h6-size: 1em;
+
+    --icon-width: 50px;
+}
+
 /*----------Text Formatting----------*/
 
 .anton{
@@ -8,26 +18,26 @@
 }
 
 p{
+    font-size: var(--p-size);
     margin: 0px;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2em;
     float: none;
 }	 
 h3 {
+    font-size: var(--h3-size);
     font-family: 'Rubik', sans-serif;
-    font-size: 1.4em;
 }
 h4{
     font-family: 'Anton';
 }
 h5 {
+    font-size: var(--h5-size);
     margin: 0px;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2em;
     padding-top: 10px;
 }
 h6 {
-    font-size: 01em;
+    font-size: var(--h6-size);;
     font-family: 'Rubik', sans-serif;
     margin: 0px;
     padding-top: 10px;
@@ -39,28 +49,28 @@ h6 {
 .fa {
     padding: 10px;
     font-size: 30px;
-    width: 50px;
+    width: var(--icon-width);
     text-align: center;
     text-decoration: none;
 }
 .fa-brands{
     padding: 10px;
     font-size: 30px;
-    width: 50px;
+    width: var(--icon-width);
     text-align: center;
     text-decoration: none;
 }
 .fa-solid{
     padding: 10px;
     font-size: 30px;
-    width: 50px;
+    width: var(--icon-width);
     text-align: center;
     text-decoration: none;
 }
 .fa-regular{
     padding: 10px;
     font-size: 30px;
-    width: 50px;
+    width: var(--icon-width);
     text-align: center;
     text-decoration: none;
 }
@@ -90,11 +100,18 @@ h6 {
 .p-proj{
     margin: 0px;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2em;
     padding-top: 2%;
     padding-left: 3%;
     padding-right: 3%;
 }
+.proj-button {
+    border: none;
+    display: inline-block;
+    padding: 0.5em 0em;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
 
 /* ------------- General -------------- */
 a {

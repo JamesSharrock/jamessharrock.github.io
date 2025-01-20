@@ -37,10 +37,24 @@
 /*---------PC Only ----------*/
 @media screen and (min-width: 800px) {
     .light-mode{
-        &:is(li a, .button, .blogbutton){
+        /* & :is(li a, .button, .blogbutton, ul){
             & :hover{
                 background-color: var(--lighthover);
             }
+        } */
+        & :is(li a,  ul){
+            & :hover{
+                background-color: var(--lighthover);
+            }
+        }
+        & .button:hover{
+            background-color: var(--lighthover);
+        }
+        & .proj-button:hover{
+            background-color: var(--lighthover);
+        }
+        & .blogbutton:hover{
+            background-color: var(--lighthover);
         }
         & .fa:hover{
             color: var(--lighticonhover);
@@ -57,10 +71,19 @@
     }
 
     .dark-mode{
-        &:is(li a, .button, .blogbutton){
+        & :is(li a,  ul){
             & :hover{
                 background-color: var(--darkhover);
             }
+        }
+        & .button:hover{
+            background-color: var(--darkhover);
+        }
+        & .proj-button:hover{
+            background-color: var(--darkhover);
+        }
+        & .blogbutton:hover{
+            background-color: var(--darkhover);
         }
         & .fa:hover{
             color: var(--darkiconhover);
@@ -80,16 +103,6 @@
 
 /* --------- Mobile Only ------- */
 @media screen and (max-width: 800px) {
-    .light-mode{
-        & a:hover{
-            color: var(--lightnav);
-        }
-    }
-    .dark-mode{
-        & a:hover{
-            color: var(--darknav);
-        }
-    }
 }
 
 
@@ -166,11 +179,6 @@
     & :is(ul, li a, .button, .blogbutton){
         background-color: var(--darknav);
     }
-    & :is(li a, .button, .blogbutton){
-        &:hover{
-            background-color: var(--darkhover);
-        }
-    }
     & :is(.header, .footer, .card, .blogcard){
         background-color: var(--darkborder);
     }
@@ -207,23 +215,18 @@
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
         color: var(--darkicon);
     }
-    & .fa:hover{
-        color: var(--darkiconhover);
-    }
-    & .fa-solid:hover{
-        color: var(--darkiconhover);
-    }
-    & .fa-regular:hover{
-        color: var(--darkiconhover);
-    }
-    & .fa-brands:hover{
-        color: var(--darkiconhover);
-    }
+
 
     & .p-blog{
         color: var(--darkpblog);
     }
     & .p-proj{
         color: var(--darkpproj);
+    }
+
+    & .title{
+        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){
+            color: var(--darkborder);
+        }
     }
 }
