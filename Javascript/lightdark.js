@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     //Event Listener for the Button
-    document.getElementById("lightdark").addEventListener("click", function(event){
+    document.getElementById("toggle-mode").addEventListener("click", function(event){
         event.preventDefault();
         toggleLightDark();
     })

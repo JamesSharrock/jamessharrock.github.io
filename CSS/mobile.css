@@ -8,28 +8,24 @@
 /*----------Mobile Formatting----------*/
 
 @media screen and (max-width: 800px) {
-
     /*---------COLOUR OVERHAUL---------*/
-    a:link, a:visited {
-        text-decoration: none;
-    }
+    a:link, a:visited {text-decoration: none;}
     a { 
         -webkit-tap-highlight-color: transparent; 
         -webkit-tap-highlight-color: rgba(0,0,0,0); /* For older webkit browsers */ 
     }
 
-
 /* ------- NAV -----------------------*/
-    nav {
+    /* nav {
         left: 0%;
         width: 100%;
-    }
+    } */
     ul {
         list-style-type: none;
         margin: 0em;
         padding: 0em;
         overflow: hidden;
-        width:100%;
+        width: 100%;
     }
     li a {
         display: block;
@@ -37,15 +33,9 @@
         text-decoration: none;
         text-align: center;
     }
-    nav ul a {
-        text-decoration: none;
-    }
     nav ul li {
         float: center;
         width: 100%;
-    }
-    * {
-        box-sizing: border-box;
     }
 
 /* --------- HEADER + FOOTER --------------*/
@@ -54,13 +44,11 @@
         padding: 0em 0em;
         height: 5em;
     }
-    .headertext{
+    .header-text{
         float: left;
         margin-left:3%;
     }
-    .headerlogos {
-        float: right;
-      }
+    .header-logos {float: right;}
     .footer{
         min-height: 10vh;
         width: 100%;
@@ -68,66 +56,39 @@
         padding: 0.5em;
         font-size: 1.8em;
     }
-    .footerli {
-      float: left;
-      width:100%;
-    }
-
 
 /* --------- GENERAL ---------------------- */
-
     article {
         margin-left: 3%;
         margin-right: 3%;
-        padding: 1em;
-        overflow: hidden;
     }
-
+    pre{
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
 
 /* -------- DIVIDERS ----------------------- */
-
-    .first-colof2{
-        float: left;
-        width: 100%;
-        margin-top: 1.5em;
-        padding: 0em 1em;
-    }
-    .mid-colof2{
-        float: left;
-        width: 100%;
-        margin-top: 1.5em;
-        padding: 0em 1em;
-    }
-    .last-colof2{
-        float: left;
-        width: 100%;
-        margin-top: 1.5em;
-        margin-bottom: 2em;
-        padding: 0em 1em;
-    }
-
-    .columnof1{
-      width: 100%;
-      display: block;
-    }
-    .columnof2 {
+    .col-1{
         width: 100%;
         display: block;
     }
-    .columnof3 {
+    .col-2{
         width: 100%;
         display: block;
     }
-
-    .card{
+    .col-3 {
         width: 100%;
-      }
+        display: block;
+    }
+    .card{width: 100%;}
+
     .split {
       width: 100%;
       display: block;
     } 
 
-
+/*----------- Images ------- */
     .img-l {
         float: left;
         width: 100%;
@@ -138,16 +99,12 @@
         width: 100%;
         padding: 5px;
     }
-    :is(.img-lsmall, .img-lmed, .img-llarge, .img-rsmall, .img-rmed, .img-rlarge){
+    :is(.small, .medium, .large){
         width: 100%;
         padding: 1em;
     }
 
-    :is(.div-leftsmall, .div-leftmed, .div-leftlarge, .div-midsmall, .divmidmed, .div-midlarge, .div-rightsmall, .div-rightmed, .div-rightlarge){
-        width: 100%;
-        padding: 5px;
-    }
-
+/* ------ Tables --------- */
     table{
         overflow-x: auto;
         display: block;
@@ -158,23 +115,9 @@
         text-overflow: ellipsis; 
     }
     
-
-    .chicago-td{
-        padding: 0 0.2em;
-    }
-    .proj-td{
-        padding: 0 0.2em;
-    }
-    .proj-th{
-        padding: 0 0.2em;
-    }
-
-
-    pre{
-        overflow-x: auto;
-        display: block;
-        width: 100%;
-    }
+    .chicago-td{padding: 0 0.2em;}
+    .proj-td{padding: 0 0.2em;}
+    .proj-th{padding: 0 0.2em;}
 
     /*-------- TEXT ----------*/
     

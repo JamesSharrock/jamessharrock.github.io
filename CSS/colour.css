@@ -16,10 +16,10 @@
     --lighticon: white;
     --lighticonhover: #ffddd0;
 
-    --darkbackground: #303030; /* 000 */
+    --darkbackground: #303030; 
     --darknav: #4b4b4b;
-    --darkhover: #c5917d; /* c5917d */
-    --darkborder: #000; /* #222d29; */ /* #1e2422 */
+    --darkhover: #c5917d; 
+    --darkborder: #000; 
     --darkpblog: white;
     --darkpproj: white;
     --darkp: white;
@@ -37,62 +37,29 @@
 /*---------PC Only ----------*/
 @media screen and (min-width: 800px) {
     .light-mode{
-
         & :is(li a,  ul){
-            & :hover{
-                background-color: var(--lighthover);
-            }
+            & :hover{background-color: var(--lighthover);}
         }
-        & .button:hover{
-            background-color: var(--lighthover);
-        }
-        & .proj-button:hover{
-            background-color: var(--lighthover);
-        }
-        & .blogbutton:hover{
-            background-color: var(--lighthover);
-        }
-        & .fa:hover{
-            color: var(--lighticonhover);
-        }
-        & .fa-solid:hover{
-            color: var(--lighticonhover);
-        }
-        & .fa-regular:hover{
-            color: var(--lighticonhover);
-        }
-        & .fa-brands:hover{
-            color: var(--lighticonhover);
-        }
+        & .button:hover{background-color: var(--lighthover);}
+        & .proj-button:hover{background-color: var(--lighthover);}
+        & .blog-button:hover{background-color: var(--lighthover);}
+        & .fa:hover{color: var(--lighticonhover);}
+        & .fa-solid:hover{color: var(--lighticonhover);}
+        & .fa-regular:hover{color: var(--lighticonhover);}
+        & .fa-brands:hover{color: var(--lighticonhover);}
     }
 
     .dark-mode{
         & :is(li a,  ul){
-            & :hover{
-                background-color: var(--darkhover);
-            }
+            & :hover{background-color: var(--darkhover);}
         }
-        & .button:hover{
-            background-color: var(--darkhover);
-        }
-        & .proj-button:hover{
-            background-color: var(--darkhover);
-        }
-        & .blogbutton:hover{
-            background-color: var(--darkhover);
-        }
-        & .fa:hover{
-            color: var(--darkiconhover);
-        }
-        & .fa-solid:hover{
-            color: var(--darkiconhover);
-        }
-        & .fa-regular:hover{
-            color: var(--darkiconhover);
-        }
-        & .fa-brands:hover{
-            color: var(--darkiconhover);
-        }
+        & .button:hover{background-color: var(--darkhover);}
+        & .proj-button:hover{background-color: var(--darkhover);}
+        & .blog-button:hover{background-color: var(--darkhover);}
+        & .fa:hover{color: var(--darkiconhover);}
+        & .fa-solid:hover{color: var(--darkiconhover);}
+        & .fa-regular:hover{color: var(--darkiconhover);}
+        & .fa-brands:hover{color: var(--darkiconhover);}
     }
 }
 
@@ -106,60 +73,28 @@
 /*----------Light Theme------*/
 .light-mode{
     background-color: var(--lightbackground);
-    & article{
-        background-color: var(--lightbackground);
-    }
-    & :is(ul, li a, .button, .blogbutton, .proj-button){
-        background-color: var(--lightnav);
-    }
-    & :is(.header, .footer, .card, .blogcard){
-        background-color: var(--lightborder);
-    }
-    & p{
-        color: var(--lightp);
-    }
-    & h1{
-        color: var(--lighth1);
-    }
-    & h2{
-        color: var(--lighth2);
-    }
-    & h3{
-        color: var(--lighth3);
-    }
-    & h4{
-        color: var(--lighth4);
-    }
-    & h5{
-        color: var(--lighth5);
-    }
-    & h6{
-        color: var(--lighth6);
-    }
-    & code{
-        color: var(--lightp);
-    }
-    & th{
-        color: var(--lightp);
-    }
-    & td{
-        color: var(--lightp);
-    }
-    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
-        color: var(--lighticon);
-    }
+    & article{background-color: var(--lightbackground);}
+    & :is(ul, li a, .button, .blog-button, .proj-button){background-color: var(--lightnav);}
+    & :is(.header, .footer, .card, .blog-card){background-color: var(--lightborder);}
 
-    & .p-blog{
-        color: var(--lightpblog);
-    }
-    & .p-proj{
-        color: var(--lightpproj);
-    }
+    & p{color: var(--lightp);}
+    & h1{color: var(--lighth1);}
+    & h2{color: var(--lighth2);}
+    & h3{color: var(--lighth3);}
+    & h4{color: var(--lighth4);}
+    & h5{color: var(--lighth5);}
+    & h6{color: var(--lighth6);}
+
+    & code{color: var(--lightp);}
+    & th{color: var(--lightp);}
+    & td{
+        color: var(--lightp);}
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--lighticon);}
+    & .blog-p{color: var(--lightpblog);}
+    & .proj-p{color: var(--lightpproj);}
 
     & .title{
-        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){
-            color: var(--lightborder);
-        }
+        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--lightborder);}
     }
 }
 
@@ -169,60 +104,26 @@
 /*----------Dark Theme------*/
 .dark-mode{
     background-color: var(--darkbackground);
-    & article{
-        background-color: var(--darkbackground);
-    }
-    & :is(ul, li a, .button, .blogbutton, .proj-button){
-        background-color: var(--darknav);
-    }
-    & :is(.header, .footer, .card, .blogcard){
-        background-color: var(--darkborder);
-    }
-    & p{
-        color: var(--darkp);
-    }
-    & h1{
-        color: var(--darkh1);
-    }
-    & h2{
-        color: var(--darkh2);
-    }
-    & h3{
-        color: var(--darkh3);
-    }
-    & h4{
-        color: var(--darkh4);
-    }
-    & h5{
-        color: var(--darkh5);
-    }
-    & h6{
-        color: var(--darkh6);
-    }
-    & code{
-        color: var(--darkp);
-    }
-    & th{
-        color: var(--darkp);
-    }
-    & td{
-        color: var(--darkp);
-    }
-    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){
-        color: var(--darkicon);
-    }
+    & article{background-color: var(--darkbackground);}
+    & :is(ul, li a, .button, .blog-button, .proj-button){background-color: var(--darknav);}
+    & :is(.header, .footer, .card, .blog-card){background-color: var(--darkborder);}
 
+    & p{color: var(--darkp);}
+    & h1{color: var(--darkh1);}
+    & h2{color: var(--darkh2);}
+    & h3{color: var(--darkh3);}
+    & h4{color: var(--darkh4);}
+    & h5{color: var(--darkh5);}
+    & h6{color: var(--darkh6);}
 
-    & .p-blog{
-        color: var(--darkpblog);
-    }
-    & .p-proj{
-        color: var(--darkpproj);
-    }
+    & code{color: var(--darkp);}
+    & th{color: var(--darkp);}
+    & td{color: var(--darkp);}
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--darkicon);}
+    & .blog-p{color: var(--darkpblog);}
+    & .proj-p{color: var(--darkpproj);}
 
     & .title{
-        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){
-            color: var(--darkborder);
-        }
+        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--darkborder);}
     }
 }

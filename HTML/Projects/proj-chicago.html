@@ -17,15 +17,15 @@
 
 <body>
   <header class= "header">
-    <div class = "headertext">
+    <div class = "header-text">
       <h4>James Sharrock</h4> 
     </div>
     
-    <div class = "headerlogos">
-      <button id = "lightdark" class = "btn"><a href = "" id = "lightdarkicon" class = "fa-moon"></a></button>
-      <a href="https://github.com/JamesSharrock" class="fa-brands fa-github"></a>
-      <a href="https://linkedin.com/in/jamessharrock" class="fa-brands fa-linkedin-in"></a>
-      <a href="mailto:jamessharrock65@gmail.com?subject=Contact%20Me" class="fa fa-envelope"></a> 
+    <div class = "header-logos">
+      <button id = "toggle-mode" class = "button-invisible"><a href = "" id = "lightdarkicon" class = "icon-fa fa-moon"></a></button>
+      <a href="https://github.com/JamesSharrock" class="icon-fa fa-brands fa-github"></a>
+      <a href="https://linkedin.com/in/jamessharrock" class="icon-fa fa-brands fa-linkedin-in"></a>
+      <a href="mailto:jamessharrock65@gmail.com?subject=Contact%20Me" class="icon-fa fa fa-envelope"></a> 
     </div>
   </header>
           
@@ -159,7 +159,7 @@
       to create some basic assets and some simple scripts. The first C# script I created was for making the background
       repeatedly scroll. {ScrollBackground.cs} - </p><br>
     
-    <div class = "div-leftmed">
+    <div class = "left medium">
     <pre><code>using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -179,7 +179,7 @@ public class ScrollBackground : MonoBehaviour {
 }</pre>
     </div>
 
-    <div class = "div-rightmed">
+    <div class = "right medium">
       <p>First I declare a renderer that gives us access to our asset material. Then create a scrollSpeed and xAxis boolean 
         variable.<br><br>
         The script works by finding the distance the background sprite has travelled. Calculating this with the scrollSpeed
@@ -193,7 +193,7 @@ public class ScrollBackground : MonoBehaviour {
       with collision detection. A BoxCollider 2D uses a rectangular hitbox to detect collisions. <br>From here I created the 
       {Player.cs} script -</p>
 
-    <div class = "div-leftmed">
+    <div class = "left medium">
       <pre><code>using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -223,7 +223,7 @@ public class Player : MonoBehaviour {
 }</pre>
     </div>
   
-    <div class = "div-rightmed">
+    <div class = "right medium">
       <p>The Start function runs at the beginning og the Main Scene and sets the Player to the original position. If a 
         collision with an 'Enemy' object occurs the scene switches to the menu and the Player car is removed.<br><br>
         On each update we find the distance the car has travelled horizontally according to the input and move the car
@@ -366,7 +366,7 @@ public class Destroy : MonoBehaviour{
 
 
   <div class = "footer">
-    <div class = "footertext">
+    <div class = "footer-text">
       <h4>James Sharrock</h4><br>
     </div>
   </div>

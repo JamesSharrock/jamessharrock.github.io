@@ -1,7 +1,10 @@
+/*-------- Layout Variables ---------*/
+
+
+
+
 /* --------- BODY --------- */
-body {
-	margin: 0em;
-}
+body {margin: 0em;}
 body, html {
   height: 100%;
 	width: 100%;
@@ -10,17 +13,14 @@ body, html {
 /* -------- HEADER/FOOTER ---------- */
 .header {
   padding: 0.5em 0.5em;
-  text-align: left;
-  font-size: 1.8rem;
+  font-size: 1.8em;
   height: 24vh;
 }
-.headertext {
+.header-text {
   float: left;
   margin-left: 3%
 }
-.headerlogos {
-  float: right;
-}
+.header-logos {float: right;}
 
 .footer {
   min-height: 10vh;
@@ -31,9 +31,7 @@ body, html {
 }
 
 /*---------- NAV ----------*/
-nav {
-	width: 100%;
-}
+nav {width: 100%;}
 ul {
   list-style-type: none;
   margin: 0em;
@@ -52,17 +50,13 @@ li a {
 li a:hover {
   color: none;
 }
-* {
-  box-sizing: border-box;
-}
-
+* {box-sizing: border-box;}
 
 
 /* ---------- Article (Content) ---------- */
 
 article {
-  margin-left: 5%;
-	margin-right: 5%;
+  margin: 0% 5%;
   padding: 1em;
   overflow: hidden;
 }
@@ -82,14 +76,9 @@ article {
   float: right;
 }
 
-.left {
-  margin-left: 3%;
-}
-.right {
-  margin-right: 5%;
-}
+
 .card {
-  padding: 0em 0em;
+  padding: 0em;
   max-width: 100%;
   min-height: 20em;
   max-height: 38em;
@@ -121,88 +110,49 @@ article {
   margin-bottom: 1em;
   padding: 1em 1em;
 }
-.first-colof2 {
+
+
+
+.col-1{
   float: left;
-  width: 50%;
-  margin-top: 1.5em;
+  width: 100%;
   padding: 0em 1em;
 }
-.mid-colof2 {
+.col-2{
   float: left;
   width: 50%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
   padding: 0em 1em;
 }
-.last-colof2{
-  float: left;
-  width: 50%;
-  margin-bottom: 2em;
-  padding: 0em 1em;
-}
-.columnof3 {
+.col-3 {
   float: left;
   width: 33.3%;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  padding: 1em 1em;
+  padding: 0em 1em;
 }
-.div-leftsmall {
-	float:left;
-  width: 33%;
-}
-.div-leftmed {
-	float:left;
-  width: 50%
-}
-.div-leftlarge {
-	float:left;
-  width: 66%
-}
-.div-midsmall{
-  position: absolute;
-  left: 34%;
-  width:33%;
-}
-.div-midmed{
-  position: absolute;
+.first-col{margin-top: 1.5em;}
+.middle-col{margin: 1.5em 0em;}
+.last-col{margin-bottom: 2em;}
+
+
+
+
+.left{float: left;}
+.right{float:right;}
+.middle{
+  position: fixed;
   left: 50%;
-  width: 50%;
+  transform: translateX(-50%);
 }
-.div-midlarge{
-  position: absolute;
-  left: 50%;
-  width: 66%;
-}
-.div-rightsmall {
-	float:right;
-  width: 33%;
-}
-.div-rightmed {
-	float:right;
-  width: 50%
-}
-.div-rightlarge {
-	float:right;
-  width: 66%
-}
-.div-full{
+.small{width: 33%;}
+.medium{width: 50%;}
+.large{width: 66%;}
+.complete{
   width: 100%;
   overflow: auto;
 }
 
 
 /*----------Blog Page--------------*/
-
-.columnof1{
-  float: left;
-  width: 100%;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  padding: 1em 1em;
-}
-
-.blogbutton{
+.blog-button{
   border: none;
   outline: 0;
   display: inline-block;
@@ -212,13 +162,13 @@ article {
   width: 100%;
   padding: 0.5em 0em;
 }
-.blogcard {
+.blog-card {
   padding: 0em 0em;
   max-width: 100%;
   min-height: 10em;
   max-height: 38em;
 }
-.blogcontainer::after, .row::after {
+.blog-container::after, .row::after {
   padding: 0em 0em;
   min-height: 0em;
   max-height: 10em;
