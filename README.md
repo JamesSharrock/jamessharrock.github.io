@@ -3,7 +3,7 @@
 This repository contains the HTML, CSS and JavaScript code for my personal portfolio website.
 The website contains my personal programming projects and a mini-blog where I discuss what I'm currently developing.
 
-<img width="943" alt="readmeimg" src="https://github.com/user-attachments/assets/93a48a3e-4862-4ba4-8d01-95f9f2541b6a" />
+<img width="100%" alt="readmeimg" src="https://github.com/user-attachments/assets/93a48a3e-4862-4ba4-8d01-95f9f2541b6a" />
 
 ## Projects -
 
