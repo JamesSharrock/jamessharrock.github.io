@@ -1,7 +1,9 @@
-# JamesSharrock.Github.io
+# [JamesSharrock.Github.io](https://jamessharrock.github.io/)
 
 This repository contains the HTML, CSS and JavaScript code for my personal portfolio website.
 The website contains my personal programming projects and a mini-blog where I discuss what I'm currently developing.
+
+![image]("Files://C:\Users\James\Documents\Programming\Websites\jamessharrock\readmeimg.png"
 
 ## Projects -
 
