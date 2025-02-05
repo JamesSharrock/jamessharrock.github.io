@@ -13,7 +13,6 @@
   <title>James Sharrock</title>
 </head>
 
-<!-- MOBILE CSS DOES NOT WORK AT THE MOMENT -->
 
 <body>
   <header class= "header">
@@ -155,83 +154,7 @@
       </tr>
     </table><br><hr><br>
 
-    <p>I then installed Unity and created a blank 2D Game template. As a first step I imported placeholder assets and began
-      to create some basic assets and some simple scripts. The first C# script I created was for making the background
-      repeatedly scroll. {ScrollBackground.cs} - </p><br>
-    
-    <div class = "left medium">
-    <pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-        
-public class ScrollBackground : MonoBehaviour {
-  Renderer rend;
-  public float scrollSpeed = 10.5f;
-  
-  void Start(){
-    rend = GetComponent&lt;Renderer&gt;();
-  }
-  
-  void Update(){
-    float offset = Time.time * scrollSpeed;
-    rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
-  }
-}</pre>
-    </div>
-
-    <div class = "right medium">
-      <p>First I declare a renderer that gives us access to our asset material. Then create a scrollSpeed and xAxis boolean 
-        variable.<br><br>
-        The script works by finding the distance the background sprite has travelled. Calculating this with the scrollSpeed
-        and time variables between each frame it then moves the sprite to a new y position of 'offset'.<br><br>
-        Remember Speed = Distance/Time. So the Offset (distance) = Speed * Time.</p>
-    </div>
-    <br class = "br-newline"><br>
-    <hr class = "hr-newline"><br>
-    <p>Once the background was in place I created the user's car giving them controls. On this asset I added some Unity
-      properties. A Rigidbody 2D(Kinematic) allows a sprite to behave in a convincing way by applying forces and helps
-      with collision detection. A BoxCollider 2D uses a rectangular hitbox to detect collisions. <br>From here I created the 
-      {Player.cs} script -</p>
-
-    <div class = "left medium">
-      <pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-          
-public class Player : MonoBehaviour {
-  public float CarSpeed;
-  Vector2 position;
-    
-  void Start(){
-    position = transform.position;
-  }
-    
-  //Update is called once per frame
-    void Update(){
-    position.x += Input.GetAxis("Horizontal") * CarSpeed * Time.deltaTime;
-    position.x += Mathf.Clamp(position.x, -2f, 2f);
-    transform.position = position;
-  }
-
-  void OnCollisionEnter2D(Collision2D col){
-    if (col.gameObject.tag == "Enemy"){
-      Destoy(gameObject);
-      SceneManager.LoadScene("Menu");
-    }
-  }
-}</pre>
-    </div>
-  
-    <div class = "right medium">
-      <p>The Start function runs at the beginning og the Main Scene and sets the Player to the original position. If a 
-        collision with an 'Enemy' object occurs the scene switches to the menu and the Player car is removed.<br><br>
-        On each update we find the distance the car has travelled horizontally according to the input and move the car
-        this amount with a transform.
-      </p>
-    </div>
-    <br class = "br-newline"><br>
-    <hr class = "hr-newline"><br>
+    <p>Initial development - </p><br><hr><br>
 
     <p>During development I came upon constraints and issues with the initial requirements and adapted them further.
       <br>The main cause of this was realising that having a set amount of enemy cars and a position wouldn't work for a
@@ -290,72 +213,12 @@ public class Player : MonoBehaviour {
       </tr>
     </table><br><hr><br>
 
+    <p>Final development and description - </p><br>
     <p>Finally, I created the enemy cars. This required the use of three scripts. One to spawn the enemy cars above the screen
       called {EnemySpawn.cs} and one to model the movement of the cars moving down the screen with {Enemy.cs}. Then finally
       I then created a third script {CarDestroy.cs} which removed the enemy assets as they left the bottom of the screen. This 
       made sure that the game wouldn' run slower the longer it ran for due to a build up of objects.
     </p><br><br>
-
-    <p>{Enemy.cs}</p>
-    <pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Enemy : MonoBehaviour{
-  public float Speed;
-  private Rigidbody 2D rb;
-
-  void Start(){
-    rb = GetComponent&lt;Rigidbody2D&gt;();
-  }
-
-  void FixedUpdate(){
-    rb.velocity = Vector2.zero;
-    rb.velocity = new Vector2(0, 
-    Speed * Time.fixedDeltaTime * -1);
-  }
-}
-    </code></pre>
-      
-    <p>{EnemySpawn.cs}</p>
-    <pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-          
-public class CarSpawn : MonoBehaviour{
-  public GameObject car;
-  public float DelayTimer;
-  float timer;
-          
-  void Start(){
-    timer = DelayTimer;
-  }
-          
-  void Update(){
-    timer -= Time.deltaTime;
-    if (timer <=0) {
-      Vector3 CarPos = new Vector3(Random.Range(-2f, 2f), transform.position.y, transform.position.z);
-      Instantiate(car, CarPos, transform.rotation);
-      timer = DelayTimer;
-    }
-  }
-}
-    </code></pre>
-
-    <p>{EnemyDestroy.cs}</p>
-    <pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-                    
-public class Destroy : MonoBehaviour{
-                     
-  void OnCollisionEnter2D(Collision2D col){
-    if(col.gameObject.tag == "Enemy") {
-      Destroy(col.gameObject);
-    }
-  }
-}
-    </code></pre>
 
     <hr><br>
     <p>The final parts of implementing the game were creating a highscore system and adding ambient music. The full code

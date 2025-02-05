@@ -13,7 +13,6 @@
   <title>James Sharrock</title>
 </head>
 
-<!-- MOBILE CSS DOES NOT WORK AT THE MOMENT -->
 
 <body>
   <header class= "header">
@@ -114,101 +113,18 @@
       important for increasing these numbers. Further evaluation could also be done to recognise areas of weakness. For 
       example, looking at the confusion charts we see the models have issues with distinguishing between the letter I and L.
     </p><br><hr><br>
-    <p>Code, Data and Charts:</p><br><br>
 
+    <p>Data and Charts:</p><br><br>
     <img class = "img-r medium" src="../../Images/proj-ai-ocr-confusion.png">
     <p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
       respectively. The blue diagonal line we can see indicates our successful matches of characters where our model
-      correctly predicted a hand-drawn letter and matched it to the correct class.<br>
+      correctly predicted a hand-drawn letter and matched it to the correct class.<br><br>
       The other boxes also indicate matches but these are incorrect matches. The higher the gradient of orange means the more
       incorrect matches. We can see these in places we might expect. For example with the KNN with Euclidean Distance model
       we see True 12 is predicted as class 9. In real terms the model predicts that the letter 'l' is the letter 'i' and vice
       versa. </p><br><br>
-    <p>Here I include my code from MatLab: </p><br>
-
-    <pre><code>load dataset-letters</code>
-<code>features = dataset_images; </code>
-<code>labels = dataset_labels; </code>
-<code>key = dataset_key; </code>
-
-<code>%2: Dataset</code>
-<code>figure(1), colormap gray;</code>
-<code>for i = 1:12 %For loop of all 12 images</code>
-  <code>subplot(3,4,i);</code>
-  <code>im = reshape(features(i, :), [28,28]); </code>
-  <code>imagesc(im), axis off</code>
-  <code>title(key(labels(i, :))); %Subtitle each subplot</code>
-<code>end</code>
-<code>saveas(gcf, "Dataset.png");</code>
-
-<code>%3: Data Preparation</code>
-<code>imf = double(features);</code>
-<code>iml = categorical(labels); %Categorical array for labels</code>
-<code>randp = randperm(26000); </code>
-<code>trfeatures = imf(randp(1:13000), :);</code>
-<code>tefeatures = imf(randp(13001:end), :);</code>
-<code>trlabels = iml(randp(1:13000), :);</code>
-<code>telabels = iml(randp(13001:end), :);</code>
-
-<code>%4.1: Model Training with K-NN</code>
-<code>prediction1 = categorical.empty(size(tefeatures, 1), 0);</code>
-<code>prediction2 = caegorical.empty(size(tefeatures, 1), 0);</code>
-<code>k = 28; %Set k parameter</code>
-<code>for i = 1:size(tefeatures, 1) %Loop for Euclidean Distance</code>
-  <code>comp1 = trfeatures;</code>
-  <code>comp2 = repmat(tefeatures(i, :), [size(trfeatures, 1), 1]);</code>
-  <code>l2 = sum((comp1-comp2).^2, 2); %Euclidean Distance</code>
-  <code>[~, ind] = sort(l2);</code>
-  <code>ind = ind(1: k);</code>
-  <code>labs = trlabels(ind);</code>
-  <code>prediction1(i, 1) = mode(labs);</code>
-  <code>i</code>
-<code>end</code>
-<code>for i = 1:size(tefeatures, 1) %Loop for Manhattan Distance</code>
-  <code>comp1 = trfeatures;</code>
-  <code>comp2 = repmat(tefeatures(i, :), [size(trfeatures, 1), 1]);</code>
-  <code>l1 = sum(abs(comp1-comp2), 2); %L1 Distance</code>
-  <code>[~, ind] = sort(l1);</code>
-  <code>ind = ind(1: k);</code>
-  <code>labs = trlabels(ind);</code>
-  <code>prediction2(i, 1) = mode(labs);</code>
-  <code>i</code>
-<code>end</code>
-
-<code>%4.2: Model Training with existing models</code>
-<code>knnmodel = fitcknn(trfeatures, trlabels);</code>
-<code>predictedknn = predict(knnmodel, tefeatures);</code>
-<code>svmmodel = fitcecoc(trfeatures, trlabels);</code>
-<code>predictedsvm = predict(svmmodel, tefeatures);</code>
-
-<code>%4.3: Evaluation</code>
-<code>correct_knn1 = sum(telabels == prediction1)</code>
-<code>correct_knn2 = sum(telabels == prediction2)</code>
-<code>correct_knnmodel = sum(telabels == predictedknn)</code>
-<code>correct_svmmodel = sum(telabels == predictedsvm)</code>
-<code>accuracy_knn1 = correct_knn/size(telabels, 1)</code>
-<code>accuracy_knn2 = correct_knn2/size(telabels, 1)</code>
-<code>accuracy_knnmodel = correct_knnmodel/size(telabels, 1)</code>
-<code>accuracy_svmmodel = correct_svmmodel/size(telabels, 1)</code>
-<code>figure(2)</code>
-<code>subplot(2,2,1);</code>
-<code>knn1CM = confusionchart(telabels, prediction1);</code>
-<code>title("KNN with Euclidean Distance");</code>
-<code>subplot(2,2,2);</code>
-<code>knn2CM = confusionchart(telabels, prediction2);</code>
-<code>title("KNN with L1 Distance");</code>
-<code>subplot(2,2,3);</code>
-<code>knnmodelCM = confusionchart(telabels, predictedknn);</code>
-<code>title("MatLab KNN");</code>
-<code>subplot(2,2,4);</code>
-<code>svmmodelCM = confusionchart(telabels, predictedsvm);</code>
-<code>title("MatLab SVM");</code>
-<code>saveas(gcf, "Results.png");</code></pre>
-
-  <br><br>
   </div>
   </article> 
-
 
   <div class = "footer">
     <div class = "footer-text">

@@ -71,7 +71,6 @@ a {
 }
 .button-invisible{
     border: none;
-    display: inline-block;
     background-color: transparent;
     background-repeat: no-repeat;
     padding: 0em;

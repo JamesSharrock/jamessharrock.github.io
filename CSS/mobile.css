@@ -1,11 +1,25 @@
 /* ---------- VARIABLES ---------------- */
+:root{
+    --icon-w: 15px;
+    --icon-size: 20px;
+    --icon-padding: 20px;
+}
 
 
 
+/*----------Mobile Formatting ------------------*/
+@media screen and (max-width: 450px){
+    .icon-fa{
+        padding: var(--icon-padding);
+        font-size: var(--icon-size);
+        width: var(--icon-w);
+        text-align: center;
+        text-decoration: none;
+    }
+}
+    
 
-
-
-/*----------Mobile Formatting----------*/
+/*----------Mobile + Tablet Formatting----------*/
 
 @media screen and (max-width: 800px) {
     /*---------COLOUR OVERHAUL---------*/
@@ -14,6 +28,8 @@
         -webkit-tap-highlight-color: transparent; 
         -webkit-tap-highlight-color: rgba(0,0,0,0); /* For older webkit browsers */ 
     }
+
+
 
 /* ------- NAV -----------------------*/
     /* nav {
