@@ -6,15 +6,11 @@
 }
 
 
-
 /*----------Mobile Formatting ------------------*/
-@media screen and (max-width: 450px){
-    .icon-fa{
-        padding: var(--icon-padding);
-        font-size: var(--icon-size);
-        width: var(--icon-w);
-        text-align: center;
-        text-decoration: none;
+@media screen and (max-width: 480px){
+    .header-logos{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
     }
 }
     
@@ -56,15 +52,6 @@
 
 /* --------- HEADER + FOOTER --------------*/
 
-    .header{
-        padding: 0em 0em;
-        height: 5em;
-    }
-    .header-text{
-        float: left;
-        margin-left:3%;
-    }
-    .header-logos {float: right;}
     .footer{
         min-height: 10vh;
         width: 100%;

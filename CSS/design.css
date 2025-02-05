@@ -70,12 +70,11 @@ a {
     text-decoration: none;
 }
 .button-invisible{
+    background: none;
     border: none;
-    background-color: transparent;
-    background-repeat: no-repeat;
     padding: 0em;
+    cursor: pointer;
     overflow: hidden;
-    outline: none;
 }
 
 
@@ -91,7 +90,6 @@ a {
     border: none;
     display: inline-block;
     padding: 0.5em 0em;
-    text-align: center;
     cursor: pointer;
     width: 100%;
   }

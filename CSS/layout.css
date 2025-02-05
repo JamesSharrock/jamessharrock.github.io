@@ -12,15 +12,25 @@ body, html {
 
 /* -------- HEADER/FOOTER ---------- */
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5em 0.5em;
   font-size: 1.8em;
   height: 24vh;
 }
 .header-text {
+  display: flex;
   float: left;
   margin-left: 3%
 }
-.header-logos {float: right;}
+.header-logos {
+  float: right;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 
 .footer {
   min-height: 10vh;
