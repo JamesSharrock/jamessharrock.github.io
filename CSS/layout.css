@@ -73,18 +73,21 @@ article {
 
 
 /*----------Dividers Formatting----------*/
-.title-section{
-  display: inline-flex;
-  width: 100%;
-  margin: 0 auto;
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
-.title-text{
-  padding: 0 0 0 40%;
+.title-text {
+  flex-grow: 1;
+  text-align: center;
 }
-.title-icons{
-  padding: 0 1%;
-  float: right;
+.title-icons {
+  display: flex;
+  gap: 10px;
 }
+
 
 
 .card {
