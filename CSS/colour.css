@@ -16,6 +16,7 @@
     --light-icon: white;
     --light-icon-hover: #ffddd0;
     --light-title-icon: #355249;
+    --light-title-hover: black;
 
     --dark-background: #303030; 
     --dark-nav: #4b4b4b;
@@ -32,7 +33,6 @@
     --dark-h6: white;
     --dark-icon: white;
     --dark-icon-hover: #c5917d;
-    --dark-title-icon: white;
 }
 
 
@@ -40,7 +40,7 @@
 @media screen and (min-width: 800px) {
     .light-mode{
         & :is(li a,  ul){
-            & :hover{background-color: var(--lighthover);}
+            & :hover{background-color: var(--light-hover);}
         }
         & .button:hover{background-color: var(--light-hover);}
         & .proj-button:hover{background-color: var(--light-hover);}
@@ -49,6 +49,7 @@
         & .fa-solid:hover{color: var(--light-icon-hover);}
         & .fa-regular:hover{color: var(--light-icon-hover);}
         & .fa-brands:hover{color: var(--light-icon-hover);}
+        & .icon-colour:hover{color: var(--light-title-hover)}
     }
 
     .dark-mode{
@@ -89,10 +90,6 @@
     & .icon-colour{color: var(--light-title-icon)}
     & .blog-p{color: var(--light-p-blog);}
     & .proj-p{color: var(--light-p-proj);}
-
-    & .title{
-        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--light-border);}
-    }
 }
 
 
@@ -117,11 +114,6 @@
     & th{color: var(--dark-p);}
     & td{color: var(--dark-p);}
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--dark-icon);}
-    & .icon-colour{color: var(--dark-title-icon)}
     & .blog-p{color: var(--dark-p-blog);}
     & .proj-p{color: var(--dark-p-proj);}
-
-    & .title{
-        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--dark-border);}
-    }
 }
