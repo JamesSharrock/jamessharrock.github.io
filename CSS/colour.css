@@ -1,36 +1,38 @@
 /*-------Colour Variables------*/
 :root{
-    --lightbackground: #d3d3d3;
-    --lightnav: #ffffff;
-    --lighthover: #ffddd0;
-    --lightborder: #355249;
-    --lightp: black;
-    --lightpblog: white;
-    --lightpproj: white;
-    --lighth1: #355249;
-    --lighth2: white;
-    --lighth3: black;
-    --lighth4: white;
-    --lighth5: black;
-    --lighth6: white;
-    --lighticon: white;
-    --lighticonhover: #ffddd0;
+    --light-background: #d3d3d3;
+    --light-nav: #ffffff;
+    --light-hover: #ffddd0;
+    --light-border: #355249;
+    --light-p: black;
+    --light-p-blog: white;
+    --light-p-proj: white;
+    --light-h1: #355249;
+    --light-h2: white;
+    --light-h3: black;
+    --light-h4: white;
+    --light-h5: black;
+    --light-h6: white;
+    --light-icon: white;
+    --light-icon-hover: #ffddd0;
+    --light-title-icon: #355249;
 
-    --darkbackground: #303030; 
-    --darknav: #4b4b4b;
-    --darkhover: #c5917d; 
-    --darkborder: #000; 
-    --darkpblog: white;
-    --darkpproj: white;
-    --darkp: white;
-    --darkh1: white;
-    --darkh2: white;
-    --darkh3: white;
-    --darkh4: white;
-    --darkh5: white;
-    --darkh6: white;
-    --darkicon: white;
-    --darkiconhover: #c5917d;
+    --dark-background: #303030; 
+    --dark-nav: #4b4b4b;
+    --dark-hover: #c5917d; 
+    --dark-border: black; 
+    --dark-p-blog: white;
+    --dark-p-proj: white;
+    --dark-p: white;
+    --dark-h1: white;
+    --dark-h2: white;
+    --dark-h3: white;
+    --dark-h4: white;
+    --dark-h5: white;
+    --dark-h6: white;
+    --dark-icon: white;
+    --dark-icon-hover: #c5917d;
+    --dark-title-icon: white;
 }
 
 
@@ -40,61 +42,56 @@
         & :is(li a,  ul){
             & :hover{background-color: var(--lighthover);}
         }
-        & .button:hover{background-color: var(--lighthover);}
-        & .proj-button:hover{background-color: var(--lighthover);}
-        & .blog-button:hover{background-color: var(--lighthover);}
-        & .fa:hover{color: var(--lighticonhover);}
-        & .fa-solid:hover{color: var(--lighticonhover);}
-        & .fa-regular:hover{color: var(--lighticonhover);}
-        & .fa-brands:hover{color: var(--lighticonhover);}
+        & .button:hover{background-color: var(--light-hover);}
+        & .proj-button:hover{background-color: var(--light-hover);}
+        & .blog-button:hover{background-color: var(--light-hover);}
+        & .fa:hover{color: var(--light-icon-hover);}
+        & .fa-solid:hover{color: var(--light-icon-hover);}
+        & .fa-regular:hover{color: var(--light-icon-hover);}
+        & .fa-brands:hover{color: var(--light-icon-hover);}
     }
 
     .dark-mode{
         & :is(li a,  ul){
-            & :hover{background-color: var(--darkhover);}
+            & :hover{background-color: var(--dark-hover);}
         }
-        & .button:hover{background-color: var(--darkhover);}
-        & .proj-button:hover{background-color: var(--darkhover);}
-        & .blog-button:hover{background-color: var(--darkhover);}
-        & .fa:hover{color: var(--darkiconhover);}
-        & .fa-solid:hover{color: var(--darkiconhover);}
-        & .fa-regular:hover{color: var(--darkiconhover);}
-        & .fa-brands:hover{color: var(--darkiconhover);}
+        & .button:hover{background-color: var(--dark-hover);}
+        & .proj-button:hover{background-color: var(--dark-hover);}
+        & .blog-button:hover{background-color: var(--dark-hover);}
+        & .fa:hover{color: var(--dark-icon-hover);}
+        & .fa-solid:hover{color: var(--dark-icon-hover);}
+        & .fa-regular:hover{color: var(--dark-icon-hover);}
+        & .fa-brands:hover{color: var(--dark-icon-hover);}
     }
 }
 
 
-/* --------- Mobile Only ------- */
-@media screen and (max-width: 800px) {
-}
-
-
-
 /*----------Light Theme------*/
 .light-mode{
-    background-color: var(--lightbackground);
-    & article{background-color: var(--lightbackground);}
-    & :is(ul, li a, .button, .blog-button, .proj-button){background-color: var(--lightnav);}
-    & :is(.header, .footer, .card, .blog-card){background-color: var(--lightborder);}
+    background-color: var(--light-background);
+    & article{background-color: var(--light-background);}
+    & :is(ul, li a, .button, .blog-button, .proj-button){background-color: var(--light-nav);}
+    & :is(.header, .footer, .card, .blog-card){background-color: var(--light-border);}
 
-    & p{color: var(--lightp);}
-    & h1{color: var(--lighth1);}
-    & h2{color: var(--lighth2);}
-    & h3{color: var(--lighth3);}
-    & h4{color: var(--lighth4);}
-    & h5{color: var(--lighth5);}
-    & h6{color: var(--lighth6);}
+    & p{color: var(--light-p);}
+    & h1{color: var(--light-h1);}
+    & h2{color: var(--light-h2);}
+    & h3{color: var(--light-h3);}
+    & h4{color: var(--light-h4);}
+    & h5{color: var(--light-h5);}
+    & h6{color: var(--light-h6);}
 
-    & code{color: var(--lightp);}
-    & th{color: var(--lightp);}
+    & code{color: var(--light-p);}
+    & th{color: var(--light-p);}
     & td{
-        color: var(--lightp);}
-    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--lighticon);}
-    & .blog-p{color: var(--lightpblog);}
-    & .proj-p{color: var(--lightpproj);}
+        color: var(--light-p);}
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--light-icon);}
+    & .icon-colour{color: var(--light-title-icon)}
+    & .blog-p{color: var(--light-p-blog);}
+    & .proj-p{color: var(--light-p-proj);}
 
     & .title{
-        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--lightborder);}
+        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--light-border);}
     }
 }
 
@@ -103,27 +100,28 @@
 
 /*----------Dark Theme------*/
 .dark-mode{
-    background-color: var(--darkbackground);
-    & article{background-color: var(--darkbackground);}
-    & :is(ul, li a, .button, .blog-button, .proj-button){background-color: var(--darknav);}
-    & :is(.header, .footer, .card, .blog-card){background-color: var(--darkborder);}
+    background-color: var(--dark-background);
+    & article{background-color: var(--dark-background);}
+    & :is(ul, li a, .button, .blog-button, .proj-button){background-color: var(--dark-nav);}
+    & :is(.header, .footer, .card, .blog-card){background-color: var(--dark-border);}
 
-    & p{color: var(--darkp);}
-    & h1{color: var(--darkh1);}
-    & h2{color: var(--darkh2);}
-    & h3{color: var(--darkh3);}
-    & h4{color: var(--darkh4);}
-    & h5{color: var(--darkh5);}
-    & h6{color: var(--darkh6);}
+    & p{color: var(--dark-p);}
+    & h1{color: var(--dark-h1);}
+    & h2{color: var(--dark-h2);}
+    & h3{color: var(--dark-h3);}
+    & h4{color: var(--dark-h4);}
+    & h5{color: var(--dark-h5);}
+    & h6{color: var(--dark-h6);}
 
-    & code{color: var(--darkp);}
-    & th{color: var(--darkp);}
-    & td{color: var(--darkp);}
-    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--darkicon);}
-    & .blog-p{color: var(--darkpblog);}
-    & .proj-p{color: var(--darkpproj);}
+    & code{color: var(--dark-p);}
+    & th{color: var(--dark-p);}
+    & td{color: var(--dark-p);}
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--dark-icon);}
+    & .icon-colour{color: var(--dark-title-icon)}
+    & .blog-p{color: var(--dark-p-blog);}
+    & .proj-p{color: var(--dark-p-proj);}
 
     & .title{
-        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--darkborder);}
+        & :is(.fa, .fa-brands, .fa-solid, .fa-regular){color: var(--dark-border);}
     }
 }
