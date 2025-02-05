@@ -75,12 +75,13 @@ article {
 /*----------Dividers Formatting----------*/
 .title-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
+  width: 100%;
 }
 .title-text {
-  flex-grow: 1;
+  margin-right: 10px;
   text-align: center;
 }
 .title-icons {
