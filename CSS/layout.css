@@ -42,15 +42,16 @@ body, html {
 
 /*---------- NAV ----------*/
 nav {width: 100%;}
-ul {
+ul.nav{
   list-style-type: none;
   margin: 0em;
   padding: 0em;
 }
-li {
+ul.nav li{
   float: left;
   width: 33.33%;
 }
+
 li a {
   display: block;
   text-align: center;
@@ -94,7 +95,7 @@ article {
 .card {
   padding: 0em;
   max-width: 100%;
-  min-height: 20em;
+  min-height: 21em;
   max-height: 38em;
 }
 .container::after, .row::after {
@@ -112,11 +113,11 @@ article {
   width: 100%;
 }
 .line {
-    float: left;
-    width: 100%;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    padding: 1em 1em;
+  float: left;
+  width: 100%;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  padding: 1em 1em;
 }
 .split {
   float: left;
@@ -124,7 +125,6 @@ article {
   margin-bottom: 1em;
   padding: 1em 1em;
 }
-
 
 
 .col-1{
@@ -145,8 +145,6 @@ article {
 .first-col{margin-top: 1.5em;}
 .middle-col{margin: 1.5em 0em;}
 .last-col{margin-bottom: 2em;}
-
-
 
 
 .left{float: left;}

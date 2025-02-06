@@ -29,7 +29,7 @@
   </header>
           
   <nav>
-    <ul>
+    <ul class = "nav">
       <li><a href="../../index.html"><h3>Home</h3></a></li>	
       <li><a href="../Pages/projects.html"><h3>Projects</h3></a></li>
       <li><a href="../Pages/blog.html"><h3>Blog</h3></a></li>
@@ -40,12 +40,44 @@
   <article>
     <div class = "title-section">
       <div class = "title-text">
-        <center><h1 class = "rubik"> Gym Tracker </h1></center>
+        <center><h1 class = "rubik"> Gym Tracker - Console </h1></center>
       </div>
       <div class = "title-icons">
-        <a href="https://github.com/JamesSharrock/Gym-Console-App" class="icon-colour icon-fa title fa-brands fa-github"></a>
+        <a href="https://github.com/JamesSharrock/Gym-Console-App" class="icon-colour icon-fa fa-solid fa-code"></a>
       </div>
     </div>
+
+    <h5><b>Features:</b></h5>
+    <ul class = "circle">
+      <li><p>Allows a user to create(save), load and delete their workouts.</p></li>
+      <li><p>Calculates which plates are required on a barbell.</p></li>
+      <li><p>Estimates user's One Rep Max.</p></li>
+    </ul><br><hr><br>
+
+    <p>This project was created using C# .NET. The code structure is as follows -</p><br>
+    <ul class = "circle">
+      <li><p><b>Helper Libraries</b>: 
+        <ul class = "sub-circle">
+          <li><p><i>helper-library.cs</i>: Stores all possible colours and has various methods for printing colour outputs to the console.</p></li>
+          </ul>
+      <li><p><b>Classes</b>: 
+        <ul class = "sub-circle">
+          <li><p><i>Exercise.cs</i>: A singular exercise. Stores Name, Weight, Sets and Reps.</p></li>
+          <li><p><i>Log.cs</i>: A singular log. Stores Name, Date and a list of Exercise objects.</p></li>
+        </ul>
+      <li><p><b>Menus</b>:
+        <ul class = "sub-circle">
+          <li><p><i>main-menu.cs</i>:</p></li>
+          <li><p><i>log-menu.cs</i>:</p></li>
+          <li><p><i>barbell-menu.cs</i>:</p></li>
+          <li><p><i>rm-menu.cs</i>:</p></li>
+        </ul>
+      <li><p><b>Processing</b>:
+        <ul class = "sub-circle">
+          <li><p><i>main.cs</i>:</p></li>
+          <li><p><i>storage.cs</i>:</p></li>
+        </ul>
+    </ul><br><br>
   </article> 
 
 

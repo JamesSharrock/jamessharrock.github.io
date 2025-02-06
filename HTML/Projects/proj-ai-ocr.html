@@ -29,7 +29,7 @@
   </header>
           
   <nav>
-    <ul>
+    <ul class = "nav">
       <li><a href="../../index.html"><h3>Home</h3></a></li>	
       <li><a href="../Pages/projects.html"><h3>Projects</h3></a></li>
       <li><a href="../Pages/blog.html"><h3>Blog</h3></a></li>
@@ -43,20 +43,17 @@
         <center><h1 class = "rubik"> Optical Character Recognition </h1></center>
       </div>
       <div class = "title-icons">
-        <a href="https://github.com/JamesSharrock/AI-OCR" class="icon-colour icon-fa title fa-brands fa-github"></a>
+        <a href="https://github.com/JamesSharrock/AI-OCR" class="icon-colour icon-fa fa-solid fa-code"></a>
       </div>
     </div>
 
-
-    <p>Optical Character Recognition from the handwritten EMNIST dataset.</p><br><hr><br>
-    <img class = "img-l small" src="../../Images/proj-ai-ocr-emnist.png">
+    <img class = "img-l small" alt = "12 letters hand-drawn from EMNIST" src="../../Images/proj-ai-ocr-emnist.png">
     <p>Optical Character Recognition is the process of converting handwritten text into machine-encoded text through mediums 
       such as documents, written papers, or images. Developing automated methods for this using machine learning and deep 
       learning of large datasets is important for producing AI models that can appropriately recognise and convert this text. 
       In this work, we aim to compare varying classification models for their efficiency and accuracy in creating an AI model 
       for Optical Character Recognition. This has many uses such as data entry in transcribing written records into a digital 
       form.</p><br> 
-    
     <p>The EMNIST dataset is a collection of 26,000 images. The format of this data is 26,000 28x28 pixel images with each 
       pixel represented by a numerical value. Each image is also provided with a corresponding label as to the correct digital 
       character that the handwritten image refers to. Data is provided as a 1x784 vector and variable labels stored as a 
@@ -65,7 +62,17 @@
       convert the labels into a categorical array for further processing. The data is split into training and testing subsets 
       to avoid overfitting. A random permutation of the 26,000 images is created and used to make a 50/50 split of training 
       and testing subsets.</p><br><hr><br>
-    <p>The results can be seen in the following table:</p><br>
+
+    <h5><b>Methodology:</b></h5><br>
+    <p>In this study we compare various classification models and distance measures to classify the test data. We
+      implement the K-nearest neighbour classification model. This model measures the distance from our test
+      point to the nearest points. It then looks at the k-nearest of these and sets the value of the test point to the
+      most common labelled point nearby. We use the k-value of 28 as a compromise for efficiency and accuracy.
+      In this method we compare the impact of using Euclidean distance against using L1 or Manhattan distance.
+      We then also compare two models from MatLab using pre-defined functions for K-nearest neighbour and
+      SVM for Multiclass. SVM for Multiclass works by splitting data into linearly separated groups.</p><br><hr><br>
+
+    <h5><b>Results:</b></h5><br>
     <table>
       <tr>
         <th class = "proj-th">Classification Model</th>
@@ -115,9 +122,9 @@
       example, looking at the confusion charts we see the models have issues with distinguishing between the letter I and L.
     </p><br><hr><br>
 
-    <p>Data and Charts:</p><br>
-    <img class = "img-r medium" src="../../Images/proj-ai-ocr-confusion.png">
-    <p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
+    <h5><b>Data and Charts:</b></h5>
+    <img class = "img-r medium" alt = "Confusion Tables of the 4 Algorithms" src="../../Images/proj-ai-ocr-confusion.png">
+    <br><p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
       respectively. The blue diagonal line we can see indicates our successful matches of characters where our model
       correctly predicted a hand-drawn letter and matched it to the correct class.<br><br>
       The other boxes also indicate matches but these are incorrect matches. The higher the gradient of orange means the more

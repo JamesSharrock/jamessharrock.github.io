@@ -54,7 +54,7 @@
 
 
 /* ------- NAV -----------------------*/
-    ul {
+    ul.nav {
         list-style-type: none;
         margin: 0em;
         padding: 0em;
@@ -67,7 +67,7 @@
         text-decoration: none;
         text-align: center;
     }
-    nav ul li {
+    nav ul.nav li {
         float: center;
         width: 100%;
     }
