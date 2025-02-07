@@ -17,6 +17,9 @@
     --light-icon-hover: #ffddd0;
     --light-title-icon: #355249;
     --light-title-hover: #c5917d;
+    --light-code-text: white;
+    --light-code-background: #2e2e2e;
+    --light-code-number: white;
 
     --dark-background: #303030; 
     --dark-nav: #4b4b4b;
@@ -33,6 +36,10 @@
     --dark-h6: white;
     --dark-icon: white;
     --dark-icon-hover: #c5917d;
+    --dark-code-text: white;
+    --dark-code-background: #4b4b4b;
+    --dark-code-number: white;
+    --dark-title-hover: #c5917d;
 }
 
 
@@ -49,7 +56,7 @@
         & .fa-solid:hover{color: var(--light-icon-hover);}
         & .fa-regular:hover{color: var(--light-icon-hover);}
         & .fa-brands:hover{color: var(--light-icon-hover);}
-        & .icon-colour:hover{color: var(--light-title-hover)}
+        & .icon-colour:hover{color: var(--light-title-hover);}
     }
 
     .dark-mode{
@@ -63,6 +70,7 @@
         & .fa-solid:hover{color: var(--dark-icon-hover);}
         & .fa-regular:hover{color: var(--dark-icon-hover);}
         & .fa-brands:hover{color: var(--dark-icon-hover);}
+        & .icon-colour:hover{color: var(--dark-title-hover);}
     }
 }
 
@@ -82,14 +90,21 @@
     & h5{color: var(--light-h5);}
     & h6{color: var(--light-h6);}
 
-    & code{color: var(--light-p);}
     & th{color: var(--light-p);}
     & td{
         color: var(--light-p);}
     & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--light-icon);}
-    & .icon-colour{color: var(--light-title-icon)}
+    & .icon-colour{color: var(--light-title-icon);}
     & .blog-p{color: var(--light-p-blog);}
     & .proj-p{color: var(--light-p-proj);}
+
+    & code{
+        background-color: var(--light-code-background);
+        color: var(--light-code-text);
+    }
+    & pre{background-color: var(--light-code-background);}
+    & pre code span::before{color: var(--light-code-number);}
+    & pre .code-title{color: var(--light-code-text);}
 }
 
 
@@ -110,10 +125,17 @@
     & h5{color: var(--dark-h5);}
     & h6{color: var(--dark-h6);}
 
-    & code{color: var(--dark-p);}
     & th{color: var(--dark-p);}
     & td{color: var(--dark-p);}
-    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon){color: var(--dark-icon);}
+    & :is(.fa-github, .fa-linkedin-in, .fa-envelope, .fa-moon, .icon-colour){color: var(--dark-icon);}
     & .blog-p{color: var(--dark-p-blog);}
     & .proj-p{color: var(--dark-p-proj);}
+
+    & code{
+        background-color: var(--dark-code-background);
+        color: var(--dark-code-text);
+    }
+    & pre{background-color: var(--dark-code-background);}
+    & pre code span::before{color: var(--dark-code-number);}
+    & pre .code-title{color: var(--dark-code-text);}
 }

@@ -45,8 +45,15 @@
       <div class = "title-icons">
         <a href="https://github.com/JamesSharrock/AI-OCR" class="icon-colour icon-fa fa-solid fa-code"></a>
       </div>
-    </div>
+    </div><hr><br>
 
+    <p>An investigation into custom and built-in machine learning algorithms for optical character recognition (OCR) on 
+      the EMNIST hand-drawn character dataset. This is done using MATLAB code. This experiment compares a custom K-Nearest 
+      Neighbour algorithm with two varying distance measures against the built-in: K-Nearest Neighbour and SVM Multiclass 
+      from MATLAB.
+    </p><br><hr>
+
+    <h5>Introduction:</h5><br>
     <img class = "img-l small" alt = "12 letters hand-drawn from EMNIST" src="../../Images/proj-ai-ocr-emnist.png">
     <p>Optical Character Recognition is the process of converting handwritten text into machine-encoded text through mediums 
       such as documents, written papers, or images. Developing automated methods for this using machine learning and deep 
@@ -61,18 +68,18 @@
       We convert the images into a double type so that it can be scaled accurately unlike an integer. We also 
       convert the labels into a categorical array for further processing. The data is split into training and testing subsets 
       to avoid overfitting. A random permutation of the 26,000 images is created and used to make a 50/50 split of training 
-      and testing subsets.</p><br><hr><br>
+      and testing subsets.</p><br><hr>
 
-    <h5><b>Methodology:</b></h5><br>
+    <h5>Methodology:</h5><br>
     <p>In this study we compare various classification models and distance measures to classify the test data. We
       implement the K-nearest neighbour classification model. This model measures the distance from our test
       point to the nearest points. It then looks at the k-nearest of these and sets the value of the test point to the
       most common labelled point nearby. We use the k-value of 28 as a compromise for efficiency and accuracy.
       In this method we compare the impact of using Euclidean distance against using L1 or Manhattan distance.
       We then also compare two models from MatLab using pre-defined functions for K-nearest neighbour and
-      SVM for Multiclass. SVM for Multiclass works by splitting data into linearly separated groups.</p><br><hr><br>
+      SVM for Multiclass. SVM for Multiclass works by splitting data into linearly separated groups.</p><br><hr>
 
-    <h5><b>Results:</b></h5><br>
+    <h5>Results:</h5><br>
     <table>
       <tr>
         <th class = "proj-th">Classification Model</th>
@@ -120,9 +127,9 @@
       enough for making this OCR model viable in commercial use and so further testing and training of other models is 
       important for increasing these numbers. Further evaluation could also be done to recognise areas of weakness. For 
       example, looking at the confusion charts we see the models have issues with distinguishing between the letter I and L.
-    </p><br><hr><br>
+    </p><br><hr>
 
-    <h5><b>Data and Charts:</b></h5>
+    <h5>Data and Charts:</h5>
     <img class = "img-r medium" alt = "Confusion Tables of the 4 Algorithms" src="../../Images/proj-ai-ocr-confusion.png">
     <br><p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
       respectively. The blue diagonal line we can see indicates our successful matches of characters where our model

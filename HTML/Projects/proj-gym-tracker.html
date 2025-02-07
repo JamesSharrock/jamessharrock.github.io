@@ -45,43 +45,58 @@
       <div class = "title-icons">
         <a href="https://github.com/JamesSharrock/Gym-Console-App" class="icon-colour icon-fa fa-solid fa-code"></a>
       </div>
-    </div>
+    </div><hr><br>
 
-    <h3 style ="font-size: 2em;">NOT COMPLETED - Editing in progress :)</h3>
+    <p>This C# Console App was created using C# .NET. It allows a user to create(save), load and delete their workouts.
+      It also calculates which weight plates are required on a barbell and estimates the user's One Rep Max. It is a good
+      project for creating user menus and implementing file handling and storage. In this particular case JSON files are
+      used to store workouts.
+    </p><br><hr>
 
-    <h5><b>Features:</b></h5>
+    <h5>Code Structure:</h5>
     <ul class = "circle">
-      <li><p>Allows a user to create(save), load and delete their workouts.</p></li>
-      <li><p>Calculates which plates are required on a barbell.</p></li>
-      <li><p>Estimates user's One Rep Max.</p></li>
-    </ul><br><hr><br>
-
-    <p>This project was created using C# .NET. The code structure is as follows -</p><br>
-    <ul class = "circle">
-      <li><p><b>Helper Libraries</b>: 
+      <li><p>Helper Libraries:</p></li>
         <ul class = "sub-circle">
           <li><p><i>helper-library.cs</i>: Stores all possible colours and has various methods for printing colour outputs to the console.</p></li>
           </ul>
-      <li><p><b>Classes</b>: 
+      <li><p>Classes: </p></li>
         <ul class = "sub-circle">
           <li><p><i>Exercise.cs</i>: A singular exercise. Stores Name, Weight, Sets and Reps.</p></li>
           <li><p><i>Log.cs</i>: A singular log. Stores Name, Date and a list of Exercise objects.</p></li>
         </ul>
-      <li><p><b>Menus</b>:
+      <li><p>Menus:</p></li>
         <ul class = "sub-circle">
-          <li><p><i>main-menu.cs</i>:</p></li>
-          <li><p><i>log-menu.cs</i>:</p></li>
-          <li><p><i>barbell-menu.cs</i>:</p></li>
-          <li><p><i>rm-menu.cs</i>:</p></li>
+          <li><p><i>main-menu.cs</i>: Displays the main menu, handles inputs and routes to the 3 sub-menus listed below.</p></li>
+          <li><p><i>log-menu.cs</i>: Displays the log menu, handles inputs and routes to sub-methods: newLog, loadLog and deleteLog.</p></li>
+          <li><p><i>barbell-menu.cs</i>: Displays the barbell menu, handles inputs and calculates the weights needed.</p></li>
+          <li><p><i>rm-menu.cs</i>: Displays the onerepmax menu, andles inputs and calculates the weights needed.</p></li>
         </ul>
-      <li><p><b>Processing</b>:
+      <li><p>Processing:</p></li>
         <ul class = "sub-circle">
-          <li><p><i>main.cs</i>:</p></li>
-          <li><p><i>storage.cs</i>:</p></li>
-        </ul>
-    </ul><br><br>
-  </article> 
+          <li><p><i>main.cs</i>: The main part of the program. This is where the main-menu is initially ran from</p></li>
+          <li>
+            <p><i>storage.cs</i>: Handles the saving, loading and deleting of files. Creates a folder in the user's 
+              directory and processes the Log objects into JSON files.</p>
+            </li>
+        </ul> 
+    </ul><br><hr>
 
+    <h5>Code View:</h5><br>
+
+    <p>Test to see how description goes and text wrapping</p>
+    <pre>
+      <div class="code-title"><i>Filename.cs</i></div>
+      <code><span>let example = "Hello, world!";</span>
+          <span>function greet() {</span>
+          <span>    console.log(example);</span>
+          <span>}</span>
+          <span>greet();</span></code>
+    </pre>
+    <p>Test to see how description goes and text wrapping</p>
+
+    <br><br>
+  </article>
+  
 
   <div class = "footer">
     <div class = "footer-text">

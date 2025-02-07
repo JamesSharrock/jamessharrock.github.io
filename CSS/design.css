@@ -100,6 +100,46 @@ li:not(ul.nav li){
 }
 
 
+/*---------------CODE ELEMENTS-------------*/
+pre {
+    counter-reset: line-number; 
+    border-radius: 1em; 
+    overflow: auto; 
+    user-select: none;
+}
+pre code {
+    padding-left: 3em; 
+    margin-top: 0;
+    display: block;
+    font-family: 'Courier New', Courier, monospace; 
+    margin: 0; 
+    line-height: 0.5; 
+}
+pre code span::before {
+    padding-left: 3em;
+    counter-increment: line-number; 
+    content: counter(line-number); 
+    display: inline-block;
+    width: 2.5em; 
+    margin-left: -3em; 
+    padding-right: 1.5em; 
+}
+pre code span {
+    display: block;
+    margin: 0; 
+    padding: 0; 
+}
+pre .code-title {
+    padding-left: 0.8em;
+    position: inline-block; 
+    top: 0.1em; 
+    left: 0.1em; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bold; 
+}
+
+
+
 /*Specific Pages:*/
 /* -------------- Blog ------------- */
 .blog-p{
