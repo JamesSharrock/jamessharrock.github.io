@@ -37,11 +37,13 @@
     --dark-icon: white;
     --dark-icon-hover: #c5917d;
     --dark-code-text: white;
-    --dark-code-background: #4b4b4b;
+    --dark-code-background: #1b1b36;
     --dark-code-number: white;
-    --dark-title-hover: #c5917d;
+    --dark-title-hover: #c5917d
 }
-
+pre.line-numbers .line-numbers-rows{
+    border-right: 1px solid white;
+}
 
 /*---------PC Only ----------*/
 @media screen and (min-width: 800px) {
@@ -106,6 +108,8 @@
     & pre code span::before{color: var(--light-code-number);}
     & pre .code-title{color: var(--light-code-text);}
     & ul li::marker {color: var(--light-p);}
+
+    & hr{border: 0.5px solid black;}
 }
 
 
@@ -140,4 +144,8 @@
     & pre code span::before{color: var(--dark-code-number);}
     & pre .code-title{color: var(--dark-code-text);}
     & ul li::marker {color: var(--dark-p);}
+
+
+    & hr{border: 0.5px solid white;}
 }
+

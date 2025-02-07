@@ -10,6 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!--font-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!--icons-->
   <script src="../../Javascript/lightdark.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  <script src ="../../Javascript/code-lines.js" defer></script>
   <title>James Sharrock</title>
 </head>
 
@@ -83,16 +91,40 @@
 
     <h5>Code View:</h5><br>
 
-    <p>Test to see how description goes and text wrapping</p>
-    <pre>
-      <div class="code-title"><i>Filename.cs</i></div>
-      <code><span>let example = "Hello, world!";</span>
-          <span>function greet() {</span>
-          <span>    console.log(example);</span>
-          <span>}</span>
-          <span>greet();</span></code>
-    </pre>
-    <p>Test to see how description goes and text wrapping</p>
+    <p>The Helper Library class is a static class to allow it to be used throughout the menus without instantiation. It
+      has the following methods: colourMessage() and changeColour(). These are all used in processing
+      messages in colour to the screen.
+    </p>
+    <pre class = "line-numbers"><div class="code-title"><i>helper-library.cs</i></div>
+      <code class = "language-csharp">public static void colourMessageLine(string colour, string message, bool line = true){
+        changeColour(colour);     //Change to specified colour
+        if (line) {
+          Console.WriteLine(message);     //Print message on a new line
+        } else {
+          Console.Write(message);     //Print message on the same line
+        }
+        Console.ForegroundColor = ConsoleColor.White;     //Reset colour to default white
+}
+
+public static void changeColour(string colour){
+        switch(colour){
+            case "black":
+                Console.ForegroundColor = ConsoleColor.Black;
+                break;
+        //This switch-case has cases for all possible C# Console colours.
+  }
+}</code></pre>
+    <p>The Exercise.cs Class is simply a class for instantiating via the constructor.</p><br>
+
+    <pre class = "line-numbers"><div class="code-title"><i>Exercise.cs</i></div>
+      <code class = "language-csharp">public Exercise(string name, double weight, int sets, int reps){ //Constructor
+        this.name = name;
+        this.weight = weight;
+        this.sets = sets;
+        this.reps = reps;
+}</code></pre>
+
+
 
     <br><br>
   </article>
