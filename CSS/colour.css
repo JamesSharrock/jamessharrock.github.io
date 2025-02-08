@@ -100,7 +100,11 @@ pre.line-numbers .line-numbers-rows{
         background-color: var(--light-code-background) !important;
         color: var(--light-code-text);
     }
-    & pre{background-color: var(--light-code-background) !important;}
+    & pre{
+        background-color: var(--light-code-background) !important;
+        border: 3px solid;
+        border-color:white;
+    }
     & ul li::marker {color: var(--light-p);}
 
     & hr{border: 0.5px solid black;}
@@ -134,7 +138,10 @@ pre.line-numbers .line-numbers-rows{
         background-color: var(--dark-code-background);
         color: var(--dark-code-text);
     }
-    & pre{background-color: var(--dark-code-background) !important;}
+    & pre{
+        background-color: var(--dark-code-background) !important;
+        border: 3px solid white !important;
+    }
     & ul li::marker {color: var(--dark-p);}
 
 
