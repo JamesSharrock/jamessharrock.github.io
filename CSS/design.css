@@ -93,46 +93,25 @@ li:not(ul.nav li){
 
 
 /*---------------CODE ELEMENTS-------------*/
-pre.line-numbers {
-    display: flex;
-    flex-direction: column;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    border-radius: 1em !important;
-    overflow: auto !important; 
+pre {
+    white-space: pre-wrap;
+    width: 100%;
+    border-radius: 1em !important;;
     user-select: none;
-    padding: 1em !important;
-    margin: 1em 0em !important;
+    margin: 1em 0em;
     position: relative;
 }  
-pre.line-numbers code {
+pre code {
     white-space: pre-wrap !important;
     word-wrap: break-word !important;
-    padding-left: 4em; 
-    margin-top: 0;
+    padding-left: 0.5em; 
     display: block;
     font-family: 'Courier New', Courier, monospace; 
-    line-height: 1.4; 
-    counter-reset: line;
 }
-pre.line-numbers .line-numbers-rows {
-    box-sizing: border-box;
-    position: absolute;
-    pointer-events: none;
-    left: 0;
-    user-select: none;
-}
-pre.line-numbers .code-title {
-    padding-left: -5em;
-    padding-bottom: 1em;
+pre .code-title {
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bold; 
 } 
-pre.line-numbers .line-numbers-rows > * {
-    line-height: 1.4 !important;
-    height: 1.4em !important;
-    display: block !important;
-}
 
 
 

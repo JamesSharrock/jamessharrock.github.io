@@ -14,8 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
   <script src ="../../Javascript/code-lines.js" defer></script>
   <title>James Sharrock</title>
@@ -89,42 +87,27 @@
         </ul> 
     </ul><br><hr>
 
-    <h5>Code View:</h5><br>
+    <h5>Classes Explained:</h5><br>
 
-    <p>The Helper Library class is a static class to allow it to be used throughout the menus without instantiation. It
-      has the following methods: colourMessage() and changeColour(). These are all used in processing
-      messages in colour to the screen.
-    </p>
-    <pre class = "line-numbers"><div class="code-title"><i>helper-library.cs</i></div>
-      <code class = "language-csharp">public static void colourMessageLine(string colour, string message, bool line = true){
-        changeColour(colour);     //Change to specified colour
-        if (line) {
-          Console.WriteLine(message);     //Print message on a new line
-        } else {
-          Console.Write(message);     //Print message on the same line
-        }
-        Console.ForegroundColor = ConsoleColor.White;     //Reset colour to default white
-}
+    <p>The Exercise class stores a singular exercise. It has properties: name, weight, sets and reps.
+    </p><br>
+    <pre><div class="code-title"><i>Exercise.cs</i></div><code class = "language-csharp">
+public Exercise(string name, double weight, int sets, int reps){ //Constructor
+    this.name = name;
+    this.weight = weight;
+    this.sets = sets;
+    this.reps = reps;
+    }</code></pre><br>
 
-public static void changeColour(string colour){
-        switch(colour){
-            case "black":
-                Console.ForegroundColor = ConsoleColor.Black;
-                break;
-        //This switch-case has cases for all possible C# Console colours.
-  }
+    <p>The Exercise class stores a singular exercise. It has properties: name, weight, sets and reps.
+    </p><br>
+    <pre><div class="code-title"><i>Log.cs</i></div><code class = "language-csharp">
+public Exercise(string name, double weight, int sets, int reps){ //Constructor
+    this.name = name;
+    this.weight = weight;
+    this.sets = sets;
+    this.reps = reps;
 }</code></pre>
-    <p>The Exercise.cs Class is simply a class for instantiating via the constructor.</p><br>
-
-    <pre class = "line-numbers"><div class="code-title"><i>Exercise.cs</i></div>
-      <code class = "language-csharp">public Exercise(string name, double weight, int sets, int reps){ //Constructor
-        this.name = name;
-        this.weight = weight;
-        this.sets = sets;
-        this.reps = reps;
-}</code></pre>
-
-
 
     <br><br>
   </article>
