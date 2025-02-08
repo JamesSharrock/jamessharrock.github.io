@@ -96,10 +96,12 @@ li:not(ul.nav li){
 pre {
     white-space: pre-wrap;
     width: 100%;
-    border-radius: 1em !important;;
+    border-radius: 1.5em 0em 1.5em 1.5em!important;;
     user-select: none;
     margin: 1em 0em;
     position: relative;
+    padding-top: 2em; 
+    overflow: hidden !important;
 }  
 pre code {
     white-space: pre-wrap !important;
@@ -111,7 +113,21 @@ pre code {
 pre .code-title {
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bold; 
+    position: relative;
 } 
+.pre-icon {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    transform: scale(3);
+    margin: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+}
+.pre-icon path{
+    stroke: white;
+}
 
 
 
