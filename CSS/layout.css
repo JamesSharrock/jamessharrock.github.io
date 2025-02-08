@@ -17,7 +17,7 @@ body, html {
   align-items: center;
   padding: 0.5em 0.5em;
   font-size: 1.8em;
-  height: 24vh;
+  height: 20vh;
 }
 .header-text {
   display: flex;
