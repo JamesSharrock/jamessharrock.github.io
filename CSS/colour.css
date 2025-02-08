@@ -17,14 +17,12 @@
     --light-icon-hover: #ffddd0;
     --light-title-icon: #355249;
     --light-title-hover: #c5917d;
-    --light-code-text: white;
     --light-code-background: #2e2e2e;
-    --light-code-number: white;
 
     --dark-background: #303030; 
     --dark-nav: #4b4b4b;
     --dark-hover: #c5917d; 
-    --dark-border: black; 
+    --dark-border: #000; 
     --dark-p-blog: white;
     --dark-p-proj: white;
     --dark-p: white;
@@ -36,9 +34,7 @@
     --dark-h6: white;
     --dark-icon: white;
     --dark-icon-hover: #c5917d;
-    --dark-code-text: white;
-    --dark-code-background: #1b1b36;
-    --dark-code-number: white;
+    --dark-code-background: #222245;
     --dark-title-hover: #c5917d
 }
 pre.line-numbers .line-numbers-rows{
@@ -101,12 +97,10 @@ pre.line-numbers .line-numbers-rows{
     & .proj-p{color: var(--light-p-proj);}
 
     & code{
-        background-color: var(--light-code-background);
+        background-color: var(--light-code-background) !important;
         color: var(--light-code-text);
     }
-    & pre{background-color: var(--light-code-background);}
-    & pre code span::before{color: var(--light-code-number);}
-    & pre .code-title{color: var(--light-code-text);}
+    & pre{background-color: var(--light-code-background) !important;}
     & ul li::marker {color: var(--light-p);}
 
     & hr{border: 0.5px solid black;}
@@ -140,9 +134,7 @@ pre.line-numbers .line-numbers-rows{
         background-color: var(--dark-code-background);
         color: var(--dark-code-text);
     }
-    & pre{background-color: var(--dark-code-background);}
-    & pre code span::before{color: var(--dark-code-number);}
-    & pre .code-title{color: var(--dark-code-text);}
+    & pre{background-color: var(--dark-code-background) !important;}
     & ul li::marker {color: var(--dark-p);}
 
 
