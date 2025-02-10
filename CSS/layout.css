@@ -108,6 +108,7 @@ article {
   max-width: 100%;
   min-height: 21em;
   max-height: 38em;
+  border-radius: 1.5em;
 }
 .container::after, .row::after {
   display: inline-block;
@@ -122,6 +123,8 @@ article {
   text-align: center;
   cursor: pointer;
   width: 100%;
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
 }
 .line {
   float: left;
@@ -183,13 +186,16 @@ article {
   text-indent: 3%;
   cursor: pointer;
   width: 100%;
-  padding: 0.5em 0em;
+  padding: 0em 0em;
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em; 
 }
 .blog-card {
   padding: 0em 0em;
   max-width: 100%;
   min-height: 10em;
   max-height: 38em;
+  border-radius: 1.5em;
 }
 .blog-container::after, .row::after {
   padding: 0em 0em;
