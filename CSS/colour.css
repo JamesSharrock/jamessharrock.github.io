@@ -153,5 +153,9 @@ pre.line-numbers .line-numbers-rows{
     & .title-section {background-color: var(--dark-border);}
     & .title-text h1 {color: white !important;}
     & .title-icons a {color: white;}
+
+    & :is(.card, .blog-card){
+        border: 2px solid white;
+    }
 }
 
