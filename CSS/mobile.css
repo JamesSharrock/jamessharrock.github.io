@@ -90,18 +90,12 @@
 
 
 /* -------- DIVIDERS ----------------------- */
-    .col-1{
+    :is(.col-1, .col-2, .col-3){
         width: 100%;
         display: block;
+        padding: 0em 0.5em;
     }
-    .col-2{
-        width: 100%;
-        display: block;
-    }
-    .col-3 {
-        width: 100%;
-        display: block;
-    }
+
     .card{width: 100%;}
 
     .split {
