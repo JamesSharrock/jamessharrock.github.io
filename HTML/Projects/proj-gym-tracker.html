@@ -46,9 +46,9 @@
         <center><h1 class = "rubik"> Gym Tracker - Console </h1></center>
       </div>
       <div class = "title-icons">
-        <a href="https://github.com/JamesSharrock/Gym-Console-App" class="icon-colour icon-fa fa-solid fa-code"></a>
+        <a href="https://github.com/JamesSharrock/Gym-Console-App" class="icon-fa fa-solid fa-code"></a>
       </div>
-    </div><hr><br>
+    </div><br><br><br>
 
     <p>This C# Console App was created using C# .NET. It allows a user to create(save), load and delete their workouts.
       It also calculates which weight plates are required on a barbell and estimates the user's One Rep Max. It is a good
@@ -72,7 +72,7 @@
           <li><p><i>main-menu.cs</i>: Displays the main menu, handles inputs and routes to the 3 sub-menus listed below.</p></li>
           <li><p><i>log-menu.cs</i>: Displays the log menu, handles inputs and routes to sub-methods: newLog, loadLog and deleteLog.</p></li>
           <li><p><i>barbell-menu.cs</i>: Displays the barbell menu, handles inputs and calculates the weights needed.</p></li>
-          <li><p><i>rm-menu.cs</i>: Displays the onerepmax menu, andles inputs and calculates the weights needed.</p></li>
+          <li><p><i>rm-menu.cs</i>: Displays the onerepmax menu, Handles inputs and calculates the weights needed.</p></li>
         </ul>
       <li><p>Processing:</p></li>
         <ul class = "sub-circle">
@@ -89,22 +89,29 @@
     <p>The Exercise class stores a singular exercise. It has properties: name, weight, sets and reps.
     </p><br>
     <pre><div class="code-title"><i>Exercise.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
-public Exercise(string name, double weight, int sets, int reps){ //Constructor
-    this.name = name;
-    this.weight = weight;
-    this.sets = sets;
-    this.reps = reps;
+public class Exercise{ 
+  public string name;
+  public double weight;
+  public int sets;
+  public int reps;
+  
+  //Constructor
+  public Exercise(string name, double weight, int sets, int reps){...}
 }</code></pre><br>
 
-    <p>The Exercise class stores a singular exercise. It has properties: name, weight, sets and reps.
+    <p>The Log class is stored as a JSON file. It has descriptive properties: name and date that are used in the filename.
+      It also contains a list of Exercise objects that make up the content of the workout.
     </p><br>
     <pre><div class="code-title"><i>Log.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
-public Exercise(string name, double weight, int sets, int reps){ //Constructor
-    this.name = name;
-    this.weight = weight;
-    this.sets = sets;
-    this.reps = reps;
-}</code></pre>
+public class Log{
+  public string title;
+  public DateTime date;
+  public List&lt;Exercise&gt; exercises;
+
+  //Constructor
+  public Log(string title, DateTime date, List&lt;Exercise&gt; exercises){...}
+}
+</code></pre>
 
     <br><br>
   </article>

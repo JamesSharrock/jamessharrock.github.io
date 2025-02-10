@@ -81,7 +81,7 @@ pre.line-numbers .line-numbers-rows{
     & :is(.header, .footer, .card, .blog-card){background-color: var(--light-border);}
 
     & p{color: var(--light-p);}
-    & h1{color: var(--light-h1);}
+    & h1:not(.title-text h1){color: var(--light-h1);}
     & h2{color: var(--light-h2);}
     & h3{color: var(--light-h3);}
     & h4{color: var(--light-h4);}
@@ -108,6 +108,10 @@ pre.line-numbers .line-numbers-rows{
     & ul li::marker {color: var(--light-p);}
 
     & hr{border: 0.5px solid black;}
+    & .title-section {background-color: var(--light-border);}
+    & .title-text {color: white !important;}
+    & .title text h1 { color: white !important;}
+    & .title-icons a {color: white;}
 }
 
 
@@ -121,7 +125,7 @@ pre.line-numbers .line-numbers-rows{
     & :is(.header, .footer, .card, .blog-card){background-color: var(--dark-border);}
 
     & p{color: var(--dark-p);}
-    & h1{color: var(--dark-h1);}
+    & h1:not(.title-text h1){color: var(--dark-h1);}
     & h2{color: var(--dark-h2);}
     & h3{color: var(--dark-h3);}
     & h4{color: var(--dark-h4);}
@@ -146,5 +150,8 @@ pre.line-numbers .line-numbers-rows{
 
 
     & hr{border: 0.5px solid white;}
+    & .title-section {background-color: var(--dark-border);}
+    & .title-text h1 {color: white !important;}
+    & .title-icons a {color: white;}
 }
 

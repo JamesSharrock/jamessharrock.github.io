@@ -7,7 +7,7 @@
 
 
 /*----------Mobile Formatting ------------------*/
-@media screen and (max-width: 370px){
+@media screen and (max-width: 300px){
     .title-section {
         flex-direction: column;
         align-items: center;
