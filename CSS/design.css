@@ -109,6 +109,7 @@ pre code {
     padding-left: 0.5em; 
     display: block;
     font-family: 'Courier New', Courier, monospace; 
+    line-height: 1.1 !important;
 }
 pre .code-title {
     font-family: 'Courier New', Courier, monospace; 
