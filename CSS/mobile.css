@@ -50,6 +50,9 @@
     .title-text {
         text-align: left;
     }
+    .first-col{margin-top: 1.5em;}
+    .middle-col{margin: 1.5em 0em;}
+    .last-col{margin-bottom: 2em;}
 
     
 

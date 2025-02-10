@@ -156,9 +156,19 @@ article {
   width: 33.3%;
   padding: 0em 1em;
 }
-.first-col{margin-top: 1.5em;}
-.middle-col{margin: 1.5em 0em;}
-.last-col{margin-bottom: 2em;}
+
+.first-col{
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+.middle-col{
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+.last-col{
+  margin-top: 0.75em;
+  margin-bottom: 1.5em;
+}
 
 
 .left{float: left;}
