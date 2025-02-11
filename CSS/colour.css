@@ -17,7 +17,7 @@
     --light-icon-hover: #ffddd0;
     --light-title-icon: #355249;
     --light-title-hover: #c5917d;
-    --light-code-background: #2e2e2e;
+    --light-code-background: rgba(46, 46, 46, 1); /*#2e2e2e*/
 
     --dark-background: #303030; 
     --dark-nav: #4b4b4b;
@@ -34,12 +34,24 @@
     --dark-h6: white;
     --dark-icon: white;
     --dark-icon-hover: #c5917d;
-    --dark-code-background: #222245;
+    --dark-code-background: rgba(22, 22, 45, 1); /*#222245*/
     --dark-title-hover: #c5917d
 }
-pre.line-numbers .line-numbers-rows{
-    border-right: 1px solid white;
+
+/*------Generic Colours (irrespective of mode) ------*/
+pre{
+    text-shadow: none !important;
 }
+.code-title{
+    color: white !important;
+}
+code{
+    color: white !important;
+    text-shadow: none !important;
+    & span {background: transparent !important;}
+}
+
+
 
 /*---------PC Only ----------*/
 @media screen and (min-width: 800px) {
@@ -96,15 +108,15 @@ pre.line-numbers .line-numbers-rows{
     & .blog-p{color: var(--light-p-blog);}
     & .proj-p{color: var(--light-p-proj);}
 
-    & code{
-        background-color: var(--light-code-background) !important;
-        color: var(--light-code-text);
-    }
+    & code[class*="language-"]{
+         background-color: var(--light-code-background) !important; 
+         color: var(--light-code-text); 
+    } 
     & pre{
-        background-color: var(--light-code-background) !important;
+        background-color: var(--light-code-background) !important; 
         border: 3px solid;
-        border-color:white;
-    }
+        border-color:white; 
+    } 
     & ul li::marker {color: var(--light-p);}
 
     & hr{border: 0.5px solid black;}
@@ -138,14 +150,15 @@ pre.line-numbers .line-numbers-rows{
     & .blog-p{color: var(--dark-p-blog);}
     & .proj-p{color: var(--dark-p-proj);}
 
-    & code{
-        background-color: var(--dark-code-background);
-        color: var(--dark-code-text);
-    }
-    & pre{
-        background-color: var(--dark-code-background) !important;
-        border: 3px solid white !important;
-    }
+    & code[class*="language-"]{
+        background-color: var(--dark-code-background) !important; 
+        color: var(--dark-code-text); 
+   } 
+   & pre{
+       background-color: var(--dark-code-background) !important; 
+       border: 3px solid;
+       border-color:white; 
+   } 
     & ul li::marker {color: var(--dark-p);}
 
 

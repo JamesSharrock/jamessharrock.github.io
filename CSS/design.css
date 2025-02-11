@@ -130,6 +130,11 @@ pre .code-title {
 }
 
 
+/*MATLAB ends up with a white shadow */
+pre.language-matlab{
+    text-shadow: none !important;
+}
+
 
 
 

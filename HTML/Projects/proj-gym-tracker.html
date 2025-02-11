@@ -110,8 +110,232 @@ public class Log{
   //Constructor
   public Log(string title, DateTime date, List&lt;Exercise&gt; exercises){...}
 }
+</code></pre><br><hr>
+
+    <h5>Menus:</h5><br>
+    <p>The menu classes all follow a similar pattern. They consist of:</p>
+    <ul class = "circle">
+      <li><p>A method that displays the menu options and inputs needed to access these submenus.</p></li>
+      <li><p>A recursive method that handles user input and validation.</p></li>
+      <li><p>If the menu is for a utility then additional functions for mathematical processing are included.</p></li>
+    </ul><br>
+    
+    <pre><div class="code-title"><i>main-menu.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+class MainMenu {
+
+  public static void Intro() {
+    HelperLib.colourMessage("blue", "Gym Tracker Console App");
+    displayMainMenu();
+    displayMainInput();
+  }
+
+  public static void displayMainMenu() {
+    //colourMessages of possible submenus
+  }
+
+  public static void displayMainInput() {
+    HelperLib.colourMessage("cyan", "Select a Mode: ", false);
+    string ?mode = Console.ReadLine();
+    switch(mode) {
+      //Various cases for submenu inputs
+      default:
+        HelperLib.colourMessage("red, "Invalid Input");
+        displayMainInput();
+        break;
+    }
+  }
+}</code></pre>
+    <br>
+    <p>These menus follow the same format so only differences to the MainMenu are shown in the following classes. </p>
+  <br>
+<pre><div class="code-title"><i>log-menu.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+class LogMenu {
+
+  public static void displayLogMenu() {
+    //colourMessages of possible functions
+  }
+
+  public static void displayLogInput() {
+    //Inputs for possible functions + Validation.
+  }
+
+  public static void newLog() {
+    //Output, Input handling + type conversion ...
+    storage.Save(newLog);
+  }
+
+  public static void loadLog() {
+    //Output, Input handling + type conversion ...
+    Log log = storage.Load(date);
+    log.printLog();
+  }
+
+  public static void deleteLog() {
+    //Output, Input handling + type conversion ...
+    Log log = storage.Load(Date);
+    log.printLog();
+    storage.Delete(date);
+  }
+}</code></pre>
+
+<pre><div class="code-title"><i>barbell-menu.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+class BarbellMenu {
+
+  public static void displayBarbellMenu() {
+    //colourMessages
+  }
+
+  public static void displayBarbellInput() {
+    //Input + Validation for barbell function
+    List&lt;string&gt; results = CalculatePlates(weight);
+    //Print formatting of results
+  }
+
+  public static List&lt;string&gt; CalculatePlates(double weight) {
+    var results = new List&lt;string&gt;();
+    double barbell = 20;
+    double oneSide = (weight - barbell) / 2;
+    double[] plates = [20, 15, 10, 5, 2.5, 1.25];
+    foreach (double plate in plates) {
+      double amount = Math.Floor(oneSide / plate);
+      if (amount > 0) {
+        results.Add($"{plate}KG: {amount}");
+      }
+      oneSide -= plate * amount;
+    }
+    return results;
+  }
+}
 </code></pre>
 
+<pre><div class="code-title"><i>rm-menu.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+  class RMMenu {
+
+    public static void displayRMMenu() {
+      //colourMessages
+    }
+
+    public static void displayRMInput() {
+      //Input + Validation for RM function
+      double oneRepMax = CalculateOneRM(weight, reps);
+      //Print formatting of result
+    }
+
+    public static double CalculateOneRM(double weight, double reps) {
+      double oneRM = weight * (1 + (reps/30));
+      oneRM = Math.Round(oneRM, 2);
+      return oneRM;
+    }
+  }</code></pre>
+    <br>
+
+
+    <p>I think it is also important to address the fact that we have input + output handling in our menu classes and yet 
+      we also include methods for processing such as newLog(), CalculatePlates() etc. Initially I separated these classes 
+      however the reason I chose to do this within the same class was due to the complexity being low and the fact none of 
+      the methods were similar enough to share methods meaning separating classes menu -> processing -> storage is the exact 
+      same just with more files. If this project was to grow in scope in the future then naturally separating the menus 
+      from the processing would be easily implemented.
+    </p><br><hr>
+
+    <h5>Storage and Logging:</h5><br>
+    <p>The <i>Storage.cs</i> class is used for converting our Log objects that we create from the log-menu subfunctions to 
+      JSON files.</p>
+    <ul class = "circle">
+      <li><p>LogMenu newLog() uses Storage.Save(Log log)</p></li>
+      <li><p>LogMenu loadLog() uses Storage.Load(DateTime date)</p></li>
+      <li><p>LogMenu deleteLog() uses Storage.Delete(DateTime date)</p></li>
+    </ul><br>
+
+    <pre><div class="code-title"><i>storage.cs - Save</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+class Store {
+
+  public string GetLogPath() {
+    //Returns the directory to save 
+  }
+
+  public void Save(Log log) {
+    string path = GetLogPath();
+    Directory.CreateDirectory(path);
+    string date = log.date.ToString("dd-MM-yyyy");
+    string fileName = $"{date}_{log.title}.json";
+    string filePath = Path.Combine(path, fileName);
+    var options = new JsonSerializerOptions { WriteIndented = true };
+    string jsonString = JsonSerializer.Serialize(log, options);
+    File.WriteAllText(filePath, jsonString);
+    HelperLib.colourMessage("green", "File saved successfully");
+  }
+}</code></pre>
+
+<pre><div class="code-title"><i>storage.cs - Load</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+  public Log Load(DateTime date) {
+    string dateString = date.ToString("dd-MM-yyyy");
+    string path = GetLogPath();
+    string[] files = Directory.GetFiles(path, $"{dateString}*.json");
+
+    //Load the first file 
+    if (files.Length > 0) {
+      string filePath = files[0];
+      string jsonString = File.ReadAllText(filePath);
+      Log log = JsonSerializer.Deserialize&lt;Log&gt;(jsonString);
+      return log;
+    } else {
+      throw new FileNotFoundException("No file found at this date.");
+    }
+  }
+</code></pre>
+
+<pre><div class="code-title"><i>storage.cs - Delete</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+  public void Delete(DateTime date) {
+    string dateString = date.ToString("dd-MM-yyyy");
+    string path = GetLogPath();
+    string[] files = Directory.GetFiles(path, $"{dateString}*.json");
+
+    //Delete all Files 
+    if (files.Length > 0) {
+      foreach (string filePath in files) {
+        File.Delete(filePath);
+        HelperLib.colourMessage("green", "File deleted successfully");
+      }
+    } else {
+      HelperLib.colourMessage("red", "No file found at this date");
+    }
+  }
+</code></pre><br><hr>
+
+    <h5>Helper Library:</h5>
+
+<pre><div class="code-title"><i>helper-library.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+public static class HelperLib {
+
+  public static void colourMessage(string colour, string message, bool line = true) {
+    changeColour(colour);
+    if (line) {
+      Console.WriteLine(message);
+    } else {
+      Console.Write(message);
+    }
+    Console.ForegroundColor = ConsoleColor.White;
+  }
+
+  public static void changeColour(string colour) {
+    switch(colour) {
+      case "black":
+        Console.ForegroundColor = ConsoleColor.Black;
+        break;
+      //Case for every possible console colour
+      default:
+        Console.ForegroundColor = ConsoleColor.White;
+        break;
+    }
+  }
+}
+</code></pre><br><hr>
+
+    <h5>Code Demo:</h5><br>
+    <p>Work In Progress: create an API that allows me to embed my C# Console program within my website to allow visitors to 
+      use the application.
+    </p>
     <br><br>
   </article>
   

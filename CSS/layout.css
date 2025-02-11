@@ -214,5 +214,14 @@ article {
   max-width: 100%;
 }
 
-
+video{
+  max-height: 80vh;
+}
+.generic-img{
+  max-height: 80vh !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block;
+  padding-bottom: 0.07em;
+}
 /*----------Flexbox----------*/

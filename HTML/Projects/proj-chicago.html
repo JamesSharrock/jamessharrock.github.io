@@ -76,7 +76,7 @@
     <h5><b>Scripts Overview:</b></h5>
     <ul class = "circle">
       <li><p><i>CarSpawn.cs</i>: Instantiates enemy cars above the screen with a random horizontal position.</p>
-      <li><p><i>Destroy.cs</i>: Deletes enemy cars at a certain point below the screen for efficiency.</p>
+      <li><p><i>Destroy.cs</i>: Deletes enemy cars at a certain point below the screen for memory.</p>
       <li><p><i>Enemy.cs</i>: Moves the enemy car down the screen and has a rigidbody to allow for collisions.</p>
       <li><p><i>Player.cs</i>: Allows the user to control the movement of their car. If it detects a collision with an 
                 enemy then it deletes the player car.</p>
@@ -88,17 +88,16 @@
     <h5><b>Code View and Development:</b></h5><br>
     <p>Initially I began development with a slightly different set of requirements as to what I wanted the final product
       to end up as. These included: Horizontal gameplay, recording and giving a score based on the user's position in a 
-      race amongst a set of cars and a fuel system where the user would pick up consumable items.</p><br>
+      race amongst a set of cars, and a fuel system where the user would pick up consumable items.</p><br>
     <p>I soon realised there were issues with my requirements and changed them slightly.</p>
 
     <ul class = "circle">
       <li><p>First of all, having the screen
         be horizontal would be good for ergonomics and match genre leading games (Asphalt 8 + Real Racing 3). However it had
-        unintended consequences in reducing the vertical height od the screen as the game is 2-dimensional, resulting in a
-        smaller possible reaction time.
+        unintended consequences as reducing the vertical height of the screen results in a smaller possible reaction time.
       </p></li>
       <li><p>Secondly, a score system based on position means that at some point in time the user would inevitably be in 1st place.
-          Once this occurs then some mechanic would need to be introduced to have enemy cars overtake he user or the game would
+          Once this occurs then some mechanic would need to be introduced to have enemy cars overtake the user or the game would
           become incredibly monotonous. A simpler solution however would be to score based on the distance the user had driven
           without a collision.
       </p></li>
@@ -129,10 +128,10 @@ public class ScrollBackground : MonoBehaviour {
   }
 }</code></pre>
 
-    <p>In Unity the Start() method runs once at the beginning of a game object's lifecycle and in this case initialises
+    <p>In Unity the Start() method runs once at the beginning of a GameObject()'s lifecycle and in this case initialises
       the rend variable with the renderer component. The Update() method is called every frame allowing for continous
-      updates. Here calculate: Distance = Speed * Time and then move our renderer to a new 2-dimensional vector position
-      with a new y coordinate corresponding to the distance.
+      updates. Here we calculate: Distance = Speed * Time and then move our renderer to a new 2-dimensional vector position
+      for the distance travelled.
     </p><br>
 
     <p>Once I had implemented this I began to work on allowing the user to move and control their vehicle. Initially I allowed
@@ -296,7 +295,7 @@ public class Scoring : MonoBehaviour {
 
     <p>Finally the <i>UI.cs</i> script is applied to the Menu scene to allow for traversing from the Menu scene to the Game scene.</p>
 
-    <pre><div class="code-title"><i>Scoring.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+    <pre><div class="code-title"><i>UI.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
 //using statements
 public class UI : MonoBehaviour {
 
@@ -310,7 +309,7 @@ public class UI : MonoBehaviour {
       <source src = "../../Files/chicago.mp4" type = "video/mp4">
       Your browser does not support the video tag
     </video>
-    <img class = "img-r medium" alt = "Gameplay Image" src = "../../Images/proj-chicago-game.png">
+    <img class = "img-r medium generic-img" height = "" alt = "Gameplay Image" src = "../../Images/proj-chicago-game.png">
 
     <br><br>
   </article> 

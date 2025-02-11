@@ -9,9 +9,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="../../Images/favicon.ico"> <!--favicon-->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!--font-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!--icons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-matlab.min.js"></script>
   <script src="../../Javascript/lightdark.js" defer></script>
   <title>James Sharrock</title>
 </head>
@@ -58,7 +58,7 @@
     </p><br><hr>
 
     <h5>Introduction:</h5><br>
-    <img class = "img-l small" alt = "12 letters hand-drawn from EMNIST" src="../../Images/proj-ai-ocr-emnist.png">
+    <img class = "img-l generic-img medium" alt = "12 letters hand-drawn from EMNIST" src="../../Images/proj-ai-ocr-emnist.png">
     <p>Optical Character Recognition is the process of converting handwritten text into machine-encoded text through mediums 
       such as documents, written papers, or images. Developing automated methods for this using machine learning and deep 
       learning of large datasets is important for producing AI models that can appropriately recognise and convert this text. 
@@ -83,6 +83,91 @@
       We then also compare two models from MatLab using pre-defined functions for K-nearest neighbour and
       SVM for Multiclass. SVM for Multiclass works by splitting data into linearly separated groups.</p><br><hr>
 
+    <h5>Code Overview:</h5><br>
+    <p>This section presents specific parts of the MATLAB code with further annotation and description. Important parts 
+      include:</p>
+    <ul class = "circle">
+      <li><p>Custom K-Nearest Neighbour algorithms.</p></li>
+      <li><p>Confusion Matrix Evaluation.</p></li>
+    </ul>
+
+    <pre><div class="code-title"><i>Main.m - Custom KNN Snippet</i></div><code class = "language-matlab">
+% Custom KNN
+prediction1 = categorical.empty(size(tefeatures, 1), 0);
+prediction2 = categorical.empty(size(tefeatures, 1), 0);
+k = 28;
+
+for i= 1:size(tefeatures, 1)
+  comp1 = trfeatures;
+  comp2 = repmat(tefeatures(i, :), [size(trfeatures, 1), 1]);
+  l2 = sum((comp1-comp2).^2, 2);
+  [~, ind] = sort(l2);
+  ind = ind(1:k);
+  labs = trlabels(ind);
+  prediction1(i, 1) = mode(labs);
+  i
+end
+
+for i = 1:size(tefeatures, 1)
+  comp1 = trfeatures;
+  comp2 = repmat(tefeatures(i, :), [size(trfeatures, 1), 1]);
+  l1 = sum(abs(comp1-comp2), 2);
+  [~, ind] = sort(l1);
+  ind = ind(1: k);
+  labs = trlabels(ind);
+  prediction2(i, 1) = mode(labs);
+  i
+end
+
+% Built-in Algorithms
+knnmodel = fitckn(trfeatures, trlabels);
+predictedknn = predict(knnmodel, tefeatures);
+svmmodel = fitcecoc(trfeatures, trlabels);
+predictedsvm = predict(svmmodel, tefeatures);
+</code></pre>
+
+<p>We create two empty categorical arrays for our prediction output for the custom KNN models. We then set our K 
+  parameter for K-NN which determines how many nearby points are compared. Then for each model we compare our testing 
+  features and training features and use our distance model to index the nearest points. The testing point is then compared 
+  to the nearest k training points and a prediction class is made and stored in our initial categorical array. 
+  This is then done for all 13,000 values and for each custom KNN method. <br>
+  We then use the fitckn() and predict() methods to use the built-in KNN Matlab model and the fitcecoc() and predict() 
+  methods to use the built-in SVM Matlab model
+</p>
+
+<pre><div class="code-title"><i>Main.m - Confusion Matrix Snippet</i></div><code class = "language-matlab">
+% Confusion Matrix
+figure(2)
+subplot(2, 2, 1);
+knn1CM = confusionchart(telabels, prediction1);
+title("KNN with Euclidean Distance");
+subplot(2, 2, 2);
+knn2CM = confusionchart(telabels, predction2);
+title("KNN with Manhattan Distance");
+subplot(2, 2, 3);
+knnmodelCM = confusionchart(telabels, predictedknn);
+title("MatLab KNN");
+subplot(2, 2, 4);
+svmmodelCM = confusionchart(telabels, predictedsvm);
+title("Matlab SVM");
+
+fname = './Results';
+if ~exist(fname, 'dir')
+  mkdir(fname);
+  disp(['Folder "', fname, '"created.']);
+else
+  disp(['Folder "', fname, '" already exists.']);
+end 
+saveas(gcf, fullfile(fname, "Confusion.png"));</code></pre>
+
+    <p>This code creates a new figure with 2 rows and 2 columns. For each position within this structure we map a confusion 
+      chart between the testing data labels and our predicted labels to compare and see which are correct. We then title them 
+      to be able to read our data. Once this is done we check to see if the 'Results' directory exists and if so save the file 
+      there. If not we create this directory and save the file there.
+    </p>
+    <br><hr>
+    
+    
     <h5>Results:</h5><br>
     <table>
       <tr>
@@ -134,7 +219,7 @@
     </p><br><hr>
 
     <h5>Data and Charts:</h5>
-    <img class = "img-r medium" alt = "Confusion Tables of the 4 Algorithms" src="../../Images/proj-ai-ocr-confusion.png">
+    <img class = "img-r medium generic-img" alt = "Confusion Tables of the 4 Algorithms" src="../../Images/proj-ai-ocr-confusion.png">
     <br><p>Reading the Data: Here we can see the confusion charts of the four models. The x and y axis are the Predicted Class and True Class 
       respectively. The blue diagonal line we can see indicates our successful matches of characters where our model
       correctly predicted a hand-drawn letter and matched it to the correct class.<br><br>
