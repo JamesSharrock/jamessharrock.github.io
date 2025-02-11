@@ -38,19 +38,6 @@
     --dark-title-hover: #c5917d
 }
 
-/*------Generic Colours (irrespective of mode) ------*/
-pre{
-    text-shadow: none !important;
-}
-.code-title{
-    color: white !important;
-}
-code{
-    color: white !important;
-    text-shadow: none !important;
-    & span {background: transparent !important;}
-}
-
 
 
 /*---------PC Only ----------*/
@@ -172,3 +159,16 @@ code{
     }
 }
 
+
+/*------Generic Colours (irrespective of mode) ------*/
+pre{
+    text-shadow: none !important;
+}
+.code-title{
+    color: white !important;
+}
+code{
+    color: white !important;
+    text-shadow: none !important;
+    & span {background: transparent !important;}
+}

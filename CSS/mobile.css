@@ -134,7 +134,19 @@
     .proj-td{padding: 0 0.2em;}
     .proj-th{padding: 0 0.2em;}
 
-    /*-------- TEXT ----------*/
+    /*-------- CODE ----------*/
+    /*------Generic Colours (irrespective of mode) ------*/
+    pre{
+        text-shadow: none !important;
+    }
+    .code-title{
+        color: white !important;
+    }
+    code{
+        color: white !important;
+        text-shadow: none !important;
+        & span {background: transparent !important;}
+    }
     
 }
   
