@@ -9,6 +9,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="../../Images/favicon.ico"> <!--favicon-->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!--font-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!--icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
   <script src="../../Javascript/lightdark.js" defer></script>
   <title>James Sharrock</title>
 </head>
@@ -57,7 +60,7 @@
       <li><p>When a crash occurs goes to the menu and allows the user to play again.</p></li>
     </ul><br><hr>
 
-    <h5>Code Structure:</h5>
+    <h5>Unity Code Structure:</h5>
     <ul class = "circle">
       <li><p>Assets:</p></li>
       <ul class = "sub-circle">
@@ -70,18 +73,245 @@
       <li><p>Project Settings: a config file that stores all of the global setings for how the project works and combines the assets.</p></li>
     </ul><br><hr>
 
-    <h5><b>Scripts:</b></h5>
+    <h5><b>Scripts Overview:</b></h5>
     <ul class = "circle">
-      <li><p><i>CarSpawn.cs</i>:</p>
-      <li><p><i>Destroy.cs</i>:</p>
-      <li><p><i>Enemy.cs</i>:</p>
-      <li><p><i>Player.cs</i>:</p>
-      <li><p><i>Scoring.cs</i>:</p>
-      <li><p><i>ScrollBackground.cs</i>:</p>
-      <li><p><i>UI.cs</i>:</p>
+      <li><p><i>CarSpawn.cs</i>: Instantiates enemy cars above the screen with a random horizontal position.</p>
+      <li><p><i>Destroy.cs</i>: Deletes enemy cars at a certain point below the screen for efficiency.</p>
+      <li><p><i>Enemy.cs</i>: Moves the enemy car down the screen and has a rigidbody to allow for collisions.</p>
+      <li><p><i>Player.cs</i>: Allows the user to control the movement of their car. If it detects a collision with an 
+                enemy then it deletes the player car.</p>
+      <li><p><i>Scoring.cs</i>: Loads previous highscore, calculates and sets new highscores.</p>
+      <li><p><i>ScrollBackground.cs</i>: Provides the moving background screen to simulate speed.</p>
+      <li><p><i>UI.cs</i>: Controls the menu with the start button and loads the main scene.</p>
+    </ul><br><hr>
+
+    <h5><b>Code View and Development:</b></h5><br>
+    <p>Initially I began development with a slightly different set of requirements as to what I wanted the final product
+      to end up as. These included: Horizontal gameplay, recording and giving a score based on the user's position in a 
+      race amongst a set of cars and a fuel system where the user would pick up consumable items.</p><br>
+    <p>I soon realised there were issues with my requirements and changed them slightly.</p>
+
+    <ul class = "circle">
+      <li><p>First of all, having the screen
+        be horizontal would be good for ergonomics and match genre leading games (Asphalt 8 + Real Racing 3). However it had
+        unintended consequences in reducing the vertical height od the screen as the game is 2-dimensional, resulting in a
+        smaller possible reaction time.
+      </p></li>
+      <li><p>Secondly, a score system based on position means that at some point in time the user would inevitably be in 1st place.
+          Once this occurs then some mechanic would need to be introduced to have enemy cars overtake he user or the game would
+          become incredibly monotonous. A simpler solution however would be to score based on the distance the user had driven
+          without a collision.
+      </p></li>
+    </ul><br>
+     
+    <p>In creating a Unity 2D game, there are components and scripts. Components include things such as GameObjects which
+      are the fundamental objects in Unity that represent characters, props and scenery. Unity also has colliders, cameras, lighting
+      and physics components for example. Therefore development consists of creating GameObjects, applying components and 
+      creating scripts to manipulate these GameObjects.
+    </p><br>
+
+    <p>The first script created was <i>ScrollBackground.cs</i> applied to my background sprite with a renderer
+      component applied.</p>
+ 
+    <pre><div class="code-title"><i>ScrollBackground.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class ScrollBackground : MonoBehaviour {
+  Renderer rend;
+  public float scrollSpeed = 10.5f;
+
+  void Start() {
+    rend = GetComponent&lt;Renderer&gt;();
+  }
+
+  void Update() {
+    float offset = Time.time * scrollSpeed;
+    rend.material.SetTextureOffset("_MainText", new Vector2(0, offset));
+  }
+}</code></pre>
+
+    <p>In Unity the Start() method runs once at the beginning of a game object's lifecycle and in this case initialises
+      the rend variable with the renderer component. The Update() method is called every frame allowing for continous
+      updates. Here calculate: Distance = Speed * Time and then move our renderer to a new 2-dimensional vector position
+      with a new y coordinate corresponding to the distance.
+    </p><br>
+
+    <p>Once I had implemented this I began to work on allowing the user to move and control their vehicle. Initially I allowed
+      the user to use the WASD and Arrow keys to move in any direction. I later changed this to only move horizontally to
+      correspond to mobile inputs. I created a player car GameObject and applied a BoxCollider2D and a RigidBody2D.<br>
+      A BoxCollider is used for interaction with the 2D physics system for collision. A RigidBody is used for implementing
+      full 2D physics to the GameObject.
+    </p>
+
+    <pre><div class="code-title"><i>Player.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class Player : MonoBehaviour {
+  public float CarSpeed;
+  Vector2 position;
+
+  void Start(){
+    position = transform.position;
+  }
+
+  void Update() {
+    position.x += Input.GetAxis("Horizontal") * CarSpeed * Time.deltaTime;
+    position.x = Mathf.Clamp(position.x, -2f, 2f);
+    transform.position = position;
+  }
+
+  void OnCollisionEnter2D(Collision2D col) {
+    if (col.GameObject.tag == "Enemy") {
+      Destroy(gameObject);
+      SceneManager.LoadScene("Menu");
+    }
+  }
+}</code></pre>
+  
+    <p>The Start() method initialises the position of the player car. The Update() method then translates the x position 
+      by getting the current x position and multiplying it by the distance between the last frame and the current one.
+      The Clamp method is used to keep the player within a certain bound (on the screen) and the car is then moved.
+      <br><br>
+      If a collision occurs then OnCollisionEnter2D() is ran with the collision as a parameter. If the player collides with
+      an "Enemy" object then the player car is destroyed and the Menu scene is loaded.
+    </p><br>
+
+    <p>We now have the background and the player but we need a system for the enemy vehicles for the core gameplay to be
+      complete. To do this an Enemy prefab was created as a template to allow for the creation of multiple instances of 
+      enemy GameObjects in a scene. This required 3 scripts: </p>
+    <ul class = "circle">
+      <li><p><i>CarSpawn.cs</i> applied to a point above the screen.</p></li>
+      <li><p><i>CarDestroy.cs</i> applied to a BoxCollider2D beneath the screen.</p>
+      <li><p><i>Enemy.cs</i> applied to the Enemy prefab along with a Sprite Renderer, BoxCollider2D and RigidBody2D</p></li>
     </ul>
 
- 
+    <pre><div class="code-title"><i>CarSpawn.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class CarSpawn : MonoBehaviour {
+  public GameObject car;
+  public float DelayTimer;
+  float timer;
+
+  void Start() {
+    timer = DelayTimer;
+  }
+
+  void Update() {
+    timer -= Time.deltaTime;
+    if (timer <= 0) {
+      Vector3 CarPos = new Vector3(Random.Range(-2f, 2f), transform.position.y, transform.position.z);
+      Instantiate(car, CarPos, transform.rotation);
+      timer = DelayTimer;
+    }
+  }
+}</code></pre>
+
+    <p>This code is used so that on each frame once the DelayTimer has passed then a new enemy car is instantiated 
+      with an x position between -2 and 2 and the current y and z position. The timer is then reset for the next delay 
+      between enemy car spawning.
+    </p>
+
+    <pre><div class="code-title"><i>CarDestroy.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class CarDestroy : MonoBehaviour {
+
+  void OnCollisionEnter2D(Collision2D col) {
+    if(col.gameObject.tag == "Enemy") {
+      Destroy(col.gameObject);
+    }
+  }
+}</code></pre> 
+    
+    <p>Simply put when a collision occurs between the BoxCollider2D beneath the screen then if the colliding object is an 
+      "Enemy" then destroy the enemy. This helps to prevent the increase of GameObjects as the game runs meaning the
+      performance should be constant no matter the length the game is running for.
+    </p>
+
+    <pre><div class="code-title"><i>Enemy.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class Enemy : MonoBehaviour {
+  public float Speed;
+  private Rigidbody2D rb;
+
+  void Start() {
+    rb = GetComponent&lt;Rigidbody2D&gt;();
+  }
+
+  void FixedUpdate() {
+    rb.velocity = Vector2.zero;
+    rb.velocity = new Vector2(0, Speed * Time.fixedDeltaTime * -1);
+  }
+}</code></pre> 
+
+    <p>The Start() method initialises the rb variable with the RidigBody2D component. The FixedUpdate() method
+      is called at fixed intervals and used for physics related updates. The first line resets the velocity to zero so that
+      the enemy's movement is controlled solely by this script. The velocity is then set to this distance in the negative y 
+      distance.
+    </p><br>
+
+    <p>The final things to implement are the menu system and the highscore system. These should allow the user to replay the 
+      game using the menu and for their highscore to be saved. This is done with two scripts <i>Scoring.cs</i> and 
+      <i>UI.cs</i> and the Menu scene.
+    </p>
+
+    <pre><div class="code-title"><i>Scoring.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class Scoring : MonoBehaviour {
+  public Text ScoreText;
+  public Text HighScoreText;
+  public int Score;
+  public int HighScore;
+  public int ScoreChange = 4;
+
+  void Start() {
+    if (PlayerPrefs.HasKey("HighScore")) {
+      HighScore = PlayerPrefs.GetInt("HighScore");
+    }
+    Score = 0;
+    InvokeRepeating("ScoreUpdate", 0.5f, 0.25f);
+  }
+
+  void Update() {
+    if (Score > HighScore) {
+      HighScore = Score;
+      PlayerPrefs.SetInt("HighScore", HighScore);
+    }
+    ScoreText.text = "Score: " + Score;
+    HighScoreText.text = "Highscore: " + HighScore;
+  }
+
+  void ScoreUpdate() {
+    Score += ScoreChange;
+  }
+}
+</code></pre> 
+
+    <p>
+      The <i>Scoring.cs</i> script is applied to a UI Element in the top left of the game scene. This has Score:    
+      and Highscore: text elements.
+    </p>
+    <ul class = "circle">
+      <li><p>Start(): Loads the "HighScore" from the PlayerPreferences Unity folder. Invokes the ScoreUpdate() method at regular intervals.</p></li>
+      <li><p>Update(): Runs once per frame and updates the displayed score and highscore and saves the highscore if the current score exceeds it.</p></li>
+      <li><p>ScoreUpdate(): Called at regular intervals to increment the score.</p></li>
+    </ul><br>
+
+    <p>Finally the <i>UI.cs</i> script is applied to the Menu scene to allow for traversing from the Menu scene to the Game scene.</p>
+
+    <pre><div class="code-title"><i>Scoring.cs</i><svg class = "pre-icon" fill="none" viewbox = "-5 -7 32 23" width = "24" height = "24"><path d="m9.5 5v5m2-5v5m-3.5-3.5h5m-5 2h5m-5 1.5-.40213.2011c-.39318.1966-.82673.2989-1.26631.2989-1.56383 0-2.83156-1.26773-2.83156-2.83156v-.33688c0-1.56383 1.26773-2.83156 2.83156-2.83156.43958 0 .87313.10235 1.26631.29894l.40213.20106m-6.5 5.5v-6l6-3.5 6 3.5v6l-6 3.5z"/></svg></div><code class = "language-csharp">
+//using statements
+public class UI : MonoBehaviour {
+
+  public void StartGame() {
+    SceneManager.LoadScene("Main");
+  }
+}</code></pre> <br><hr>
+    
+    <h5><b>Gameplay and Screenshots:</b></h5><br><br>
+    <video controls class = "img-l medium" alt = "Video gameplay">
+      <source src = "../../Files/chicago.mp4" type = "video/mp4">
+      Your browser does not support the video tag
+    </video>
+    <img class = "img-r medium" alt = "Gameplay Image" src = "../../Images/proj-chicago-game.png">
+
     <br><br>
   </article> 
 
