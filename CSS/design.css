@@ -96,7 +96,7 @@ li:not(ul.nav li){
 pre {
     white-space: pre-wrap;
     width: 100%;
-    border-radius: 1.5em 0em 1.5em 1.5em!important;;
+    border-radius: 1.5em 0em 1.5em 1.5em !important;;
     user-select: none;
     margin: 1em 0em;
     position: relative;
@@ -104,12 +104,13 @@ pre {
     overflow: hidden !important;
 }  
 pre code {
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
     padding-left: 0.5em; 
     display: block;
     font-family: 'Courier New', Courier, monospace; 
     line-height: 1.1 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: pre;
 }
 pre .code-title {
     font-family: 'Courier New', Courier, monospace; 
